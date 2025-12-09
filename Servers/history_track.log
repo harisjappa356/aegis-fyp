@@ -4,3 +4,4 @@ Sprint 2 dev activity track: Sprint 2: Implement Create Organization model and m
 Sprint 2 dev activity track: Sprint 2: Implement Implement user invitation flow at 2025-12-05 13:12:00
 Sprint 2 dev activity track: Sprint 2: Implement Implement real-time SSE notifications with Redis Pub/Sub at 2025-12-08 9:45:00
 Sprint 2 test activity track: Sprint 2: TC2-01 - Two tenants cannot access each other's data at 2025-12-09 11:44:00
+Sprint 2 test activity track: Sprint 2: TC2-02 - Use Case created with auto-generated UC-ID at 2025-12-09 15:24:00

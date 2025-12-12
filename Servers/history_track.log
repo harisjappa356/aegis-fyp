@@ -14,3 +14,4 @@ Sprint 2 test activity track: Sprint 2: TC2-10 - Tenant schema isolation verifie
 Sprint 2 test activity track: Sprint 2: TC2-09 - Approver rejects with comment at 2025-12-11 10:34:00
 Sprint 2 test activity track: Sprint 2: TC2-08 - Editor withdraws approval request at 2025-12-11 14:16:00
 Sprint 2 bug activity track: Sprint 2: Fix bug - Fix database connection leak in schema creation at 2025-12-12 16:32:00
+Sprint 2 bug activity track: Sprint 2: Fix bug - Add test cases for multi-step approval workflow engine at 2025-12-12 17:48:00

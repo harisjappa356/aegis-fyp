@@ -50,3 +50,4 @@ Sprint 4 bug activity track: Sprint 4: Fix bug - Fix file path resolver for evid
 Sprint 5 dev activity track: Sprint 5: Implement Implement risk auto-calculation algorithm (L1 + S3) at 2026-01-13 9:28:00
 Sprint 5 dev activity track: Sprint 5: Implement Implement risk history snapshotting hook at 2026-01-15 13:10:00
 Sprint 5 test activity track: Sprint 5: TC5-02 - Risk level auto-calculated on creation at 2026-01-19 11:19:00
+Sprint 5 test activity track: Sprint 5: TC5-01 - Create project risk with valid data at 2026-01-19 14:50:00

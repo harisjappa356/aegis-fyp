@@ -62,3 +62,4 @@ Sprint 5 test activity track: Sprint 5: TC5-09 - Risk timeseries chart data at 2
 Sprint 5 bug activity track: Sprint 5: Fix bug - Fix alignment of risk level matrix borders in Chrome at 2026-01-23 16:41:00
 Sprint 5 bug activity track: Sprint 5: Fix bug - Fix auto-calculation logic when severity is undefined at 2026-01-23 17:14:00
 Sprint 6 dev activity track: Sprint 6: Implement Implement policy state transitions (Draft -> Review -> Published) at 2026-01-25 13:45:00
+Sprint 6 dev activity track: Sprint 6: Implement Implement task assignment and deadline email hooks at 2026-02-01 13:17:00

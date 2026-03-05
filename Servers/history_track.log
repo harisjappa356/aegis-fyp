@@ -93,3 +93,4 @@ Sprint 7 bug activity track: Sprint 7: Fix bug - Fix version tracking incrementa
 Sprint 7 bug activity track: Sprint 7: Fix bug - Fix NIST progress calculation division-by-zero errors at 2026-02-20 17:41:00
 Sprint 8 test activity track: Sprint 8: TC8-01 - LLM API key added for OpenAI at 2026-03-02 15:45:00
 Sprint 8 test activity track: Sprint 8: TC8-06 - Conversation history saved at 2026-03-04 10:13:00
+Sprint 8 test activity track: Sprint 8: TC8-09 - API key deletion at 2026-03-05 10:21:00

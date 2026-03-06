@@ -95,3 +95,4 @@ Sprint 8 test activity track: Sprint 8: TC8-01 - LLM API key added for OpenAI at
 Sprint 8 test activity track: Sprint 8: TC8-06 - Conversation history saved at 2026-03-04 10:13:00
 Sprint 8 test activity track: Sprint 8: TC8-09 - API key deletion at 2026-03-05 10:21:00
 Sprint 8 bug activity track: Sprint 8: Fix bug - Fix chatbot autoscroll when new message is received at 2026-03-06 16:14:00
+Sprint 8 bug activity track: Sprint 8: Fix bug - Encrypt stored API keys at database level at 2026-03-06 17:25:00

@@ -99,3 +99,4 @@ Sprint 8 bug activity track: Sprint 8: Fix bug - Encrypt stored API keys at data
 Sprint 9 dev activity track: Sprint 9: Implement Implement comments and annotation threads on risks at 2026-03-15 11:39:00
 Sprint 9 test activity track: Sprint 9: TC9-02 - Generate DOCX report at 2026-03-16 10:39:00
 Sprint 9 test activity track: Sprint 9: TC9-03 - Global search returns results at 2026-03-17 10:14:00
+Sprint 9 test activity track: Sprint 9: TC9-04 - Command Palette opens on Ctrl+K at 2026-03-17 11:42:00

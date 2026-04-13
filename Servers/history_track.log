@@ -117,3 +117,4 @@ Sprint 10 bug activity track: Sprint 10: Fix bug - Fix SSE connection recovery m
 Sprint 10 bug activity track: Sprint 10: Fix bug - Fix validation errors on incident logs severity levels at 2026-04-03 17:45:00
 Sprint 11 dev activity track: Sprint 11: Implement Implement automated monitoring cycle generator (Cron job worker) at 2026-04-09 10:12:00
 Sprint 11 test activity track: Sprint 11: TC11-01 - Save project PMM schedule configuration at 2026-04-12 11:25:00
+Sprint 11 test activity track: Sprint 11: TC11-02 - Add custom question to PMM config at 2026-04-13 10:32:00

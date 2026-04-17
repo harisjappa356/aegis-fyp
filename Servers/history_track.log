@@ -122,3 +122,4 @@ Sprint 11 test activity track: Sprint 11: TC11-03 - Trigger PMM cycle via schedu
 Sprint 11 test activity track: Sprint 11: TC11-04 - Save questionnaire response draft at 2026-04-14 11:25:00
 Sprint 11 test activity track: Sprint 11: TC11-05 - Submit PMM cycle questionnaire at 2026-04-15 11:21:00
 Sprint 11 test activity track: Sprint 11: TC11-06 - Trigger overdue escalation alert at 2026-04-15 15:11:00
+Sprint 11 bug activity track: Sprint 11: Fix bug - Fix PMM schedule daily cron calculation offset at 2026-04-17 16:36:00

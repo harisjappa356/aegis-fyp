@@ -127,3 +127,4 @@ Sprint 12 dev activity track: Sprint 12: Implement Implement token validation mi
 Sprint 12 test activity track: Sprint 12: TC12-03 - Revoke existing API token at 2026-04-28 14:14:00
 Sprint 12 test activity track: Sprint 12: TC12-02 - Generate new API token at 2026-04-28 15:31:00
 Sprint 12 test activity track: Sprint 12: TC12-05 - Retrieve change history trail for project risk at 2026-04-29 15:44:00
+Sprint 12 test activity track: Sprint 12: TC12-06 - Verify auditor cannot modify change history log at 2026-04-30 14:11:00

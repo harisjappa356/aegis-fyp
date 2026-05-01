@@ -72,3 +72,4 @@ Sprint 12 dev activity track: Sprint 12: Implement Build API Token Management pa
 Sprint 12 dev activity track: Sprint 12: Implement Build tenant-specific statistics overview cards at 2026-04-26 10:24:00
 Sprint 12 test activity track: Sprint 12: TC12-01 - Toggle dark mode theme preference at 2026-04-27 10:22:00
 Sprint 12 test activity track: Sprint 12: TC12-04 - Verify tenant statistics dashboard aggregation at 2026-04-29 14:32:00
+Sprint 12 bug activity track: Sprint 12: Fix bug - Fix theme toggle transition flicker in Firefox at 2026-05-01 17:26:00

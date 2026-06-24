@@ -46,6 +46,7 @@ import { createNewUserWrapper } from "./user.ctrl";
 import {
   ValidationException,
   BusinessLogicException,
+  ConflictException,
 } from "../domain.layer/exceptions/custom.exception";
 import logger, { logStructured } from "../utils/logger/fileLogger";
 import { logEvent } from "../utils/logger/dbLogger";
@@ -395,6 +396,22 @@ export async function createOrganization(
         req.tenantId!
       );
       return res.status(400).json(STATUS_CODE[400](error.message));
+    }
+
+    if (error instanceof ConflictException) {
+      logStructured(
+        "error",
+        `conflict: ${error.message}`,
+        "createOrganization",
+        "organization.ctrl.ts"
+      );
+      await logEvent(
+        "Error",
+        `Conflict during organization creation: ${error.message}`,
+        req.userId!,
+        req.tenantId!
+      );
+      return res.status(409).json(STATUS_CODE[409](error.message));
     }
 
     if (error instanceof BusinessLogicException) {

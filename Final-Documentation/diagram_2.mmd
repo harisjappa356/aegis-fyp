@@ -1,0 +1,60 @@
+flowchart LR
+    %% External Entities
+    User(["👤 User\n(Admin/Editor/\nReviewer/Auditor)"])
+    Regulator(["📋 Regulator /\nPublic"])
+    LLMProv(["🤖 LLM Provider\n(OpenAI/Anthropic)"])
+    GitHubEnt(["🐙 GitHub"])
+    SlackEnt(["💬 Slack"])
+    MLflowEnt(["📊 MLflow"])
+
+    %% Internal Processes
+    P1["P1\nAuthentication &\nUser Management"]
+    P2["P2\nCompliance Framework\nManagement"]
+    P3["P3\nRisk Management"]
+    P4["P4\nPolicy & Vendor\nManagement"]
+    P5["P5\nLLM Evaluation &\nAI Advisor"]
+    P6["P6\nReporting &\nExport"]
+    P7["P7\nAutomations &\nNotifications"]
+
+    %% Data Stores
+    D1[("D1\nUsers & Orgs\nPostgreSQL")]
+    D2[("D2\nTenant Data\nPostgreSQL")]
+    D3[("D3\nFiles & Evidence\nFile Storage")]
+    D4[("D4\nJob Queue\nRedis/BullMQ")]
+    D5[("D5\nEval Results\nEvalServer DB")]
+
+    %% Authentication flows
+    User -->|Credentials| P1
+    P1 -->|JWT Token| User
+    P1 -->|Store user| D1
+
+    %% Framework/Risk flows
+    User -->|Control updates| P2
+    P2 -->|Framework progress| D2
+    User -->|Risk data| P3
+    P3 -->|Risk records| D2
+
+    %% Policy/Vendor flows
+    User -->|Policy/Vendor data| P4
+    P4 -->|Records| D2
+
+    %% LLM flows
+    User -->|Query / prompt| P5
+    P5 -->|LLM request| LLMProv
+    LLMProv -->|Response| P5
+    P5 -->|Answer| User
+    P5 -->|Eval results| D5
+
+    %% Reporting flows
+    P6 -->|Read all data| D2
+    P6 -->|Read evidence| D3
+    P6 -->|PDF / DOCX| Regulator
+
+    %% Automation flows
+    P7 -->|Read queue| D4
+    P7 -->|Slack notification| SlackEnt
+
+    %% External system flows
+    GitHubEnt -->|Repo code| P2
+    MLflowEnt -->|Model metadata| D2
+    User -->|File upload| D3

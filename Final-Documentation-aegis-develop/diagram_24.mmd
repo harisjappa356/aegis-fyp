@@ -1,0 +1,31 @@
+flowchart TD
+    subgraph Presentation ["🌐 Presentation Layer — Routes & Middleware"]
+        Routes["60 Express Route Modules\n(project.route.ts, risks.route.ts, ...)"]
+        AuthMW["JWT Auth Middleware"]
+        TenantMW["Tenant Middleware (Schema Routing)"]
+        RBACMW["RBAC Middleware (Role Enforcement)"]
+    end
+
+    subgraph Application ["⚙️ Application Layer — Controllers & Services"]
+        Controllers["Controllers\n(auth.ctrl.ts, project.ctrl.ts, ...)"]
+        Services["Domain Services\n(MLflow, Slack, PMM Scheduler,\nSSE Publisher, PDF Generator)"]
+        Jobs["BullMQ Workers\n(worker.ts)"]
+    end
+
+    subgraph Domain ["🧠 Domain Layer — Business Logic"]
+        Models["Sequelize ORM Models\n(users, projects, risks, vendors,\napprovalWorkflows, pmm, ...)"]
+        Interfaces["TypeScript Interfaces"]
+        Enums["Shared Enumerations"]
+        Rules["Business Rules\n(Risk Formula: L×1 + S×3)\n(PMM escalation logic)"]
+    end
+
+    subgraph Infrastructure ["🔧 Infrastructure Layer — External Systems"]
+        PG[("PostgreSQL\nSchema-per-tenant")]
+        Redis2[("Redis\nPub/Sub + BullMQ")]
+        EmailSvc["Email Service\n(SES / SMTP / Resend)"]
+        LLMSvc["LLM APIs\n(OpenAI / Anthropic)"]
+    end
+
+    Presentation --> Application
+    Application --> Domain
+    Domain --> Infrastructure

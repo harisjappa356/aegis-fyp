@@ -1,0 +1,47 @@
+graph TD
+    PB["Product Backlog<br/>58 User Stories across 20 EPICs"]
+
+    E1["EPIC 1<br/>User Management & RBAC"]
+    E2["EPIC 2<br/>Multi-Tenancy & Org Mgmt"]
+    E3["EPIC 3<br/>Approval Workflows"]
+    E4["EPIC 4<br/>Framework Management"]
+    E5["EPIC 5<br/>Risk Management"]
+    E6["EPIC 6<br/>Vendor Management"]
+    E7["EPIC 7<br/>Policy Management"]
+    E8["EPIC 8<br/>AI Model Inventory"]
+    E9["EPIC 9 (P2)<br/>LLM Evaluations & Arena"]
+    E10["EPIC 10 (P2)<br/>AI Advisor"]
+    E11["EPIC 11<br/>Search & Navigation"]
+    E12["EPIC 12<br/>Reporting & Dashboard"]
+    E13["EPIC 13<br/>Shared Collaboration"]
+    E14["EPIC 14<br/>Automations & Notifications"]
+    E15["EPIC 15<br/>Incident Mgmt & Training"]
+    E16["EPIC 16 (P2)<br/>AI Detection Module"]
+    E17["EPIC 17 (P2)<br/>Bias & Fairness"]
+    E18["EPIC 18<br/>Post-Market Monitoring"]
+    E19["EPIC 19<br/>Policy Templates"]
+    E20["EPIC 20<br/>WatchTower / Event Tracker"]
+
+    PB --> E1 & E2 & E3 & E4 & E5
+    PB --> E6 & E7 & E8 & E9 & E10
+    PB --> E11 & E12 & E13 & E14 & E15
+    PB --> E16 & E17 & E18 & E19 & E20
+
+    E1 --> US101["US-101: Register / Login"]
+    E1 --> US102["US-102: Assign Roles"]
+    E1 --> US103["US-103: Password Reset (P2)"]
+    E1 --> US104["US-104: Preferences"]
+    E1 --> US105["US-105: API Tokens"]
+
+    E2 --> US201["US-201: Schema-per-Tenant"]
+    E2 --> US202["US-202: Dashboard Stats"]
+    E2 --> US203["US-203: Tier Management"]
+
+    E4 --> US401["US-401: EU AI Act"]
+    E4 --> US402["US-402: ISO 42001/27001"]
+    E4 --> US403["US-403: NIST AI RMF"]
+    E4 --> US404["US-404: Auto Drivers (P2)"]
+
+    E5 --> US501["US-501: Project Risks"]
+    E5 --> US502["US-502: Risk History"]
+    E5 --> US503["US-503: Risk Auto-Calc"]

@@ -1,0 +1,35 @@
+flowchart LR
+    Admin(["👤 Admin"])
+    Editor(["👤 Editor"])
+    Reviewer(["👤 Reviewer"])
+    Auditor(["👤 Auditor"])
+    Stakeholder(["👤 Stakeholder\n(PMM Respondent)"])
+
+    SYSTEM(["⬛ AEGIS.AI\nAI Governance Platform"])
+
+    OpenAI(["🤖 OpenAI / Anthropic"])
+    Slack(["💬 Slack"])
+    GitHub(["🐙 GitHub"])
+    MLflow(["📊 MLflow"])
+    Email(["📧 Email Service"])
+
+    Admin -->|"User roles, org settings,\nautomation rules"| SYSTEM
+    Editor -->|"Use cases, risks,\ncontrols, evidence"| SYSTEM
+    Reviewer -->|"Approval decisions,\ncomments"| SYSTEM
+    Auditor -->|"Report requests,\naudit queries"| SYSTEM
+    Stakeholder -->|"PMM questionnaire\nresponses"| SYSTEM
+
+    SYSTEM -->|"Dashboards, reports,\nnotifications, audit trails"| Admin
+    SYSTEM -->|"Framework progress,\napproval status, AI advice"| Editor
+    SYSTEM -->|"Pending approvals,\nentity details"| Reviewer
+    SYSTEM -->|"PDF/DOCX reports,\naudit logs"| Auditor
+    SYSTEM -->|"PMM cycle emails,\nescalation alerts"| Stakeholder
+
+    SYSTEM -->|"LLM prompts"| OpenAI
+    OpenAI -->|"AI-generated responses"| SYSTEM
+    SYSTEM -->|"Webhook messages"| Slack
+    SYSTEM -->|"Repo scan requests"| GitHub
+    GitHub -->|"Repository content"| SYSTEM
+    SYSTEM -->|"Sync requests"| MLflow
+    MLflow -->|"Model metadata"| SYSTEM
+    SYSTEM -->|"Transactional emails"| Email

@@ -1,0 +1,23 @@
+sequenceDiagram
+    actor Auditor
+    participant FE as React Frontend
+    participant BE as Node.js Backend
+    participant PW as Playwright Service
+    participant DB as PostgreSQL
+
+    Auditor->>FE: Click "Generate PDF Report"
+    FE->>BE: POST /api/reports/pdf (projectId)
+    BE->>DB: Fetch project + framework data
+    BE->>DB: Fetch risk registry
+    BE->>DB: Fetch evidence records
+    DB-->>BE: Full project governance data
+
+    BE->>PW: Render HTML report template
+    PW->>PW: Launch headless Chromium
+    PW->>PW: Render governance data into styled HTML
+    PW->>PW: Print to PDF (retry on CI flakiness)
+    PW-->>BE: PDF Buffer
+
+    BE->>BE: Store PDF in reports archive
+    BE-->>FE: 200 OK + PDF download URL
+    FE-->>Auditor: Browser triggers PDF download

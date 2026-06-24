@@ -42,3 +42,10 @@ EvaluationModule/data/uploads/*
 
 # Google Drive Desktop sync temp files
 *.tmp.driveupload
+
+# Windows folder configuration files
+[Dd]esktop.ini
+
+# Log files
+*.log
+*-logs.txt

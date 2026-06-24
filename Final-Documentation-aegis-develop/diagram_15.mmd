@@ -1,0 +1,29 @@
+sequenceDiagram
+    actor Developer
+    participant FE as React Frontend
+    participant BE as Node.js Backend
+    participant DB as PostgreSQL
+
+    Developer->>FE: Register new AI Model
+    FE->>BE: POST /api/modelInventory
+    BE->>DB: INSERT model_inventories
+    BE->>DB: INSERT model_inventory_history (v1 snapshot)
+    BE-->>FE: 201 Created + model record
+
+    Developer->>FE: Update model version to v2
+    FE->>BE: PATCH /api/modelInventory/:id
+    BE->>DB: UPDATE model record
+    BE->>DB: INSERT model_inventory_history (v2 snapshot)
+    BE->>DB: INSERT model_change_history (changed version)
+    BE-->>FE: Updated model
+
+    Developer->>FE: Open NIST AI RMF ” GOVERN function
+    FE->>BE: GET /api/nist-ai-rmf?projectId=1
+    BE->>DB: SELECT nist categories for project
+    BE-->>FE: NIST categories with current status
+
+    Developer->>FE: Mark subcategory as Implemented
+    FE->>BE: PATCH /api/nist-ai-rmf/categories/:id
+    BE->>DB: UPDATE category status = Implemented
+    BE->>DB: Recalculate function completion %
+    BE-->>FE: Updated progress

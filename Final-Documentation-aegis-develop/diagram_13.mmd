@@ -1,0 +1,31 @@
+sequenceDiagram
+    actor Editor
+    participant FE as React Frontend
+    participant BE as Node.js Backend
+    participant DB as PostgreSQL
+    actor Reviewer
+
+    Editor->>FE: Create new AI Policy (Draft)
+    FE->>BE: POST /api/policies
+    BE->>DB: INSERT policy (status=Draft)
+    BE-->>FE: 201 Created
+
+    Editor->>FE: Submit for Review
+    FE->>BE: PATCH /api/policies/:id (status=Under_Review)
+    BE->>DB: Update policy status
+    BE->>DB: Log policy_change_history
+    BE-->>Reviewer: SSE notification
+
+    Reviewer->>FE: Open policy for review
+    FE->>BE: GET /api/policies/:id
+    BE-->>FE: Policy content + history
+
+    Reviewer->>FE: Approve policy
+    FE->>BE: POST /api/approval-requests/:id/approve
+    BE->>DB: Update status = Approved
+    BE-->>Editor: SSE notification (Approved)
+
+    Editor->>FE: Publish policy
+    FE->>BE: PATCH /api/policies/:id (status=Published)
+    BE->>DB: Update policy status = Published
+    BE-->>FE: 200 OK

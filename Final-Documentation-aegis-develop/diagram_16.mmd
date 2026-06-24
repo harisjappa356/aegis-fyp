@@ -1,0 +1,53 @@
+classDiagram
+    class LLMApiKey {
+        +int id
+        +string provider
+        +string key_encrypted
+        +int organization_id
+        +boolean is_active
+        +create(provider, key) void
+        +revoke() void
+    }
+    class LLMEvaluation {
+        +int id
+        +string experiment_name
+        +string model_name
+        +string dataset
+        +string[] metrics
+        +string status
+        +getResults() EvalResult[]
+    }
+    class EvalResult {
+        +int id
+        +int evaluation_id
+        +string metric_name
+        +float score
+        +string question
+        +string answer
+    }
+    class AdvisorConversation {
+        +int id
+        +int user_id
+        +string title
+        +getMessages() AdvisorMessage[]
+    }
+    class AdvisorMessage {
+        +int id
+        +int conversation_id
+        +string role
+        +string content
+        +timestamp created_at
+    }
+    class LLMArenaComparison {
+        +int id
+        +string model_a
+        +string model_b
+        +string prompt
+        +string response_a
+        +string response_b
+        +string winner
+    }
+    LLMEvaluation "1" --> "many" EvalResult : stores
+    AdvisorConversation "1" --> "many" AdvisorMessage : contains
+    LLMApiKey ..> LLMEvaluation : configures
+    LLMApiKey ..> LLMArenaComparison : configures

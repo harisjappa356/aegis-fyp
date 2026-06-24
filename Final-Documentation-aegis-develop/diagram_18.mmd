@@ -1,0 +1,53 @@
+classDiagram
+    class Report {
+        +int id
+        +int project_id
+        +string format
+        +string file_path
+        +timestamp generated_at
+        +generatePDF(projectId) string
+        +generateDOCX(projectId) string
+    }
+    class GlobalSearch {
+        +string[] entityTypes
+        +search(query, tenantId) SearchResult[]
+    }
+    class SearchResult {
+        +string entity_type
+        +int entity_id
+        +string title
+        +string snippet
+    }
+    class CommandPalette {
+        +string[] commands
+        +quickSearch(query) SearchResult[]
+        +navigate(target) void
+    }
+    class Note {
+        +int id
+        +string entity_type
+        +int entity_id
+        +string content
+        +int created_by
+        +timestamp created_at
+    }
+    class ShareLink {
+        +int id
+        +string token
+        +string entity_type
+        +int entity_id
+        +date expires_at
+        +boolean is_active
+        +validate() boolean
+    }
+    class AITrustCenter {
+        +int id
+        +int organization_id
+        +string[] resources
+        +string[] subprocessors
+        +getPublicView() TrustCenterData
+    }
+    Report ..> GlobalSearch : indexed by
+    GlobalSearch "1" --> "many" SearchResult : returns
+    CommandPalette ..> GlobalSearch : uses
+    ShareLink ..> AITrustCenter : can share

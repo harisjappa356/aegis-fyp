@@ -1,0 +1,27 @@
+sequenceDiagram
+    actor Editor
+    participant FE as React Frontend
+    participant BE as Node.js Backend
+    participant DB as PostgreSQL
+    participant Redis
+    actor Approver
+
+    Editor->>FE: Submit Use Case for Approval
+    FE->>BE: POST /api/approval-requests
+    BE->>DB: Create ApprovalRequest (status: pending)
+    BE->>DB: Update project status to pending_approval
+    BE->>Redis: Publish "approval-notifications" event
+
+    Redis-->>BE: Broadcast to SSE subscribers
+    BE-->>Approver: Real-time SSE notification
+
+    Approver->>FE: Open approval request
+    FE->>BE: GET /api/approval-requests/:id
+    BE-->>FE: Request details
+
+    Approver->>FE: Click Approve
+    FE->>BE: POST /api/approval-requests/:id/approve
+    BE->>DB: Update step status to approved
+    BE->>DB: Update project status to approved
+    BE->>Redis: Publish approval result
+    BE-->>Editor: SSE notification (Approved)

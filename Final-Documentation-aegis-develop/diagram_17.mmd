@@ -1,0 +1,27 @@
+sequenceDiagram
+    actor Admin
+    participant FE as React Frontend
+    participant BE as Node.js Backend
+    participant DB as PostgreSQL
+
+    Admin->>FE: Open LLM Key Management page
+    FE->>BE: GET /api/llmApiKeys
+    BE->>DB: SELECT keys for organization
+    BE-->>FE: List of providers (masked keys)
+
+    Admin->>FE: Add new OpenAI key
+    FE->>BE: POST /api/llmApiKeys (provider=OpenAI, key=sk-...)
+    BE->>BE: Encrypt key with AES-256
+    BE->>DB: INSERT llm_api_keys
+    BE-->>FE: 201 Created (key stored)
+
+    Admin->>FE: Create evaluation experiment
+    FE->>BE: POST /api/llm-evaluations
+    BE->>DB: INSERT evaluation record (status=Pending)
+    BE-->>FE: Experiment created (awaiting EvalServer)
+
+    Note over BE: EvalServer connection required to run
+    Admin->>FE: Delete a key
+    FE->>BE: DELETE /api/llmApiKeys/:id
+    BE->>DB: DELETE key record
+    BE-->>FE: 200 OK

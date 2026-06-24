@@ -1,0 +1,26 @@
+sequenceDiagram
+    actor Editor
+    participant FE as React Frontend
+    participant BE as Node.js Backend
+    participant DB as PostgreSQL
+    participant LLM as OpenAI API
+
+    Editor->>FE: Open EU AI Act Control
+    FE->>BE: GET /api/eu-ai-act/controls/:id
+    BE->>DB: SELECT control + implementation details
+    DB-->>BE: Control data
+    BE-->>FE: Control with current status
+
+    Editor->>FE: Click "Auto-Fill" button
+    FE->>BE: POST /api/autoDrivers (controlId, context)
+    BE->>LLM: Prompt with control description + project context
+    LLM-->>BE: AI-generated implementation text
+    BE->>DB: Update control implementation_details
+    BE-->>FE: 200 OK + filled content
+    FE-->>Editor: Show auto-filled answer
+
+    Editor->>FE: Update status to "Done"
+    FE->>BE: PATCH /api/eu-ai-act/controls/:id
+    BE->>DB: Update control status = Done
+    BE->>DB: Recalculate framework completion %
+    BE-->>FE: Updated progress

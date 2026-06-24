@@ -1,0 +1,46 @@
+classDiagram
+    class User {
+        +int id
+        +string name
+        +string email
+        +string password_hash
+        +string role
+        +int organization_id
+        +boolean is_active
+        +login(email, password) JWT
+        +register(name, email, password) User
+        +resetPassword(token, newPass) void
+    }
+
+    class Organization {
+        +int id
+        +string name
+        +string tenant_schema
+        +int tier_id
+        +createTenantSchema() void
+        +getMembers() User[]
+    }
+
+    class Role {
+        +string name
+        +string[] permissions
+        +canAccess(resource) boolean
+    }
+
+    class Tier {
+        +int id
+        +string name
+        +int max_users
+        +string[] features
+    }
+
+    class AuthMiddleware {
+        +verifyJWT(token) Payload
+        +enforceRole(role) void
+        +extractTenant(header) string
+    }
+
+    User "many" --> "1" Organization : belongs to
+    User "many" --> "1" Role : has
+    Organization "1" --> "1" Tier : subscribed to
+    AuthMiddleware ..> User : validates

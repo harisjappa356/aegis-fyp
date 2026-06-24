@@ -1,0 +1,38 @@
+erDiagram
+    ORGANIZATIONS ||--o{ USERS : "has members"
+    ORGANIZATIONS ||--o{ PROJECTS : "owns"
+    ORGANIZATIONS ||--o{ APPROVAL_WORKFLOWS : "configures"
+    ORGANIZATIONS ||--o{ AUTOMATIONS : "defines"
+
+    PROJECTS ||--o{ PROJECT_RISKS : "has"
+    PROJECTS ||--o{ VENDOR_RISKS : "tracks"
+    PROJECTS ||--o{ MODEL_INVENTORIES : "uses"
+    PROJECTS ||--o{ APPROVAL_REQUESTS : "triggers"
+    PROJECTS ||--o{ TASKS : "has"
+    PROJECTS ||--o{ INCIDENTS : "logs"
+    PROJECTS ||--o{ PMM_CONFIGS : "monitored by"
+    PROJECTS ||--o{ EVIDENCE_HUB : "stores"
+
+    APPROVAL_WORKFLOWS ||--o{ APPROVAL_WORKFLOW_STEPS : "has"
+    APPROVAL_WORKFLOWS ||--o{ APPROVAL_REQUESTS : "generates"
+    APPROVAL_REQUESTS ||--o{ APPROVAL_REQUEST_STEPS : "tracks"
+
+    PROJECT_RISKS ||--o{ RISK_HISTORY : "records"
+    PROJECT_RISKS ||--o{ RISK_CHANGE_HISTORY : "audits"
+
+    VENDORS ||--o{ VENDOR_RISKS : "assessed by"
+    VENDORS ||--o{ VENDOR_CHANGE_HISTORY : "audits"
+
+    MODEL_INVENTORIES ||--o{ MODEL_RISKS : "has"
+    MODEL_INVENTORIES ||--o{ MODEL_INVENTORY_HISTORY : "versions"
+
+    POLICIES ||--o{ POLICY_LINKED_OBJECTS : "links to"
+    POLICIES ||--o{ POLICY_CHANGE_HISTORY : "audits"
+
+    PMM_CONFIGS ||--o{ PMM_QUESTIONS : "defines"
+    PMM_CONFIGS ||--o{ PMM_CYCLES : "generates"
+    PMM_CYCLES ||--o{ PMM_RESPONSES : "collects"
+    PMM_CYCLES ||--o{ PMM_REPORTS : "produces"
+
+    USERS ||--o{ NOTIFICATIONS : "receives"
+    USERS ||--o{ NOTES : "creates"

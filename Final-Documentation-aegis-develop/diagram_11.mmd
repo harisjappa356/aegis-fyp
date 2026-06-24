@@ -1,0 +1,24 @@
+sequenceDiagram
+    actor RiskOwner
+    participant FE as React Frontend
+    participant BE as Node.js Backend
+    participant DB as PostgreSQL
+
+    RiskOwner->>FE: Fill risk form (name, likelihood=Likely, severity=Major)
+    FE->>BE: POST /api/projectRisks
+    BE->>BE: calculateRiskLevel(likelihood=4, severity=4)
+    Note over BE: Score = (4*1) + (4*3) = 16 = High
+    BE->>DB: INSERT INTO project_risks (risk_level='High')
+    BE->>DB: INSERT INTO risk_history (snapshot of scores)
+    BE->>DB: INSERT INTO risk_change_history (creation event)
+    DB-->>BE: New risk record
+    BE-->>FE: 201 Created + risk with risk_level=High
+    FE-->>RiskOwner: Risk shown with High level badge
+
+    RiskOwner->>FE: Update severity to Catastrophic
+    FE->>BE: PATCH /api/projectRisks/:id
+    BE->>BE: Recalculate: (4*1) + (5*3) = 19 = Very High
+    BE->>DB: UPDATE project_risks (risk_level='Very High')
+    BE->>DB: INSERT INTO risk_history (new snapshot)
+    BE->>DB: INSERT into risk_change_history (update event)
+    BE-->>FE: Updated risk

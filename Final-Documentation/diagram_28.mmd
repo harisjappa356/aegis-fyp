@@ -1,0 +1,54 @@
+flowchart TB
+    User(["👤 Users\n(Admin/Editor/Reviewer/Auditor)"])
+    ExtUser(["👤 Stakeholder\n(PMM)"])
+    ExtAPIs(["🌐 External APIs\n(OpenAI, Slack, GitHub, MLflow)"])
+
+    P1["🔐 P1: Authentication\n& User Management"]
+    P2["📋 P2: Compliance Framework\nManagement\n(EU AI Act / ISO / NIST)"]
+    P3["⚠️ P3: Risk & Vendor\nManagement"]
+    P4["🤖 P4: LLM Evaluation\n& AI Advisory"]
+    P5["📄 P5: Reporting &\nDocument Generation"]
+    P6["⚡ P6: Automation &\nNotification Engine"]
+    P7["🔄 P7: Post-Market\nMonitoring (PMM)"]
+    P8["🔍 P8: AI Detection\n& Repository Scanning"]
+
+    DS1[("🗄️ DS1: PostgreSQL\nUser & Org Data")]
+    DS2[("🗄️ DS2: PostgreSQL\nGovernance Data")]
+    DS3[("🗄️ DS3: Redis\nQueues & Pub/Sub")]
+    DS4[("🗄️ DS4: EvalServer DB\nEval Results")]
+
+    User -->|"Credentials"| P1
+    P1 -->|"JWT Token"| User
+    P1 <-->|"User records"| DS1
+
+    User -->|"Framework input,\ncontrol updates"| P2
+    P2 <-->|"Controls, assessments"| DS2
+    P2 -->|"AI auto-fill request"| P4
+
+    User -->|"Risk / vendor data"| P3
+    P3 <-->|"Risk records,\nhistory"| DS2
+    P3 -->|"Risk change event"| P6
+
+    User -->|"LLM eval request,\nchat message"| P4
+    P4 <-->|"Prompts / responses"| ExtAPIs
+    P4 <-->|"Eval results"| DS4
+
+    User -->|"Report request"| P5
+    P5 <-->|"Governance data"| DS2
+    P5 -->|"PDF / DOCX file"| User
+
+    P6 <-->|"Automation rules"| DS2
+    P6 <-->|"Job queue"| DS3
+    P6 -->|"Slack message"| ExtAPIs
+    P6 -->|"Email notification"| ExtUser
+    P6 -->|"SSE push"| User
+
+    ExtUser -->|"Questionnaire\nresponses"| P7
+    P7 <-->|"PMM cycles,\nreports"| DS2
+    P7 -->|"Scheduled job"| DS3
+    P7 -->|"Escalation alert"| P6
+
+    User -->|"Repo URL"| P8
+    P8 <-->|"Repo content"| ExtAPIs
+    P8 <-->|"Scan results"| DS2
+    P8 -->|"AI-BOM export"| User

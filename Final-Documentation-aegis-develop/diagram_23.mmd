@@ -1,0 +1,74 @@
+classDiagram
+    class Organization {
+        +int id
+        +string name
+        +string tenant_schema
+        +int tier_id
+        +createTenantSchema() void
+    }
+
+    class User {
+        +int id
+        +string email
+        +string role
+        +int organization_id
+        +boolean is_active
+        +login(email, pass) JWT
+    }
+
+    class Project {
+        +int id
+        +string uc_id
+        +string project_title
+        +string approval_status
+        +submitForApproval() ApprovalRequest
+    }
+
+    class ProjectRisk {
+        +int id
+        +int project_id
+        +string likelihood
+        +string severity
+        +string risk_level_autocalculated
+        +calculateRiskLevel() string
+    }
+
+    class ApprovalWorkflow {
+        +int id
+        +string workflow_title
+        +string entity_type
+        +createRequest(entityId) ApprovalRequest
+    }
+
+    class ApprovalRequest {
+        +int id
+        +int workflow_id
+        +string entity_type
+        +string status
+        +approve() void
+        +reject(comment) void
+    }
+
+    class Policy {
+        +int id
+        +string title
+        +string status
+        +submitForReview() void
+        +publish() void
+    }
+
+    class PMM {
+        +int id
+        +int project_id
+        +string frequency
+        +int reminder_days
+        +getActiveCycle() PMMCycle
+    }
+
+    Organization "1" --> "many" User : has members
+    Organization "1" --> "many" Project : owns
+    Project "1" --> "many" ProjectRisk : has risks
+    Project ..> ApprovalRequest : triggers via
+    ApprovalWorkflow "1" --> "many" ApprovalRequest : generates
+    Project "1" --> "1" PMM : monitored by
+    Policy ..> ApprovalWorkflow : uses for approval

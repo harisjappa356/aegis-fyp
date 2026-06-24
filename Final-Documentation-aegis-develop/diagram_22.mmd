@@ -1,0 +1,32 @@
+C4Component
+    title Component Diagram — Backend API Container
+    Container_Boundary(api, "Backend API — Node.js/Express") {
+        Component(authMW, "Auth Middleware", "Express Middleware", "Validates JWT; extracts user identity and tenant")
+        Component(tenantMW, "Tenant Middleware", "Express Middleware", "Sets schema search path for PostgreSQL based on tenant header")
+        Component(rbacMW, "RBAC Middleware", "Express Middleware", "Enforces role-based access per route")
+        Component(routes, "Route Modules (60)", "Express Router", "Defines API endpoints for all 17 feature domains")
+        Component(controllers, "Controllers", "TypeScript Classes", "Handles request/response, delegates to models and services")
+        Component(models, "Sequelize Models", "ORM Models", "Defines database schemas for all entities (users, risks, projects, etc.)")
+        Component(sseService, "SSE Publisher", "Node.js Service", "Publishes real-time events to subscribed browser clients via Redis Pub/Sub")
+        Component(pmmScheduler, "PMM Scheduler", "BullMQ Worker", "Hourly cron job that creates PMM cycles and sends due notifications")
+        Component(pdfService, "PDF Generator", "Playwright Service", "Generates compliance PDF reports on demand")
+        Component(slackService, "Slack Service", "HTTP Client", "Sends formatted notifications to configured Slack webhooks")
+        Component(llmService, "LLM Service", "HTTP Client", "Calls OpenAI/Anthropic APIs for AI Advisor and Auto Drivers")
+    }
+
+    ContainerDb(postgres, "PostgreSQL", "Database")
+    ContainerDb(redis, "Redis", "Cache/Queue")
+
+    Rel(routes, authMW, "Uses")
+    Rel(routes, tenantMW, "Uses")
+    Rel(routes, rbacMW, "Uses")
+    Rel(routes, controllers, "Delegates to")
+    Rel(controllers, models, "Reads/Writes via")
+    Rel(controllers, sseService, "Publishes events")
+    Rel(controllers, slackService, "Triggers notifications")
+    Rel(controllers, llmService, "Calls AI APIs")
+    Rel(pmmScheduler, models, "Creates PMM cycles")
+    Rel(pdfService, models, "Reads project data")
+    Rel(sseService, redis, "Pub/Sub")
+    Rel(pmmScheduler, redis, "BullMQ jobs")
+    Rel(models, postgres, "SQL Queries")

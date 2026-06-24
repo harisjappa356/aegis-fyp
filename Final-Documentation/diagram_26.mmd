@@ -1,0 +1,42 @@
+sequenceDiagram
+    actor Editor
+    participant FE as React Frontend
+    participant BE as Node.js Backend
+    participant DB as PostgreSQL
+    participant Redis
+    actor Approver
+
+    Editor->>FE: Submits Use Case / Risk for Approval
+    FE->>BE: POST /api/approval-requests
+    BE->>DB: Create ApprovalRequest (status: pending)
+    BE->>DB: Update entity status → pending_approval
+    BE->>Redis: Publish notification event
+
+    Redis-->>BE: Broadcast via SSE channel
+    BE-->>Approver: Real-time SSE notification
+
+    Approver->>FE: Opens pending approval request
+    FE->>BE: GET /api/approval-requests/:id
+    BE->>DB: Fetch request + entity details
+    BE-->>FE: Return request data
+
+    alt Approver Approves
+        Approver->>FE: Clicks "Approve"
+        FE->>BE: POST /api/approval-requests/:id/approve
+        BE->>DB: Update step status → approved
+        BE->>DB: Check if all steps complete
+        BE->>DB: Update entity status → approved
+        BE->>Redis: Publish approval notification
+        Redis-->>BE: Broadcast via SSE
+        BE-->>Editor: Real-time SSE notification (Approved)
+    else Approver Rejects
+        Approver->>FE: Clicks "Reject" with comment
+        FE->>BE: POST /api/approval-requests/:id/reject
+        BE->>DB: Update request status → rejected
+        BE->>DB: Revert entity status → previous state
+        BE->>Redis: Publish rejection notification
+        Redis-->>BE: Broadcast via SSE
+        BE-->>Editor: Real-time SSE notification (Rejected)
+    end
+
+    BE-->>FE: 200 OK

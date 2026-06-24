@@ -1,0 +1,43 @@
+classDiagram
+    class EUAIActCategory {
+        +int id
+        +string category_name
+        +string description
+        +getControls() EUAIActControl[]
+        +getProgress(projectId) float
+    }
+
+    class EUAIActControl {
+        +int id
+        +int category_id
+        +string control_name
+        +string implementation_details
+        +string status
+        +updateStatus(status) void
+        +linkToRisk(riskId) void
+    }
+
+    class EUAIActSubControl {
+        +int id
+        +int control_id
+        +string sub_control_name
+        +string status
+    }
+
+    class AutoDriver {
+        +string llm_provider
+        +generateAnswer(controlId, context) string
+        +fillControl(controlId) void
+    }
+
+    class ProjectFramework {
+        +int project_id
+        +string framework_type
+        +float completion_pct
+        +getAssignedControls() EUAIActControl[]
+    }
+
+    EUAIActCategory "1" --> "many" EUAIActControl : contains
+    EUAIActControl "1" --> "many" EUAIActSubControl : has
+    AutoDriver ..> EUAIActControl : fills
+    ProjectFramework --> EUAIActCategory : tracks

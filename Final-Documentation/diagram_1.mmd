@@ -1,0 +1,34 @@
+flowchart TD
+    subgraph Users["👥 Users (Actors)"]
+        Admin["🔑 Admin\nUser Management, RBAC\nOrg Config, Tiers"]
+        Editor["✏️ Editor\nProjects, Risks, Vendors\nFrameworks, Policies"]
+        Reviewer["👁️ Reviewer\nApprove Controls\nRisks & Policies"]
+        Auditor["📋 Auditor\nView Reports\nAudit Logs"]
+    end
+
+    subgraph AegisAI["🏛️ AEGIS.AI SYSTEM"]
+        Core["Core Platform\nAuthentication · RBAC · Multi-Tenancy\nFrameworks · Risks · Vendors\nPolicies · PMM · Tasks · Evidence"]
+    end
+
+    subgraph Outputs["📤 Outputs"]
+        Regulators["📄 Regulators / Public\nCompliance PDF/DOCX Reports\nCE Marking · AI Trust Center"]
+        SlackOut["💬 Slack\nAutomation Alerts\nIncident Notifications"]
+    end
+
+    subgraph External["🔌 External Dependencies"]
+        PG[("🗄️ PostgreSQL\nData persistence\nSchema-per-tenant")]
+        Redis[("⚡ Redis\nJob queues\nPub/Sub · Cache")]
+        LLM["🤖 OpenAI / Anthropic\nAI Advisor\nAuto-fill Controls"]
+        GitHub["🐙 GitHub\nAI Detection\nRepo Scanning"]
+        MLflow["📊 MLflow\nModel metadata\nsync"]
+        Email["📧 SMTP / SES\nTransactional\nemails"]
+    end
+
+    Users -->|Governs via| AegisAI
+    AegisAI -->|Reports| Outputs
+    AegisAI --> PG
+    AegisAI --> Redis
+    AegisAI -->|LLM API calls| LLM
+    AegisAI -->|Scan repos| GitHub
+    AegisAI -->|Sync models| MLflow
+    AegisAI -->|Send emails| Email

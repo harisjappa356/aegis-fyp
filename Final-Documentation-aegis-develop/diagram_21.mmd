@@ -1,0 +1,31 @@
+C4Container
+    title System Container Diagram — Aegis.AI
+    Person(user, "Platform User", "Admin, Editor, Reviewer, Auditor using the web browser")
+    Person(extUser, "External User", "Accessing public AI Trust Center or shared links")
+
+    System_Boundary(aegis, "Aegis.AI System") {
+        Container(spa, "React SPA", "React 18, Vite, MUI, Redux", "Single Page Application served to browser over HTTPS")
+        Container(api, "Backend API", "Node.js, Express, TypeScript", "Handles all business logic, authentication, RBAC, multi-tenancy, and REST endpoints")
+        Container(evalserver, "EvalServer", "Python, FastAPI, DeepEval", "Executes LLM evaluations, Bias & Fairness assessments, and Arena comparisons")
+        ContainerDb(postgres, "PostgreSQL", "Relational DB", "Schema-per-tenant data isolation for all business entities")
+        ContainerDb(redis, "Redis", "In-memory store", "Pub/Sub for SSE notifications; BullMQ job queue for PMM scheduler")
+    }
+
+    System_Ext(openai, "OpenAI / Anthropic / OpenRouter", "External LLM APIs for AI Advisor, Auto Drivers, and Arena")
+    System_Ext(slack, "Slack", "Webhook endpoint for automation notifications")
+    System_Ext(github, "GitHub", "Token-authenticated API for AI Detection repository scans")
+    System_Ext(mlflow, "MLflow", "REST API for AI model metadata synchronization")
+    System_Ext(email, "Email (SES/SMTP)", "Transactional emails for invitations, PMM reminders")
+
+    Rel(user, spa, "Uses", "HTTPS")
+    Rel(extUser, spa, "Views public pages", "HTTPS")
+    Rel(spa, api, "Calls REST APIs", "JSON/HTTP")
+    Rel(spa, evalserver, "Calls evaluation APIs", "JSON/HTTP")
+    Rel(api, postgres, "Reads/Writes", "SQL/TCP")
+    Rel(api, redis, "Publishes events; queues jobs", "Redis Protocol")
+    Rel(evalserver, openai, "LLM API calls", "HTTPS")
+    Rel(api, openai, "LLM API calls (Advisor, AutoDrivers)", "HTTPS")
+    Rel(api, slack, "Sends webhook notifications", "HTTPS")
+    Rel(api, github, "Scans repositories", "HTTPS")
+    Rel(api, mlflow, "Syncs model metadata", "HTTPS")
+    Rel(api, email, "Sends transactional emails", "SMTP/HTTPS")

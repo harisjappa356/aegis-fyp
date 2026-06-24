@@ -53,7 +53,6 @@ import {
 } from "../controllers/user.ctrl";
 import resetPasswordMiddleware from "../middleware/resetPassword.middleware";
 import authenticateJWT from "../middleware/auth.middleware";
-import registerJWT from "../middleware/register.middleware";
 
 /**
  * GET /users
@@ -109,7 +108,7 @@ router.get("/:id", authenticateJWT, getUserById);
  * @param {express.Request} req - Express request object
  * @param {express.Response} res - Express response object
  */
-router.post("/register", authLimiter, registerJWT, createNewUser);
+router.post("/register", authLimiter, createNewUser);
 
 /**
  * POST /users/login

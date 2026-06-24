@@ -1,0 +1,46 @@
+classDiagram
+    class ModelInventory {
+        +int id
+        +string model_name
+        +string version
+        +string model_type
+        +int owner_id
+        +int project_id
+        +string status
+        +getVersionHistory() ModelInventoryHistory[]
+        +getRisks() ModelRisk[]
+    }
+    class ModelInventoryHistory {
+        +int id
+        +int model_id
+        +string version_snapshot
+        +string metadata_snapshot
+        +timestamp recorded_at
+    }
+    class ModelChangeHistory {
+        +int id
+        +int model_id
+        +string changed_field
+        +string old_value
+        +string new_value
+        +int changed_by
+        +timestamp changed_at
+    }
+    class NistAiRmfFunction {
+        +int id
+        +string function_name
+        +string description
+        +getCategories() NistAiRmfCategory[]
+        +getProgress(projectId) float
+    }
+    class NistAiRmfCategory {
+        +int id
+        +int function_id
+        +string category_name
+        +string status
+        +string implementation_details
+        +updateStatus(status) void
+    }
+    ModelInventory "1" --> "many" ModelInventoryHistory : versions
+    ModelInventory "1" --> "many" ModelChangeHistory : audits
+    NistAiRmfFunction "1" --> "many" NistAiRmfCategory : contains

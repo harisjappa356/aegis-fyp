@@ -63,6 +63,7 @@ interface IncidentTableProps {
 
 const DEFAULT_ROWS_PER_PAGE = 10;
 const INCIDENT_TABLE_SORTING_KEY = "aegis_incident_table_sorting";
+const STORAGE_KEY = "aegis_incident_rows_per_page";
 
 type SortDirection = "asc" | "desc" | null;
 type SortConfig = {

@@ -1,0 +1,43 @@
+flowchart TB
+    Browser(["🌐 Browser / User"])
+
+    subgraph Frontend ["Frontend — React 18 (Vite, Port 5173)"]
+        React["React SPA\n50+ pages, MUI, Redux\nSSE Client, Command Palette"]
+    end
+
+    subgraph Backend ["Backend — Node.js / Express (Port 3000)"]
+        API["REST API\n60 active route modules\nJWT + RBAC + Multi-tenancy"]
+        BullMQ["BullMQ\nJob Queues / PMM Scheduler"]
+        SSE["SSE Publisher\nRedis Pub/Sub"]
+    end
+
+    subgraph EvalSrv ["EvalServer — Python FastAPI (Port 8000)"]
+        FastAPI["FastAPI\nDeepEval, LLM Arena\nBias & Fairness"]
+    end
+
+    subgraph Data ["Data Layer"]
+        PG[("PostgreSQL :5432\nSchema-per-tenant")]
+        Redis[("Redis :6379\nPub/Sub + Cache")]
+    end
+
+    subgraph External ["External Services"]
+        OpenAI["OpenAI / Anthropic"]
+        Slack["Slack API"]
+        GitHub["GitHub API"]
+        MLflow["MLflow Server"]
+        Email["Email (SES/SMTP)"]
+    end
+
+    Browser -->|HTTPS| React
+    React -->|REST / JSON| API
+    React -->|HTTP| FastAPI
+    API --> PG
+    API --> Redis
+    BullMQ --> Redis
+    SSE --> Redis
+    FastAPI -->|LLM calls| OpenAI
+    API -->|LLM calls| OpenAI
+    API -->|Webhooks| Slack
+    API -->|Token auth| GitHub
+    API -->|REST| MLflow
+    API -->|SMTP/API| Email

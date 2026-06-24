@@ -1,0 +1,57 @@
+classDiagram
+    class ProjectRisk {
+        +int id
+        +int project_id
+        +string risk_name
+        +string risk_owner_id
+        +string likelihood
+        +string severity
+        +string risk_level_autocalculated
+        +string mitigation_status
+        +string mitigation_plan
+        +calculateRiskLevel() string
+        +saveHistory() RiskHistory
+    }
+
+    class RiskHistory {
+        +int id
+        +int risk_id
+        +string likelihood_snapshot
+        +string severity_snapshot
+        +string risk_level_snapshot
+        +timestamp recorded_at
+    }
+
+    class RiskChangeHistory {
+        +int id
+        +int risk_id
+        +string changed_field
+        +string old_value
+        +string new_value
+        +int changed_by
+        +timestamp changed_at
+    }
+
+    class VendorRisk {
+        +int id
+        +int vendor_id
+        +int project_id
+        +string risk_name
+        +string likelihood
+        +string severity
+        +string risk_level
+    }
+
+    class ModelRisk {
+        +int id
+        +int model_id
+        +string risk_name
+        +string likelihood
+        +string severity
+        +string risk_level
+    }
+
+    ProjectRisk "1" --> "many" RiskHistory : snapshots
+    ProjectRisk "1" --> "many" RiskChangeHistory : audits
+    VendorRisk ..> ProjectRisk : same scoring formula
+    ModelRisk ..> ProjectRisk : same scoring formula

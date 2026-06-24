@@ -14,6 +14,7 @@ export const compileMjmlToHtml = (
   });
 
   // Convert MJML to HTML
-  const { html } = mjml2html(compiledTemplate);
+  // Note: mjml2html is synchronous at runtime despite @types/mjml-core@5.0.0 declaring it as async
+  const { html } = mjml2html(compiledTemplate) as unknown as { html: string };
   return html;
 };

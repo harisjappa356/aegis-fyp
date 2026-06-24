@@ -1,0 +1,57 @@
+classDiagram
+    class ApprovalWorkflow {
+        +int id
+        +string workflow_title
+        +string entity_type
+        +boolean is_active
+        +getSteps() ApprovalWorkflowStep[]
+        +createRequest(entityId) ApprovalRequest
+    }
+
+    class ApprovalWorkflowStep {
+        +int id
+        +int workflow_id
+        +int step_number
+        +int assignee_id
+        +string role_requirement
+    }
+
+    class ApprovalRequest {
+        +int id
+        +int workflow_id
+        +int entity_id
+        +string entity_type
+        +string status
+        +approve(stepId) void
+        +reject(stepId, comment) void
+        +withdraw() void
+    }
+
+    class ApprovalRequestStep {
+        +int id
+        +int request_id
+        +int step_number
+        +string status
+        +string comment
+        +timestamp decided_at
+    }
+
+    class Project {
+        +int id
+        +string uc_id
+        +string project_title
+        +string status
+        +string approval_status
+        +submitForApproval() ApprovalRequest
+    }
+
+    class TenantMiddleware {
+        +extractTenantHeader(req) string
+        +setSchemaSearchPath(schema) void
+    }
+
+    ApprovalWorkflow "1" --> "many" ApprovalWorkflowStep : has steps
+    ApprovalWorkflow "1" --> "many" ApprovalRequest : generates
+    ApprovalRequest "1" --> "many" ApprovalRequestStep : tracks
+    Project ..> ApprovalRequest : triggers
+    TenantMiddleware ..> Project : scopes queries

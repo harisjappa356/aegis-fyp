@@ -1,0 +1,20 @@
+sequenceDiagram
+    actor User
+    participant FE as React Frontend
+    participant BE as Node.js Backend
+    participant DB as PostgreSQL
+
+    User->>FE: Enter email + password
+    FE->>BE: POST /api/users/login
+    BE->>DB: SELECT user WHERE email = ?
+    DB-->>BE: User record (hashed password)
+    BE->>BE: bcrypt.compare(password, hash)
+    alt Valid credentials
+        BE->>BE: jwt.sign(userId, role, orgId)
+        BE-->>FE: 200 OK + JWT token
+        FE->>FE: Store JWT in Redux + persist
+        FE-->>User: Redirect to Dashboard
+    else Invalid credentials
+        BE-->>FE: 401 Unauthorized
+        FE-->>User: Show error message
+    end

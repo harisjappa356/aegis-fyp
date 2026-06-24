@@ -1,0 +1,65 @@
+classDiagram
+    class Policy {
+        +int id
+        +string title
+        +string content
+        +string status
+        +int created_by
+        +int organization_id
+        +submitForReview() void
+        +approve() void
+        +publish() void
+        +archive() void
+    }
+    class PolicyChangeHistory {
+        +int id
+        +int policy_id
+        +string changed_field
+        +string old_value
+        +string new_value
+        +int changed_by
+        +timestamp changed_at
+    }
+    class PolicyLinkedObject {
+        +int id
+        +int policy_id
+        +string linked_type
+        +int linked_id
+    }
+    class Vendor {
+        +int id
+        +string vendor_name
+        +string service_type
+        +string contact_email
+        +string status
+        +getRisks() VendorRisk[]
+    }
+    class VendorChangeHistory {
+        +int id
+        +int vendor_id
+        +string changed_field
+        +string old_value
+        +string new_value
+        +timestamp changed_at
+    }
+    class Task {
+        +int id
+        +string title
+        +int assignee_id
+        +date due_date
+        +string status
+        +isOverdue() boolean
+    }
+    class EvidenceHub {
+        +int id
+        +string file_name
+        +string file_path
+        +string entity_type
+        +int entity_id
+        +upload(file) void
+    }
+    Policy "1" --> "many" PolicyChangeHistory : audits
+    Policy "1" --> "many" PolicyLinkedObject : links to
+    Vendor "1" --> "many" VendorChangeHistory : audits
+    Task ..> Policy : may relate to
+    EvidenceHub ..> Policy : attaches to

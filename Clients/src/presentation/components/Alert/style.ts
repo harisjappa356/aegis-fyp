@@ -1,3 +1,5 @@
+import React from "react";
+
 /**
  * Styles for the IconButton component.
  *
@@ -21,9 +23,9 @@ export const iconButtonStyles = (hasIcon: boolean): object => ({
  * Styles for the CloseIcon component.
  *
  * @param {string} text - The color of the close icon.
- * @returns {object} The styles for the CloseIcon component.
+ * @returns {React.CSSProperties} The styles for the CloseIcon component.
  */
-export const closeIconStyles = (text: string): object => ({
+export const closeIconStyles = (text: string): React.CSSProperties => ({
   fontSize: 20,
   fill: text,
 });

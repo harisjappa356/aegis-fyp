@@ -3,7 +3,7 @@ import { ENV_VARs } from "../../../../env.vars";
 import getStyles from "./styles";
 
 // URL constants
-const PRICING_URL = "https://verifywise.ai/pricing/";
+const PRICING_URL = "https://axomify.co";
 
 const ReadyToSubscribeBox = () => {
   const theme = useTheme();

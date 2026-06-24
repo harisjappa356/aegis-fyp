@@ -18,15 +18,28 @@ interface PolicyTemplate {
 }
 
 let policyTemplates: PolicyTemplate[] = [];
-try {
-  const templatesPath = path.join(
-    __dirname,
-    "../../../../Clients/src/application/data/PolicyTemplates.json"
-  );
-  const templatesContent = fs.readFileSync(templatesPath, "utf-8");
-  policyTemplates = JSON.parse(templatesContent);
-} catch (error) {
-  logger.warn("Could not load policy templates:", error);
+const possiblePaths = [
+  path.join(__dirname, "../../../data/PolicyTemplates.json"), // Production Docker container path (/app/data/PolicyTemplates.json)
+  path.join(__dirname, "../../../../Clients/src/application/data/PolicyTemplates.json"), // Development fallback path (compiled)
+  path.join(__dirname, "../../data/PolicyTemplates.json"), // Development fallback path (direct TS execution)
+];
+
+let loaded = false;
+for (const templatesPath of possiblePaths) {
+  try {
+    if (fs.existsSync(templatesPath)) {
+      const templatesContent = fs.readFileSync(templatesPath, "utf-8");
+      policyTemplates = JSON.parse(templatesContent);
+      loaded = true;
+      break;
+    }
+  } catch (error) {
+    // Try the next path
+  }
+}
+
+if (!loaded) {
+  logger.warn("Could not load policy templates from any expected paths.");
 }
 
 export interface FetchPoliciesParams {

@@ -16,33 +16,15 @@ module.exports = {
     const transaction = await queryInterface.sequelize.transaction();
 
     try {
-      // Step 1: Add column as nullable first
-      await queryInterface.addColumn(
-        'organizations',
-        'onboarding_status',
-        {
-          type: Sequelize.STRING(20),
-          allowNull: true,
-        },
-        { transaction }
-      );
-
-      // Step 2: Set all existing organizations to 'completed' (grandfathered)
-      // This ensures existing orgs don't see the modal after upgrade
+      // Step 1: Add the column with a default of 'completed' so all existing rows get 'completed'
       await queryInterface.sequelize.query(
-        `UPDATE organizations SET onboarding_status = 'completed' WHERE onboarding_status IS NULL;`,
+        `ALTER TABLE "organizations" ADD COLUMN "onboarding_status" VARCHAR(20) NOT NULL DEFAULT 'completed';`,
         { transaction }
       );
 
-      // Step 3: Make column NOT NULL with default 'pending' for new orgs
-      await queryInterface.changeColumn(
-        'organizations',
-        'onboarding_status',
-        {
-          type: Sequelize.STRING(20),
-          allowNull: false,
-          defaultValue: 'pending',
-        },
+      // Step 2: Alter the default value to 'pending' for new rows going forward
+      await queryInterface.sequelize.query(
+        `ALTER TABLE "organizations" ALTER COLUMN "onboarding_status" SET DEFAULT 'pending';`,
         { transaction }
       );
 
@@ -58,9 +40,10 @@ module.exports = {
     const transaction = await queryInterface.sequelize.transaction();
 
     try {
-      await queryInterface.removeColumn('organizations', 'onboarding_status', {
-        transaction,
-      });
+      await queryInterface.sequelize.query(
+        `ALTER TABLE "organizations" DROP COLUMN "onboarding_status";`,
+        { transaction }
+      );
 
       await transaction.commit();
       console.log('Successfully removed onboarding_status column from organizations table');
@@ -70,3 +53,4 @@ module.exports = {
     }
   },
 };
+

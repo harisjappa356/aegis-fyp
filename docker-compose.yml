@@ -52,7 +52,8 @@ services:
     depends_on:
       - backend
     build:
-      context: ./Clients
+      context: .
+      dockerfile: ./Clients/Dockerfile
   worker:
     depends_on:
       postgresdb:
@@ -77,7 +78,8 @@ services:
       - backend
       - redis
     build:
-      context: ./EvalServer
+      context: .
+      dockerfile: ./EvalServer/Dockerfile
     expose:
       - "8000"
     volumes:

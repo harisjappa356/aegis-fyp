@@ -89,7 +89,7 @@ const HelpSection: React.FC = () => {
           Questions about features, how-tos, or use cases? Join our Discord community to connect with other users and get help.
         </p>
         <a
-          href="https://discord.com/invite/d3k3E4uEpR"
+          href="https://axomify.co/community"
           target="_blank"
           rel="noopener noreferrer"
           className="help-button"

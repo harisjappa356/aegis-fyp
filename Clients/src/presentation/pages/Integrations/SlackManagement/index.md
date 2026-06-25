@@ -1,6 +1,6 @@
 # Slack Integration Module
 
-This module manages the integration between VerifyWise and Slack workspaces, enabling real-time notifications and alerts to be sent to designated Slack channels.
+This module manages the integration between Aegis and Slack workspaces, enabling real-time notifications and alerts to be sent to designated Slack channels.
 
 ## Architecture Overview
 
@@ -243,8 +243,8 @@ const {
 1. User clicks "Add to Slack" button
 2. Redirected to Slack OAuth authorization page
 3. User selects workspace and channel
-4. User authorizes VerifyWise app with required scopes
-5. Redirected back to VerifyWise with authorization code
+4. User authorizes Aegis app with required scopes
+5. Redirected back to Aegis with authorization code
 6. Code is exchanged for access token (backend)
 7. Integration is created and bot is invited to channel
 8. Integration appears in table

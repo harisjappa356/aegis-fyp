@@ -9,14 +9,14 @@ Open browser DevTools console and run:
 ```javascript
 // Clear onboarding state for current user
 const userId = /* your user ID */;
-localStorage.removeItem(`verifywise_onboarding_${userId}`);
+localStorage.removeItem(`Aegis_onboarding_${userId}`);
 ```
 
-### Option 2: Clear All VerifyWise LocalStorage
+### Option 2: Clear All Aegis LocalStorage
 ```javascript
-// Clear all VerifyWise data
+// Clear all Aegis data
 Object.keys(localStorage).forEach(key => {
-  if (key.startsWith('verifywise_')) {
+  if (key.startsWith('Aegis_')) {
     localStorage.removeItem(key);
   }
 });
@@ -27,7 +27,7 @@ Object.keys(localStorage).forEach(key => {
 2. Go to Application tab
 3. Expand "Local Storage" in the left sidebar
 4. Click on your domain (e.g., `http://localhost:5173`)
-5. Find keys starting with `verifywise_onboarding_`
+5. Find keys starting with `Aegis_onboarding_`
 6. Right-click and delete
 
 ### Option 4: Quick Reset via Console
@@ -42,4 +42,4 @@ The onboarding modal shows:
 - **Only on first login** (when `isComplete` is false)
 - **Only on dashboard route** (`/`)
 - Can be skipped at any time
-- State is stored in localStorage per user: `verifywise_onboarding_{userId}`
+- State is stored in localStorage per user: `Aegis_onboarding_{userId}`

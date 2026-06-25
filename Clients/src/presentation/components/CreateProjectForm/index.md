@@ -337,4 +337,4 @@ test('validates required fields', async () => {
 
 ## License
 
-This component is part of the VerifyWise application and follows the project's licensing terms.
+This component is part of the Aegis application and follows the project's licensing terms.

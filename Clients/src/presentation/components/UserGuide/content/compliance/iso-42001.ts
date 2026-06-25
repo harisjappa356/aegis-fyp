@@ -117,13 +117,13 @@ export const iso42001Content: ArticleContent = {
     },
     {
       type: 'heading',
-      id: 'verifywise-support',
+      id: 'Aegis-support',
       level: 2,
-      text: 'How VerifyWise supports ISO 42001',
+      text: 'How Aegis supports ISO 42001',
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise helps you build and demonstrate an ISO 42001-compliant AI management system:',
+      text: 'Aegis helps you build and demonstrate an ISO 42001-compliant AI management system:',
     },
     {
       type: 'bullet-list',
@@ -191,7 +191,7 @@ export const iso42001Content: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'When you select ISO 42001 for a use case, VerifyWise creates an assessment with two distinct sections that mirror the structure of the standard:',
+      text: 'When you select ISO 42001 for a use case, Aegis creates an assessment with two distinct sections that mirror the structure of the standard:',
     },
     {
       type: 'icon-cards',
@@ -260,7 +260,7 @@ export const iso42001Content: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'For each subclause, VerifyWise tracks:',
+      text: 'For each subclause, Aegis tracks:',
     },
     {
       type: 'bullet-list',
@@ -388,7 +388,7 @@ export const iso42001Content: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise provides metrics to monitor your ISO 42001 compliance progress:',
+      text: 'Aegis provides metrics to monitor your ISO 42001 compliance progress:',
     },
     {
       type: 'bullet-list',
@@ -499,7 +499,7 @@ export const iso42001Content: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'Start by understanding your AI system context, establishing an AI policy, assessing risks and impacts, and securing leadership commitment. Then plan, support, operate, monitor, and continually improve your AI management system. VerifyWise provides tools to support each phase of implementation.',
+      text: 'Start by understanding your AI system context, establishing an AI policy, assessing risks and impacts, and securing leadership commitment. Then plan, support, operate, monitor, and continually improve your AI management system. Aegis provides tools to support each phase of implementation.',
     },
     {
       type: 'article-links',

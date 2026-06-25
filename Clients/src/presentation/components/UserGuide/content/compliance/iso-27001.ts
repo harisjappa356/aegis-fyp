@@ -118,13 +118,13 @@ export const iso27001Content: ArticleContent = {
     },
     {
       type: 'heading',
-      id: 'verifywise-support',
+      id: 'Aegis-support',
       level: 2,
-      text: 'How VerifyWise supports integration',
+      text: 'How Aegis supports integration',
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise helps you extend your ISO 27001 ISMS to cover AI systems:',
+      text: 'Aegis helps you extend your ISO 27001 ISMS to cover AI systems:',
     },
     {
       type: 'bullet-list',

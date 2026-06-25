@@ -104,8 +104,8 @@ interface FormValues {
 
 // Initial state for the form
 const initialState: FormValues = {
-  email: isDemoApp ? "verifywise@email.com" : "",
-  password: isDemoApp ? "Verifywise#1" : "",
+  email: isDemoApp ? "aegis@email.com" : "",
+  password: isDemoApp ? "Aegis#1" : "",
   rememberMe: false,
 };
 

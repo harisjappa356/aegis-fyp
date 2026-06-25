@@ -10,11 +10,11 @@ export const apiAccessContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise provides API access for programmatic integration with external applications, scripts, and automation workflows. API keys allow authenticated access to VerifyWise features without requiring interactive login.',
+      text: 'Aegis provides API access for programmatic integration with external applications, scripts, and automation workflows. API keys allow authenticated access to Aegis features without requiring interactive login.',
     },
     {
       type: 'paragraph',
-      text: 'Use API keys to build custom integrations, automate data synchronization, or connect VerifyWise with your existing tools and processes.',
+      text: 'Use API keys to build custom integrations, automate data synchronization, or connect Aegis with your existing tools and processes.',
     },
     {
       type: 'heading',
@@ -270,7 +270,7 @@ export const apiAccessContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'API keys provide access to VerifyWise API endpoints based on the permissions available to your organization. The specific endpoints and operations available are documented in the API reference.',
+      text: 'API keys provide access to Aegis API endpoints based on the permissions available to your organization. The specific endpoints and operations available are documented in the API reference.',
     },
     {
       type: 'heading',

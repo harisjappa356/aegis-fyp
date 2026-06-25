@@ -10,11 +10,11 @@ export const assessmentsContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise supports multiple compliance frameworks to help you meet regulatory requirements and demonstrate responsible AI governance. Each framework provides a structured approach to evaluating your AI systems against specific standards or regulations.',
+      text: 'Aegis supports multiple compliance frameworks to help you meet regulatory requirements and demonstrate responsible AI governance. Each framework provides a structured approach to evaluating your AI systems against specific standards or regulations.',
     },
     {
       type: 'paragraph',
-      text: 'Rather than treating compliance as a one-time event, VerifyWise enables continuous assessment and improvement. You can track progress over time, identify gaps, and demonstrate to auditors exactly where you stand on each requirement.',
+      text: 'Rather than treating compliance as a one-time event, Aegis enables continuous assessment and improvement. You can track progress over time, identify gaps, and demonstrate to auditors exactly where you stand on each requirement.',
     },
     {
       type: 'heading',
@@ -24,7 +24,7 @@ export const assessmentsContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise includes support for the following compliance frameworks:',
+      text: 'Aegis includes support for the following compliance frameworks:',
     },
     {
       type: 'icon-cards',
@@ -110,14 +110,14 @@ export const assessmentsContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'To begin compliance tracking in VerifyWise:',
+      text: 'To begin compliance tracking in Aegis:',
     },
     {
       type: 'ordered-list',
       items: [
         { text: 'Create a use case for your AI system' },
         { text: 'Select the compliance framework(s) you need to address' },
-        { text: 'VerifyWise creates an assessment with all applicable requirements' },
+        { text: 'Aegis creates an assessment with all applicable requirements' },
         { text: 'Assign owners to controls and begin implementation' },
         { text: 'Track progress and link evidence as you work' },
       ],
@@ -136,7 +136,7 @@ export const assessmentsContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'While each framework has its own structure and terminology, they share common elements in VerifyWise:',
+      text: 'While each framework has its own structure and terminology, they share common elements in Aegis:',
     },
     {
       type: 'bullet-list',
@@ -157,7 +157,7 @@ export const assessmentsContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'Compliance is not a one-time achievement. VerifyWise supports ongoing compliance management:',
+      text: 'Compliance is not a one-time achievement. Aegis supports ongoing compliance management:',
     },
     {
       type: 'bullet-list',

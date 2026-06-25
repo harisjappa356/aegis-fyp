@@ -10,7 +10,7 @@ export const trainingTrackingContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'The Training Registry in VerifyWise helps you track AI-related training programs across your organization. Maintaining a record of training activities demonstrates that your team has the knowledge and skills needed to develop, deploy, and govern AI systems responsibly.',
+      text: 'The Training Registry in Aegis helps you track AI-related training programs across your organization. Maintaining a record of training activities demonstrates that your team has the knowledge and skills needed to develop, deploy, and govern AI systems responsibly.',
     },
     {
       type: 'paragraph',

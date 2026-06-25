@@ -162,7 +162,7 @@ const InviteUserModal: React.FC<InviteUserModalProps> = ({
       isOpen={isOpen}
       onClose={() => setIsOpen(false)}
       title="Invite new team member"
-      description="Add a new member to give them access to the VerifyWise dashboard"
+      description="Add a new member to give them access to the Aegis dashboard"
       submitButtonText="Send Invite"
       onSubmit={handleSendInvitation}
     >

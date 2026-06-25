@@ -251,7 +251,7 @@ const SidebarWrapper: React.FC<SidebarWrapperProps> = ({
 
   // Handle "Open in new tab"
   const handleOpenInNewTab = () => {
-    let path = 'https://verifywise.ai/user-guide';
+    let path = 'https://axomify.co/user-guide';
     if (collectionId) {
       path += `/${collectionId}`;
       if (articleId) {

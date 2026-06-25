@@ -184,7 +184,7 @@ const FormInputsSection: React.FC = () => {
             maxWidth: 600,
           }}
         >
-          Text fields, selects, and search boxes used throughout VerifyWise.
+          Text fields, selects, and search boxes used throughout Aegis.
           All inputs share consistent sizing, spacing, and interaction states.
           Click any value to copy it to clipboard.
         </Typography>

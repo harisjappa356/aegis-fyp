@@ -100,7 +100,7 @@ export const vendorManagementContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise includes a built-in review workflow for vendor assessments:',
+      text: 'Aegis includes a built-in review workflow for vendor assessments:',
     },
     {
       type: 'icon-cards',
@@ -147,7 +147,7 @@ export const vendorManagementContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise uses a scorecard approach to assess vendor risk. Each vendor is evaluated across multiple dimensions:',
+      text: 'Aegis uses a scorecard approach to assess vendor risk. Each vendor is evaluated across multiple dimensions:',
     },
     {
       type: 'heading',
@@ -236,7 +236,7 @@ export const vendorManagementContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'Based on the scorecard inputs, VerifyWise calculates an overall risk score for each vendor. Higher scores indicate greater risk requiring more attention and oversight.',
+      text: 'Based on the scorecard inputs, Aegis calculates an overall risk score for each vendor. Higher scores indicate greater risk requiring more attention and oversight.',
     },
     {
       type: 'callout',

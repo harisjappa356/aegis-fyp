@@ -10,7 +10,7 @@ export const organizationSettingsContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'Organization settings allow you to configure your organization\'s identity and branding within VerifyWise. These settings define how your organization appears across the platform and in generated reports.',
+      text: 'Organization settings allow you to configure your organization\'s identity and branding within Aegis. These settings define how your organization appears across the platform and in generated reports.',
     },
     {
       type: 'heading',
@@ -42,7 +42,7 @@ export const organizationSettingsContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'The organization name identifies your company or team across VerifyWise. It appears in reports, documentation, and throughout the platform.',
+      text: 'The organization name identifies your company or team across Aegis. It appears in reports, documentation, and throughout the platform.',
     },
     {
       type: 'paragraph',
@@ -71,7 +71,7 @@ export const organizationSettingsContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'Upload your organization\'s logo to brand your VerifyWise instance. The logo appears in various places throughout the platform.',
+      text: 'Upload your organization\'s logo to brand your Aegis instance. The logo appears in various places throughout the platform.',
     },
     {
       type: 'heading',
@@ -141,7 +141,7 @@ export const organizationSettingsContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'When you first log in to VerifyWise, you may be prompted to set your organization name if it has not been configured. This ensures your governance documentation and reports display the correct organization identifier from the start.',
+      text: 'When you first log in to Aegis, you may be prompted to set your organization name if it has not been configured. This ensures your governance documentation and reports display the correct organization identifier from the start.',
     },
     {
       type: 'heading',
@@ -167,7 +167,7 @@ export const organizationSettingsContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'The organization logo is used for branding within the VerifyWise platform. Report formatting depends on the specific report type and may or may not include the logo.',
+      text: 'The organization logo is used for branding within the Aegis platform. Report formatting depends on the specific report type and may or may not include the logo.',
     },
     {
       type: 'heading',

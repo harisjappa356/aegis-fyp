@@ -121,7 +121,7 @@ const ButtonsSection: React.FC = () => {
             maxWidth: 600,
           }}
         >
-          Action buttons and toggles used throughout VerifyWise.
+          Action buttons and toggles used throughout Aegis.
           CustomizableButton is the primary button component with support for variants, colors, icons, and loading states.
         </Typography>
       </Box>

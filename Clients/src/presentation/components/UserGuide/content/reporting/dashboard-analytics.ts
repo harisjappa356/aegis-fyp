@@ -10,7 +10,7 @@ export const dashboardAnalyticsContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'The VerifyWise dashboard is the first screen you see after logging in. It provides a real-time overview of your AI governance program, showing key metrics across all areas of the platform in a customizable layout.',
+      text: 'The Aegis dashboard is the first screen you see after logging in. It provides a real-time overview of your AI governance program, showing key metrics across all areas of the platform in a customizable layout.',
     },
     {
       type: 'paragraph',
@@ -19,8 +19,8 @@ export const dashboardAnalyticsContent: ArticleContent = {
     {
       type: 'image',
       src: '/images/user-guide/dashboard-overview.png',
-      alt: 'VerifyWise dashboard showing widget cards with status charts for models, vendors, policies, trainings, and incidents',
-      caption: 'The VerifyWise dashboard provides an at-a-glance view of your AI governance program.',
+      alt: 'Aegis dashboard showing widget cards with status charts for models, vendors, policies, trainings, and incidents',
+      caption: 'The Aegis dashboard provides an at-a-glance view of your AI governance program.',
     },
     {
       type: 'heading',
@@ -277,7 +277,7 @@ export const dashboardAnalyticsContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'When you first log in to VerifyWise, you may be prompted to confirm or update your organization name. This ensures your governance documentation and reports display the correct organization identifier.',
+      text: 'When you first log in to Aegis, you may be prompted to confirm or update your organization name. This ensures your governance documentation and reports display the correct organization identifier.',
     },
     {
       type: 'heading',
@@ -293,7 +293,7 @@ export const dashboardAnalyticsContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'To reset your dashboard, enter edit mode and use the "Show/hide cards" selector to hide all widgets. Then click the link to restore all cards, which resets them to the default layout. Alternatively, you can clear your browser\'s local storage for the VerifyWise site.',
+      text: 'To reset your dashboard, enter edit mode and use the "Show/hide cards" selector to hide all widgets. Then click the link to restore all cards, which resets them to the default layout. Alternatively, you can clear your browser\'s local storage for the Aegis site.',
     },
     {
       type: 'heading',
@@ -339,7 +339,7 @@ export const dashboardAnalyticsContent: ArticleContent = {
           collectionId: 'getting-started',
           articleId: 'quick-start',
           title: 'Quick start guide',
-          description: 'Get started with VerifyWise',
+          description: 'Get started with Aegis',
         },
       ],
     },

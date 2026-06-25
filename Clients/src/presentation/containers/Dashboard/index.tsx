@@ -338,7 +338,7 @@ const Dashboard: FC<DashboardProps> = ({ reloadTrigger }) => {
             isOpen={openDemoDataModal}
             onClose={() => setOpenDemoDataModal(false)}
             title="Create demo data"
-            description="Generate sample data to explore VerifyWise features"
+            description="Generate sample data to explore Aegis features"
             submitButtonText="Create demo data"
             onSubmit={handleCreateDemoData}
             isSubmitting={showToastNotification}
@@ -354,7 +354,7 @@ const Dashboard: FC<DashboardProps> = ({ reloadTrigger }) => {
               >
                 <Typography variant="body2" sx={{ color: "rgba(0, 0, 0, 0.87)" }}>
                   This will generate demo (mock) data for you, allowing you to
-                  explore and get a hands-on understanding of how VerifyWise works.
+                  explore and get a hands-on understanding of how Aegis works.
                   We highly recommend this option.
                 </Typography>
               </Box>

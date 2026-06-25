@@ -98,13 +98,13 @@ export const euAiActContent: ArticleContent = {
     },
     {
       type: 'heading',
-      id: 'verifywise-support',
+      id: 'Aegis-support',
       level: 2,
-      text: 'How VerifyWise supports EU AI Act compliance',
+      text: 'How Aegis supports EU AI Act compliance',
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise provides structured tools to help you meet EU AI Act requirements:',
+      text: 'Aegis provides structured tools to help you meet EU AI Act requirements:',
     },
     {
       type: 'bullet-list',
@@ -125,12 +125,12 @@ export const euAiActContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'To begin your EU AI Act compliance journey in VerifyWise:',
+      text: 'To begin your EU AI Act compliance journey in Aegis:',
     },
     {
       type: 'ordered-list',
       items: [
-        { text: 'Create a use case for your AI system in VerifyWise' },
+        { text: 'Create a use case for your AI system in Aegis' },
         { text: 'Select the EU AI Act framework when configuring the use case' },
         { text: 'Classify your AI system according to its risk level' },
         { text: 'Complete the compliance assessment to identify gaps' },
@@ -146,7 +146,7 @@ export const euAiActContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise organizes EU AI Act requirements into manageable controls and subcontrols:',
+      text: 'Aegis organizes EU AI Act requirements into manageable controls and subcontrols:',
     },
     {
       type: 'bullet-list',
@@ -172,7 +172,7 @@ export const euAiActContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'When you select the EU AI Act framework for a use case, VerifyWise creates an assessment containing all applicable controls. The assessment screen provides a comprehensive view of your compliance progress.',
+      text: 'When you select the EU AI Act framework for a use case, Aegis creates an assessment containing all applicable controls. The assessment screen provides a comprehensive view of your compliance progress.',
     },
     {
       type: 'paragraph',
@@ -195,7 +195,7 @@ export const euAiActContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'EU AI Act controls in VerifyWise are organized into categories aligned with the regulation\'s structure:',
+      text: 'EU AI Act controls in Aegis are organized into categories aligned with the regulation\'s structure:',
     },
     {
       type: 'checklist',
@@ -342,7 +342,7 @@ export const euAiActContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise provides multiple ways to monitor your EU AI Act compliance progress:',
+      text: 'Aegis provides multiple ways to monitor your EU AI Act compliance progress:',
     },
     {
       type: 'bullet-list',

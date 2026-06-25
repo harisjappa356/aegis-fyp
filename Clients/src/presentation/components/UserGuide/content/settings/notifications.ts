@@ -10,7 +10,7 @@ export const notificationsContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise provides notification capabilities to keep you informed about important governance activities. Notifications help ensure that team members are aware of updates, deadlines, and actions that require attention.',
+      text: 'Aegis provides notification capabilities to keep you informed about important governance activities. Notifications help ensure that team members are aware of updates, deadlines, and actions that require attention.',
     },
     {
       type: 'heading',
@@ -20,7 +20,7 @@ export const notificationsContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise can notify you about various governance events:',
+      text: 'Aegis can notify you about various governance events:',
     },
     {
       type: 'bullet-list',
@@ -41,7 +41,7 @@ export const notificationsContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'The primary way to receive notifications from VerifyWise is through the Slack integration. When configured, VerifyWise can send real-time notifications directly to your Slack workspace.',
+      text: 'The primary way to receive notifications from Aegis is through the Slack integration. When configured, Aegis can send real-time notifications directly to your Slack workspace.',
     },
     {
       type: 'paragraph',
@@ -52,7 +52,7 @@ export const notificationsContent: ArticleContent = {
       items: [
         { text: 'Navigate to Integrations from the main menu' },
         { text: 'Click on the Slack integration card' },
-        { text: 'Authorize VerifyWise to connect to your Slack workspace' },
+        { text: 'Authorize Aegis to connect to your Slack workspace' },
         { text: 'Configure which channels receive notifications' },
         { text: 'Set up notification routing for different event types' },
       ],
@@ -93,7 +93,7 @@ export const notificationsContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'In addition to external notifications, VerifyWise displays visual indicators within the platform to highlight items needing attention:',
+      text: 'In addition to external notifications, Aegis displays visual indicators within the platform to highlight items needing attention:',
     },
     {
       type: 'bullet-list',
@@ -133,11 +133,11 @@ export const notificationsContent: ArticleContent = {
       type: 'heading',
       id: 'faq-email-notifications',
       level: 3,
-      text: 'Does VerifyWise send email notifications?',
+      text: 'Does Aegis send email notifications?',
     },
     {
       type: 'paragraph',
-      text: 'Currently, VerifyWise uses Slack as the primary notification channel. Email is used for account-related communications like invitations and password resets, but not for governance notifications.',
+      text: 'Currently, Aegis uses Slack as the primary notification channel. Email is used for account-related communications like invitations and password resets, but not for governance notifications.',
     },
     {
       type: 'heading',

@@ -4,13 +4,13 @@ export const welcomeContent: ArticleContent = {
   blocks: [
     {
       type: 'heading',
-      id: 'what-is-verifywise',
+      id: 'what-is-Aegis',
       level: 2,
-      text: 'What is VerifyWise?',
+      text: 'What is Aegis?',
     },
     {
       type: 'paragraph',
-      text: "VerifyWise is an enterprise-ready AI governance platform that helps organizations manage AI systems safely and responsibly. Whether you're tracking AI models, managing compliance with regulations like the EU AI Act, or monitoring vendor risks, VerifyWise provides the tools you need to bring order to your AI governance program.",
+      text: "Aegis is an enterprise-ready AI governance platform that helps organizations manage AI systems safely and responsibly. Whether you're tracking AI models, managing compliance with regulations like the EU AI Act, or monitoring vendor risks, Aegis provides the tools you need to bring order to your AI governance program.",
     },
     {
       type: 'paragraph',
@@ -19,7 +19,7 @@ export const welcomeContent: ArticleContent = {
     {
       type: 'callout',
       variant: 'info',
-      text: 'VerifyWise is source-available software, which means you can review the code, deploy it internally, and maintain full visibility into how your governance platform operates.',
+      text: 'Aegis is source-available software, which means you can review the code, deploy it internally, and maintain full visibility into how your governance platform operates.',
     },
     {
       type: 'heading',
@@ -29,7 +29,7 @@ export const welcomeContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: "VerifyWise centralizes your AI governance activities in one platform. Here's what you can accomplish:",
+      text: "Aegis centralizes your AI governance activities in one platform. Here's what you can accomplish:",
     },
     {
       type: 'icon-cards',
@@ -64,7 +64,7 @@ export const welcomeContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise provides built-in support for major AI governance and information security frameworks:',
+      text: 'Aegis provides built-in support for major AI governance and information security frameworks:',
     },
     {
       type: 'bullet-list',
@@ -83,7 +83,7 @@ export const welcomeContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'Beyond core governance capabilities, VerifyWise includes features designed to streamline your workflow:',
+      text: 'Beyond core governance capabilities, Aegis includes features designed to streamline your workflow:',
     },
     {
       type: 'checklist',
@@ -106,7 +106,7 @@ export const welcomeContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise is designed for flexible deployment to match your infrastructure requirements:',
+      text: 'Aegis is designed for flexible deployment to match your infrastructure requirements:',
     },
     {
       type: 'grid-cards',
@@ -133,7 +133,7 @@ export const welcomeContent: ArticleContent = {
     {
       type: 'ordered-list',
       items: [
-        { bold: 'Install VerifyWise', text: '— Follow our installation guide to deploy the platform in your environment' },
+        { bold: 'Install Aegis', text: '— Follow our installation guide to deploy the platform in your environment' },
         { bold: 'Explore the dashboard', text: '— Learn how to navigate the interface and find what you need' },
         { bold: 'Complete the quick start', text: '— Get your first AI use case configured in under 10 minutes' },
       ],
@@ -145,7 +145,7 @@ export const welcomeContent: ArticleContent = {
         {
           collectionId: 'getting-started',
           articleId: 'installing',
-          title: 'Installing VerifyWise',
+          title: 'Installing Aegis',
           description: 'Deploy the platform in your environment with Docker or Kubernetes',
         },
         {

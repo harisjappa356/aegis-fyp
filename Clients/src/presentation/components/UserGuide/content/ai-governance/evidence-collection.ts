@@ -157,7 +157,7 @@ export const evidenceCollectionContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise supports various file formats for evidence documentation. Each uploaded file tracks:',
+      text: 'Aegis supports various file formats for evidence documentation. Each uploaded file tracks:',
     },
     {
       type: 'bullet-list',
@@ -205,7 +205,7 @@ export const evidenceCollectionContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'Evidence in VerifyWise can be organized by the compliance requirement it supports. This helps you quickly identify:',
+      text: 'Evidence in Aegis can be organized by the compliance requirement it supports. This helps you quickly identify:',
     },
     {
       type: 'checklist',
@@ -243,7 +243,7 @@ export const evidenceCollectionContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'Beyond the Evidence Hub, VerifyWise allows you to attach evidence directly to compliance assessments. This creates a clear link between specific assessment questions and the documentation that demonstrates compliance.',
+      text: 'Beyond the Evidence Hub, Aegis allows you to attach evidence directly to compliance assessments. This creates a clear link between specific assessment questions and the documentation that demonstrates compliance.',
     },
     {
       type: 'paragraph',

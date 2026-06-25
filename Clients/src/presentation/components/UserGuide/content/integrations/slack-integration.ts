@@ -10,7 +10,7 @@ export const slackIntegrationContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'The Slack integration enables VerifyWise to send real-time notifications about AI governance activities directly to your Slack workspace. Keep your team informed about model updates, risk assessments, compliance changes, and more without leaving Slack.',
+      text: 'The Slack integration enables Aegis to send real-time notifications about AI governance activities directly to your Slack workspace. Keep your team informed about model updates, risk assessments, compliance changes, and more without leaving Slack.',
     },
     {
       type: 'heading',
@@ -24,7 +24,7 @@ export const slackIntegrationContent: ArticleContent = {
         { bold: 'Receive notifications', text: 'Get real-time alerts about governance events in Slack channels' },
         { bold: 'Route by channel', text: 'Send different notification types to specific channels' },
         { bold: 'Multiple workspaces', text: 'Connect multiple Slack workspaces if needed' },
-        { bold: 'Stay informed', text: 'Keep your team updated without requiring them to log into VerifyWise' },
+        { bold: 'Stay informed', text: 'Keep your team updated without requiring them to log into Aegis' },
       ],
     },
     {
@@ -35,7 +35,7 @@ export const slackIntegrationContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'To connect your Slack workspace to VerifyWise:',
+      text: 'To connect your Slack workspace to Aegis:',
     },
     {
       type: 'ordered-list',
@@ -45,7 +45,7 @@ export const slackIntegrationContent: ArticleContent = {
         { text: 'You will be redirected to Slack to authorize the connection' },
         { text: 'Select the Slack workspace you want to connect' },
         { text: 'Review the permissions requested and click Allow' },
-        { text: 'You will be redirected back to VerifyWise with the connection active' },
+        { text: 'You will be redirected back to Aegis with the connection active' },
       ],
     },
     {
@@ -61,7 +61,7 @@ export const slackIntegrationContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise requests the following Slack permissions:',
+      text: 'Aegis requests the following Slack permissions:',
     },
     {
       type: 'bullet-list',
@@ -74,7 +74,7 @@ export const slackIntegrationContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'These permissions allow VerifyWise to send notifications but do not give access to read your messages or user data.',
+      text: 'These permissions allow Aegis to send notifications but do not give access to read your messages or user data.',
     },
     {
       type: 'heading',
@@ -223,7 +223,7 @@ export const slackIntegrationContent: ArticleContent = {
       items: [
         { text: 'Verify the Slack connection is active in the integrations table' },
         { text: 'Check that notification routing is configured for the expected channel' },
-        { text: 'Ensure the VerifyWise app has not been removed from your Slack workspace' },
+        { text: 'Ensure the Aegis app has not been removed from your Slack workspace' },
         { text: 'Confirm that the target channel still exists' },
       ],
     },
@@ -255,7 +255,7 @@ export const slackIntegrationContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'Yes, if you grant the appropriate permissions during authorization. The VerifyWise Slack app will need to be invited to private channels to send messages there.',
+      text: 'Yes, if you grant the appropriate permissions during authorization. The Aegis Slack app will need to be invited to private channels to send messages there.',
     },
     {
       type: 'heading',
@@ -285,7 +285,7 @@ export const slackIntegrationContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'Notifications are sent in real-time as events occur in VerifyWise. There is no batching or delay.',
+      text: 'Notifications are sent in real-time as events occur in Aegis. There is no batching or delay.',
     },
     {
       type: 'article-links',

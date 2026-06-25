@@ -116,7 +116,7 @@ export const riskMitigationContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise tracks multiple risk level measurements to show mitigation effectiveness:',
+      text: 'Aegis tracks multiple risk level measurements to show mitigation effectiveness:',
     },
     {
       type: 'bullet-list',
@@ -190,7 +190,7 @@ export const riskMitigationContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'For significant risks, VerifyWise supports an approval process:',
+      text: 'For significant risks, Aegis supports an approval process:',
     },
     {
       type: 'ordered-list',

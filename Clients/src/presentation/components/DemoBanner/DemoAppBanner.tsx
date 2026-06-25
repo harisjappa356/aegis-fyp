@@ -9,7 +9,7 @@ const DemoAppBanner = () => {
 
     return (
         <Container>
-            <Text>You're viewing a public demo of the VerifyWise AI governance platform. Feel free to explore using demo data, but please don't enter any personal or company information.</Text>
+            <Text>You're viewing a public demo of the Aegis AI governance platform. Feel free to explore using demo data, but please don't enter any personal or company information.</Text>
         </Container>
     );
 }

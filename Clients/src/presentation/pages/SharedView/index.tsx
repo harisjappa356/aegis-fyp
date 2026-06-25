@@ -428,12 +428,12 @@ const SharedView: React.FC = () => {
           <Typography variant="caption" color="textSecondary">
             Powered by{" "}
             <a
-              href="https://verifywise.ai"
+              href="https://axomify.co"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: "#13715B", textDecoration: "none", fontWeight: 600 }}
             >
-              VerifyWise
+              Aegis
             </a>
           </Typography>
         </Box>

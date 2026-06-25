@@ -515,7 +515,7 @@ const UserGuideLanding: React.FC<UserGuideLandingProps> = ({
                   Can't find what you need? Our support team is here to help.
                 </p>
                 <a
-                  href="mailto:support@verifywise.ai"
+                  href="mailto:support@axomify.co"
                   className="about-docs-button"
                   style={{
                     display: 'inline-flex',
@@ -562,7 +562,7 @@ const UserGuideLanding: React.FC<UserGuideLandingProps> = ({
                   Questions about features, how-tos, or use cases?
                 </p>
                 <a
-                  href="https://github.com/verifywise/verifywise/discussions"
+                  href="https://axomify.co/community"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="about-docs-button"

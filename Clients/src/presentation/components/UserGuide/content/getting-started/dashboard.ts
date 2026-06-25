@@ -10,11 +10,11 @@ export const dashboardContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: "The dashboard is your home base in VerifyWise. After logging in, this is the first screen you'll see — it provides a snapshot of your AI governance program across all projects and lets you quickly access the areas that need attention.",
+      text: "The dashboard is your home base in Aegis. After logging in, this is the first screen you'll see — it provides a snapshot of your AI governance program across all projects and lets you quickly access the areas that need attention.",
     },
     {
       type: 'paragraph',
-      text: 'You can return to the dashboard at any time by clicking the VerifyWise logo in the top-left corner or selecting "Dashboard" from the sidebar menu.',
+      text: 'You can return to the dashboard at any time by clicking the Aegis logo in the top-left corner or selecting "Dashboard" from the sidebar menu.',
     },
     {
       type: 'callout',
@@ -110,7 +110,7 @@ export const dashboardContent: ArticleContent = {
     {
       type: 'image',
       src: '/images/user-guide/sidebar-navigation.png',
-      alt: 'VerifyWise sidebar navigation showing Dashboard, Tasks, Discovery, Assurance, and Governance sections with expandable menus',
+      alt: 'Aegis sidebar navigation showing Dashboard, Tasks, Discovery, Assurance, and Governance sections with expandable menus',
       caption: 'The sidebar provides access to all platform features organized by category.',
     },
     {
@@ -130,7 +130,7 @@ export const dashboardContent: ArticleContent = {
     {
       type: 'bullet-list',
       items: [
-        { bold: 'Integrations', text: 'Connect VerifyWise with external tools (admin only)' },
+        { bold: 'Integrations', text: 'Connect Aegis with external tools (admin only)' },
         { bold: 'Automations', text: 'Set up automated workflows and triggers' },
         { bold: 'New use case', text: 'Register a new AI use case in the system' },
       ],

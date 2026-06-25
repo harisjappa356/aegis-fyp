@@ -54,7 +54,7 @@ export const vendorRisksContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise assesses vendor risk across four key dimensions:',
+      text: 'Aegis assesses vendor risk across four key dimensions:',
     },
     {
       type: 'icon-cards',
@@ -196,7 +196,7 @@ export const vendorRisksContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise calculates an overall risk score based on the scorecard inputs. Higher scores indicate greater risk. Factors that increase the score include:',
+      text: 'Aegis calculates an overall risk score based on the scorecard inputs. Higher scores indicate greater risk. Factors that increase the score include:',
     },
     {
       type: 'bullet-list',

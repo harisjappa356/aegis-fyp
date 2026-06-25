@@ -40,7 +40,7 @@ export const modelLifecycleContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise recognizes the following phases in the AI model lifecycle, aligned with industry standards and regulatory expectations:',
+      text: 'Aegis recognizes the following phases in the AI model lifecycle, aligned with industry standards and regulatory expectations:',
     },
     {
       type: 'icon-cards',
@@ -90,7 +90,7 @@ export const modelLifecycleContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'Each AI project in VerifyWise has a status that indicates its current state in the governance workflow:',
+      text: 'Each AI project in Aegis has a status that indicates its current state in the governance workflow:',
     },
     {
       type: 'table',
@@ -141,7 +141,7 @@ export const modelLifecycleContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'For teams using MLFlow, VerifyWise imports lifecycle stage information directly from your ML platform:',
+      text: 'For teams using MLFlow, Aegis imports lifecycle stage information directly from your ML platform:',
     },
     {
       type: 'bullet-list',
@@ -163,7 +163,7 @@ export const modelLifecycleContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise supports EU AI Act risk classification for projects, which influences governance requirements throughout the lifecycle:',
+      text: 'Aegis supports EU AI Act risk classification for projects, which influences governance requirements throughout the lifecycle:',
     },
     {
       type: 'grid-cards',
@@ -183,7 +183,7 @@ export const modelLifecycleContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'For high-risk AI systems, VerifyWise tracks your organization\'s role in the AI value chain, as different roles carry different compliance obligations:',
+      text: 'For high-risk AI systems, Aegis tracks your organization\'s role in the AI value chain, as different roles carry different compliance obligations:',
     },
     {
       type: 'bullet-list',

@@ -303,7 +303,7 @@ const NewTraining: FC<NewTrainingProps> = ({
                 error={errors.provider}
                 isRequired
                 sx={fieldStyle}
-                placeholder="e.g., VerifyWise, External Vendor, Internal Team"
+                placeholder="e.g., Aegis, External Vendor, Internal Team"
               />
             </Suspense>
           </Box>

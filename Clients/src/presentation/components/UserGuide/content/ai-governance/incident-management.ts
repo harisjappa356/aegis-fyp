@@ -79,7 +79,7 @@ export const incidentManagementContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise categorizes incidents to help with analysis and reporting:',
+      text: 'Aegis categorizes incidents to help with analysis and reporting:',
     },
     {
       type: 'icon-cards',

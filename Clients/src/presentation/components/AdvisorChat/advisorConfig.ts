@@ -135,7 +135,7 @@ export type AdvisorDomain = keyof typeof ADVISOR_DOMAINS;
 
 export const ADVISOR_PATHS = Object.values(ADVISOR_DOMAINS).map(d => d.path);
 
-export const DEFAULT_WELCOME_MESSAGE = "Hello! I'm your VerifyWise AI Advisor. I can help you with AI Risk Management, Model Inventory, Model Risks, Vendors, AI Incident Management, Tasks, and Policies. What would you like to know?";
+export const DEFAULT_WELCOME_MESSAGE = "Hello! I'm your Aegis AI Advisor. I can help you with AI Risk Management, Model Inventory, Model Risks, Vendors, AI Incident Management, Tasks, and Policies. What would you like to know?";
 
 /**
  * Get domain key by path

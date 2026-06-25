@@ -10,7 +10,7 @@ export const generatingReportsContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'The Reporting section in VerifyWise lets you generate comprehensive governance and compliance reports from your platform data. Reports can be created for individual use cases or your entire organization, and are automatically saved for future reference.',
+      text: 'The Reporting section in Aegis lets you generate comprehensive governance and compliance reports from your platform data. Reports can be created for individual use cases or your entire organization, and are automatically saved for future reference.',
     },
     {
       type: 'paragraph',
@@ -50,7 +50,7 @@ export const generatingReportsContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise supports two categories of reports based on scope:',
+      text: 'Aegis supports two categories of reports based on scope:',
     },
     {
       type: 'icon-cards',

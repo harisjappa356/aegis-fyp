@@ -12,8 +12,8 @@ const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 // Helper function to determine if multi-tenant mode should be enabled
 const shouldEnableMultiTenant = (organizationExists: boolean | null): boolean => {
   return !organizationExists || (
-    window.location.hostname === "app.verifywise.ai" ||
-    window.location.hostname === "test.verifywise.ai"
+    window.location.hostname === "app.axomify.co" ||
+    window.location.hostname === "test.axomify.co"
   );
 };
 

@@ -10,7 +10,7 @@ export const roleConfigurationContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise uses role-based access control (RBAC) to manage what users can see and do within the platform. Each user is assigned a role that determines their permissions across all features.',
+      text: 'Aegis uses role-based access control (RBAC) to manage what users can see and do within the platform. Each user is assigned a role that determines their permissions across all features.',
     },
     {
       type: 'paragraph',
@@ -24,7 +24,7 @@ export const roleConfigurationContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise provides three predefined roles to cover common organizational needs:',
+      text: 'Aegis provides three predefined roles to cover common organizational needs:',
     },
     {
       type: 'icon-cards',
@@ -54,7 +54,7 @@ export const roleConfigurationContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'Administrators have complete control over the VerifyWise platform. This role should be assigned to users responsible for platform governance and user management.',
+      text: 'Administrators have complete control over the Aegis platform. This role should be assigned to users responsible for platform governance and user management.',
     },
     {
       type: 'paragraph',
@@ -254,7 +254,7 @@ export const roleConfigurationContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'Currently, VerifyWise provides three predefined roles (Admin, Editor, Viewer). Custom role configuration is not available in this version. The predefined roles cover most organizational needs.',
+      text: 'Currently, Aegis provides three predefined roles (Admin, Editor, Viewer). Custom role configuration is not available in this version. The predefined roles cover most organizational needs.',
     },
     {
       type: 'heading',

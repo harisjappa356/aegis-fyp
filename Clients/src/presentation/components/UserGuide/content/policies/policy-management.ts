@@ -10,11 +10,11 @@ export const policyManagementContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'The Policy Manager in VerifyWise helps you create, organize, and maintain AI governance policies for your organization. Well-documented policies are the foundation of effective AI governance, demonstrating your commitment to responsible AI and ensuring consistent practices across teams.',
+      text: 'The Policy Manager in Aegis helps you create, organize, and maintain AI governance policies for your organization. Well-documented policies are the foundation of effective AI governance, demonstrating your commitment to responsible AI and ensuring consistent practices across teams.',
     },
     {
       type: 'paragraph',
-      text: 'Policies in VerifyWise can be created from scratch or built from pre-designed templates covering common AI governance topics. Each policy tracks its status through a defined lifecycle, from initial draft through review and approval to publication.',
+      text: 'Policies in Aegis can be created from scratch or built from pre-designed templates covering common AI governance topics. Each policy tracks its status through a defined lifecycle, from initial draft through review and approval to publication.',
     },
     {
       type: 'heading',
@@ -148,7 +148,7 @@ export const policyManagementContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise provides predefined tags to help categorize your policies:',
+      text: 'Aegis provides predefined tags to help categorize your policies:',
     },
     {
       type: 'bullet-list',
@@ -210,7 +210,7 @@ export const policyManagementContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'Yes. You can paste existing policy content into VerifyWise to centralize your AI governance documentation. Many organizations start by importing their current policies, then use VerifyWise to track their status, schedule reviews, and maintain a single source of truth for AI governance.',
+      text: 'Yes. You can paste existing policy content into Aegis to centralize your AI governance documentation. Many organizations start by importing their current policies, then use Aegis to track their status, schedule reviews, and maintain a single source of truth for AI governance.',
     },
     {
       type: 'heading',
@@ -250,7 +250,7 @@ export const policyManagementContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'Review policies at least annually, or more frequently for rapidly evolving areas. AI regulations and best practices are still developing, so policies may need more frequent updates than traditional corporate policies. Set review dates when you publish a policy and use VerifyWise to track when reviews are due.',
+      text: 'Review policies at least annually, or more frequently for rapidly evolving areas. AI regulations and best practices are still developing, so policies may need more frequent updates than traditional corporate policies. Set review dates when you publish a policy and use Aegis to track when reviews are due.',
     },
     {
       type: 'article-links',

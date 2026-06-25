@@ -10,7 +10,7 @@ export const policyVersioningContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'Policies in VerifyWise follow a defined lifecycle from initial creation through publication and eventual retirement. Understanding this lifecycle helps you manage policies effectively and ensures stakeholders always know which policies are active and authoritative.',
+      text: 'Policies in Aegis follow a defined lifecycle from initial creation through publication and eventual retirement. Understanding this lifecycle helps you manage policies effectively and ensures stakeholders always know which policies are active and authoritative.',
     },
     {
       type: 'paragraph',
@@ -141,7 +141,7 @@ export const policyVersioningContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise automatically tracks who made changes and when:',
+      text: 'Aegis automatically tracks who made changes and when:',
     },
     {
       type: 'bullet-list',

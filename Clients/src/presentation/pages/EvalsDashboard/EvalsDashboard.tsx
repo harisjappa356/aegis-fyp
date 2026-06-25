@@ -1467,7 +1467,7 @@ export default function EvalsDashboard() {
                         Local providers are only available for self-hosted deployments
                       </Typography>
                       <Typography sx={{ fontSize: 13, color: "#4F46E5", lineHeight: 1.5 }}>
-                        To use Ollama or other local models, deploy VerifyWise on your own infrastructure. 
+                        To use Ollama or other local models, deploy Aegis on your own infrastructure. 
                         Local providers require direct access to your machine's network which isn't possible on the hosted demo.
                       </Typography>
                     </Box>

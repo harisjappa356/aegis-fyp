@@ -660,7 +660,7 @@ const SidebarFooter: FC<SidebarFooterProps> = ({
                 </Stack>
               </Box>
 
-              {/* Explore VerifyWise Section */}
+              {/* Explore Aegis Section */}
               <Box>
                 <Typography
                   variant="overline"
@@ -673,7 +673,7 @@ const SidebarFooter: FC<SidebarFooterProps> = ({
                     pb: 1,
                   }}
                 >
-                  EXPLORE VERIFYWISE
+                  EXPLORE AEGIS
                 </Typography>
 
                 <Stack spacing={1}>
@@ -683,7 +683,7 @@ const SidebarFooter: FC<SidebarFooterProps> = ({
                       if (openUserGuide) {
                         openUserGuide();
                       } else {
-                        window.open("https://verifywise.ai", "_blank", "noreferrer");
+                        window.open("https://axomify.co", "_blank", "noreferrer");
                       }
                       closePopup();
                     }}
@@ -715,7 +715,7 @@ const SidebarFooter: FC<SidebarFooterProps> = ({
                   {/* What's New */}
                   <ListItemButton
                     onClick={() => {
-                      window.open("https://verifywise.ai/blog", "_blank", "noreferrer");
+                      window.open("https://axomify.co/blog", "_blank", "noreferrer");
                       closePopup();
                     }}
                     sx={{
@@ -777,7 +777,7 @@ const SidebarFooter: FC<SidebarFooterProps> = ({
                   {/* Get Support */}
                   <ListItemButton
                     onClick={() => {
-                      window.open("https://verifywise.ai/contact", "_blank", "noreferrer");
+                      window.open("https://axomify.co/contact", "_blank", "noreferrer");
                       closePopup();
                     }}
                     sx={{
@@ -808,7 +808,7 @@ const SidebarFooter: FC<SidebarFooterProps> = ({
                   {/* Give Feedback */}
                   <ListItemButton
                     onClick={() => {
-                      window.open("https://verifywise.ai/contact", "_blank", "noreferrer");
+                      window.open("https://axomify.co/contact", "_blank", "noreferrer");
                       closePopup();
                     }}
                     sx={{

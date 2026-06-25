@@ -14,7 +14,7 @@ export const quickStartContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: "This guide walks you through setting up your first AI governance use case in VerifyWise. By the end, you'll have a working use case with a compliance framework, controls to track, and your first piece of evidence uploaded.",
+      text: "This guide walks you through setting up your first AI governance use case in Aegis. By the end, you'll have a working use case with a compliance framework, controls to track, and your first piece of evidence uploaded.",
     },
     {
       type: 'checklist',
@@ -34,7 +34,7 @@ export const quickStartContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'Use cases in VerifyWise represent individual AI systems that you want to govern. Each use case has its own compliance tracking, risk assessments, and evidence collection.',
+      text: 'Use cases in Aegis represent individual AI systems that you want to govern. Each use case has its own compliance tracking, risk assessments, and evidence collection.',
     },
     {
       type: 'ordered-list',
@@ -65,7 +65,7 @@ export const quickStartContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'Compliance frameworks define the requirements you need to meet. VerifyWise comes with several built-in frameworks that you can apply to your use case.',
+      text: 'Compliance frameworks define the requirements you need to meet. Aegis comes with several built-in frameworks that you can apply to your use case.',
     },
     {
       type: 'grid-cards',
@@ -82,7 +82,7 @@ export const quickStartContent: ArticleContent = {
         { bold: '', text: 'In your new use case, navigate to **Assurance → Compliance tracker**' },
         { bold: '', text: 'Click **"Add framework"**' },
         { bold: '', text: 'Select the framework that applies to your AI system' },
-        { bold: '', text: 'VerifyWise will automatically populate the required controls and assessments' },
+        { bold: '', text: 'Aegis will automatically populate the required controls and assessments' },
       ],
     },
     {
@@ -93,7 +93,7 @@ export const quickStartContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: "Controls are the specific requirements you need to implement. When you add a framework, VerifyWise creates a set of controls based on that framework's requirements.",
+      text: "Controls are the specific requirements you need to implement. When you add a framework, Aegis creates a set of controls based on that framework's requirements.",
     },
     {
       type: 'ordered-list',
@@ -185,7 +185,7 @@ export const quickStartContent: ArticleContent = {
       type: 'callout',
       variant: 'success',
       title: "You're off to a great start!",
-      text: "AI governance is an ongoing process. VerifyWise helps you track progress over time, so don't feel pressured to complete everything at once. Focus on one area at a time and build from there.",
+      text: "AI governance is an ongoing process. Aegis helps you track progress over time, so don't feel pressured to complete everything at once. Focus on one area at a time and build from there.",
     },
   ],
 };

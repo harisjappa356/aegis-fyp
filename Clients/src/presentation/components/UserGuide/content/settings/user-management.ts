@@ -10,7 +10,7 @@ export const userManagementContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'User management in VerifyWise allows administrators to control who has access to the platform and what they can do. From the Settings page, you can manage your own profile, update security credentials, and administer team members.',
+      text: 'User management in Aegis allows administrators to control who has access to the platform and what they can do. From the Settings page, you can manage your own profile, update security credentials, and administer team members.',
     },
     {
       type: 'heading',

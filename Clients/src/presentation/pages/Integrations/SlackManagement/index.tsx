@@ -222,7 +222,7 @@ const SlackManagement = () => {
           Slack Integration
         </Typography>
         <Typography variant="body1" sx={{ fontSize: '13px' }} color="text.secondary">
-          Connect your Slack workspace and route VerifyWise notifications to specific channels.
+          Connect your Slack workspace and route Aegis notifications to specific channels.
         </Typography>
       </Box>
 

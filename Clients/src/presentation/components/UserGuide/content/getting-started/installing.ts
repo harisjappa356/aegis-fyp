@@ -14,7 +14,7 @@ export const installingContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise can be deployed on your own infrastructure, giving you complete control over your data. Before starting the installation, make sure you have the following prerequisites in place.',
+      text: 'Aegis can be deployed on your own infrastructure, giving you complete control over your data. Before starting the installation, make sure you have the following prerequisites in place.',
     },
     {
       type: 'requirements',
@@ -56,7 +56,7 @@ export const installingContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise supports two deployment approaches depending on your needs:',
+      text: 'Aegis supports two deployment approaches depending on your needs:',
     },
     {
       type: 'grid-cards',
@@ -80,7 +80,7 @@ export const installingContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'The production setup uses Docker Compose to run all services in containers. This is the simplest way to get VerifyWise running.',
+      text: 'The production setup uses Docker Compose to run all services in containers. This is the simplest way to get Aegis running.',
     },
     {
       type: 'heading',
@@ -94,9 +94,9 @@ export const installingContent: ArticleContent = {
     },
     {
       type: 'code',
-      code: `mkdir verifywise && cd verifywise
-curl -O https://raw.githubusercontent.com/Aegis-AI/verifywise/develop/install.sh
-curl -O https://raw.githubusercontent.com/Aegis-AI/verifywise/develop/.env.prod`,
+      code: `mkdir Aegis && cd Aegis
+curl -O https://raw.githubusercontent.com/Aegis-AI/Aegis/develop/install.sh
+curl -O https://raw.githubusercontent.com/Aegis-AI/Aegis/develop/.env.prod`,
     },
     {
       type: 'heading',
@@ -138,7 +138,7 @@ POSTGRES_PASSWORD=your-secure-password`,
     },
     {
       type: 'paragraph',
-      text: 'The script will pull the Docker images, create the database, and start all services. Once complete, VerifyWise will be available at your configured `FRONTEND_URL`.',
+      text: 'The script will pull the Docker images, create the database, and start all services. Once complete, Aegis will be available at your configured `FRONTEND_URL`.',
     },
     {
       type: 'heading',
@@ -158,8 +158,8 @@ POSTGRES_PASSWORD=your-secure-password`,
     },
     {
       type: 'code',
-      code: `git clone https://github.com/Aegis-AI/verifywise.git
-cd verifywise
+      code: `git clone https://github.com/Aegis-AI/Aegis.git
+cd Aegis
 
 # Install frontend dependencies
 cd Clients && npm install
@@ -187,7 +187,7 @@ docker run -d --name mypostgres -p 5432:5432 \\
 docker run -d --name myredis -p 6379:6379 redis
 
 # Create the database
-docker exec -it mypostgres psql -U postgres -c "CREATE DATABASE verifywise;"`,
+docker exec -it mypostgres psql -U postgres -c "CREATE DATABASE Aegis;"`,
     },
     {
       type: 'heading',
@@ -231,7 +231,7 @@ cd Clients && npm run dev`,
         { variable: 'FRONTEND_URL', description: 'URL where the web application is accessible' },
         { variable: 'JWT_SECRET', description: 'Secret key for signing authentication tokens' },
         { variable: 'POSTGRES_PASSWORD', description: 'Password for the PostgreSQL database' },
-        { variable: 'POSTGRES_DB', description: 'Database name (default: verifywise)' },
+        { variable: 'POSTGRES_DB', description: 'Database name (default: Aegis)' },
         { variable: 'REDIS_HOST', description: 'Redis server hostname (default: localhost)' },
       ],
     },
@@ -243,12 +243,12 @@ cd Clients && npm run dev`,
     },
     {
       type: 'paragraph',
-      text: "When you first access VerifyWise, you'll see the admin registration page. This is expected — the platform ships without any default users for security reasons.",
+      text: "When you first access Aegis, you'll see the admin registration page. This is expected — the platform ships without any default users for security reasons.",
     },
     {
       type: 'ordered-list',
       items: [
-        { text: 'Navigate to your VerifyWise URL in a web browser' },
+        { text: 'Navigate to your Aegis URL in a web browser' },
         { text: 'Complete the admin registration form with your details' },
         { text: 'Log in with your new admin credentials' },
         { text: "You'll land on the dashboard, ready to create your first use case" },
@@ -258,7 +258,7 @@ cd Clients && npm run dev`,
       type: 'callout',
       variant: 'warning',
       title: 'Important',
-      text: 'Complete the admin registration promptly after deployment. Anyone with access to your VerifyWise URL can register as admin until the first account is created.',
+      text: 'Complete the admin registration promptly after deployment. Anyone with access to your Aegis URL can register as admin until the first account is created.',
     },
     {
       type: 'heading',
@@ -275,7 +275,7 @@ cd Clients && npm run dev`,
       items: [
         { text: 'Install Nginx as a reverse proxy on your server' },
         { text: 'Install Certbot and obtain certificates for your domain' },
-        { text: 'Configure Nginx to proxy requests to VerifyWise services' },
+        { text: 'Configure Nginx to proxy requests to Aegis services' },
         { text: 'Update your `.env.prod` URLs to use `https://`' },
         { text: 'Restart the services to apply the changes' },
       ],
@@ -284,7 +284,7 @@ cd Clients && npm run dev`,
       type: 'callout',
       variant: 'tip',
       title: 'Next step',
-      text: 'Now that VerifyWise is installed, learn how to navigate the dashboard and set up your first AI governance use case.',
+      text: 'Now that Aegis is installed, learn how to navigate the dashboard and set up your first AI governance use case.',
     },
   ],
 };

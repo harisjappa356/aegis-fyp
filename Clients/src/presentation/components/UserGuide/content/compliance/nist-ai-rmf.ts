@@ -193,13 +193,13 @@ export const nistAiRmfContent: ArticleContent = {
     },
     {
       type: 'heading',
-      id: 'verifywise-support',
+      id: 'Aegis-support',
       level: 2,
-      text: 'How VerifyWise supports NIST AI RMF',
+      text: 'How Aegis supports NIST AI RMF',
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise provides a structured environment to implement and track your NIST AI RMF activities. The platform organizes the framework into functions, categories, and subcategories, making it easy to work through requirements systematically.',
+      text: 'Aegis provides a structured environment to implement and track your NIST AI RMF activities. The platform organizes the framework into functions, categories, and subcategories, making it easy to work through requirements systematically.',
     },
     {
       type: 'bullet-list',
@@ -214,7 +214,7 @@ export const nistAiRmfContent: ArticleContent = {
       type: 'callout',
       variant: 'tip',
       title: 'Best practice',
-      text: 'Use the NIST AI RMF Playbook alongside VerifyWise. The Playbook provides specific suggested actions for each subcategory that you can track in VerifyWise. Download the Playbook from the official NIST website.',
+      text: 'Use the NIST AI RMF Playbook alongside Aegis. The Playbook provides specific suggested actions for each subcategory that you can track in Aegis. Download the Playbook from the official NIST website.',
     },
     {
       type: 'heading',
@@ -224,7 +224,7 @@ export const nistAiRmfContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise organizes the NIST AI RMF into a three-level hierarchy that mirrors the framework\'s structure:',
+      text: 'Aegis organizes the NIST AI RMF into a three-level hierarchy that mirrors the framework\'s structure:',
     },
     {
       type: 'icon-cards',
@@ -254,7 +254,7 @@ export const nistAiRmfContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'When you access NIST AI RMF in VerifyWise, you see the four core functions with their categories and subcategories. Each function shows progress indicators so you can quickly see where you stand:',
+      text: 'When you access NIST AI RMF in Aegis, you see the four core functions with their categories and subcategories. Each function shows progress indicators so you can quickly see where you stand:',
     },
     {
       type: 'checklist',
@@ -295,7 +295,7 @@ export const nistAiRmfContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'For each subcategory, VerifyWise tracks:',
+      text: 'For each subcategory, Aegis tracks:',
     },
     {
       type: 'bullet-list',
@@ -342,7 +342,7 @@ export const nistAiRmfContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise provides multiple ways to monitor your NIST AI RMF implementation:',
+      text: 'Aegis provides multiple ways to monitor your NIST AI RMF implementation:',
     },
     {
       type: 'bullet-list',

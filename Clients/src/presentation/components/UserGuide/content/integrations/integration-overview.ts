@@ -10,7 +10,7 @@ export const integrationOverviewContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise integrations connect your AI governance platform with external tools and services. Integrations help streamline workflows, automate data synchronization, and keep your team informed through familiar channels.',
+      text: 'Aegis integrations connect your AI governance platform with external tools and services. Integrations help streamline workflows, automate data synchronization, and keep your team informed through familiar channels.',
     },
     {
       type: 'paragraph',
@@ -47,7 +47,7 @@ export const integrationOverviewContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise currently offers the following integrations:',
+      text: 'Aegis currently offers the following integrations:',
     },
     {
       type: 'icon-cards',
@@ -96,7 +96,7 @@ export const integrationOverviewContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'The Slack integration enables VerifyWise to send notifications directly to your Slack workspace. You can route different types of notifications to specific channels, keeping your team informed about governance activities without leaving Slack.',
+      text: 'The Slack integration enables Aegis to send notifications directly to your Slack workspace. You can route different types of notifications to specific channels, keeping your team informed about governance activities without leaving Slack.',
     },
     {
       type: 'paragraph',
@@ -119,7 +119,7 @@ export const integrationOverviewContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'The MLflow integration connects VerifyWise to your MLflow tracking server, enabling automatic synchronization of machine learning models. This helps maintain an up-to-date model inventory without manual data entry.',
+      text: 'The MLflow integration connects Aegis to your MLflow tracking server, enabling automatic synchronization of machine learning models. This helps maintain an up-to-date model inventory without manual data entry.',
     },
     {
       type: 'paragraph',
@@ -143,7 +143,7 @@ export const integrationOverviewContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'In addition to pre-built integrations, VerifyWise provides API access for custom integrations. API keys allow you to programmatically interact with VerifyWise data and features from external applications or scripts.',
+      text: 'In addition to pre-built integrations, Aegis provides API access for custom integrations. API keys allow you to programmatically interact with Aegis data and features from external applications or scripts.',
     },
     {
       type: 'paragraph',

@@ -39,7 +39,7 @@ export const riskAssessmentContent: ArticleContent = {
     {
       type: 'callout',
       variant: 'info',
-      text: 'Risks in VerifyWise can be linked to both use cases and compliance frameworks, allowing you to track risks across different contexts and regulatory requirements.',
+      text: 'Risks in Aegis can be linked to both use cases and compliance frameworks, allowing you to track risks across different contexts and regulatory requirements.',
     },
     {
       type: 'image',
@@ -55,7 +55,7 @@ export const riskAssessmentContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'To create a new risk in VerifyWise, navigate to the Risk Management section and provide the following information:',
+      text: 'To create a new risk in Aegis, navigate to the Risk Management section and provide the following information:',
     },
     {
       type: 'ordered-list',
@@ -81,7 +81,7 @@ export const riskAssessmentContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise tracks risks across the complete AI system lifecycle:',
+      text: 'Aegis tracks risks across the complete AI system lifecycle:',
     },
     {
       type: 'icon-cards',
@@ -126,7 +126,7 @@ export const riskAssessmentContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'Each risk is analyzed using likelihood and severity assessments. VerifyWise automatically calculates the overall risk level based on these inputs.',
+      text: 'Each risk is analyzed using likelihood and severity assessments. Aegis automatically calculates the overall risk level based on these inputs.',
     },
     {
       type: 'heading',
@@ -184,7 +184,7 @@ export const riskAssessmentContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'Based on likelihood and severity, VerifyWise automatically calculates the risk level:',
+      text: 'Based on likelihood and severity, Aegis automatically calculates the risk level:',
     },
     {
       type: 'table',
@@ -233,7 +233,7 @@ export const riskAssessmentContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise provides several views for monitoring your risks:',
+      text: 'Aegis provides several views for monitoring your risks:',
     },
     {
       type: 'bullet-list',

@@ -228,7 +228,7 @@ const Integrations: React.FC = () => {
         </Box>
       </Box>
 
-      {/* VerifyWise Toast */}
+      {/* Aegis Toast */}
       {toast && toast.visible && (
         <Suspense fallback={<div>Loading...</div>}>
           <Alert

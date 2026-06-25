@@ -35,7 +35,7 @@ export const modelInventoryContent: ArticleContent = {
     {
       type: 'callout',
       variant: 'info',
-      text: 'Maintaining an accurate model inventory is a core requirement for EU AI Act compliance and ISO 42001 certification. VerifyWise automatically tracks changes to your inventory for audit purposes.',
+      text: 'Maintaining an accurate model inventory is a core requirement for EU AI Act compliance and ISO 42001 certification. Aegis automatically tracks changes to your inventory for audit purposes.',
     },
     {
       type: 'heading',
@@ -161,7 +161,7 @@ export const modelInventoryContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'For organizations using MLFlow for ML operations, VerifyWise can import model training data directly. This provides visibility into model development metrics including training timestamps, parameters, and lifecycle stages.',
+      text: 'For organizations using MLFlow for ML operations, Aegis can import model training data directly. This provides visibility into model development metrics including training timestamps, parameters, and lifecycle stages.',
     },
     {
       type: 'heading',
@@ -171,7 +171,7 @@ export const modelInventoryContent: ArticleContent = {
     },
     {
       type: 'paragraph',
-      text: 'VerifyWise automatically maintains a complete audit trail for every model in your inventory. Each change records:',
+      text: 'Aegis automatically maintains a complete audit trail for every model in your inventory. Each change records:',
     },
     {
       type: 'bullet-list',

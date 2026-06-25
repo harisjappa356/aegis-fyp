@@ -38,7 +38,7 @@ const HelpSection: React.FC = () => {
           Can't find what you need? Our support team is here to help.
         </p>
         <a
-          href="mailto:support@verifywise.ai"
+          href="mailto:support@axomify.co"
           className="help-button"
           style={{
             display: 'flex',

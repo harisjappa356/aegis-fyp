@@ -807,7 +807,7 @@ const MLFlowManagement: React.FC = () => {
                 handleInputChange('timeout', Number.isNaN(nextValue) ? 30 : nextValue);
               }}
               isRequired={true}
-              helperText="How long VerifyWise waits before marking MLFlow requests as failed (default 30s)"
+              helperText="How long Aegis waits before marking MLFlow requests as failed (default 30s)"
               formHelperTextProps={{
                 sx: {
                   marginLeft: 0,

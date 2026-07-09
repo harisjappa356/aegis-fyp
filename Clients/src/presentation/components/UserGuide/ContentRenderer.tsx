@@ -735,35 +735,71 @@ const ContentRenderer: React.FC<ContentRendererProps> = ({ content, onNavigate }
     </div>
   );
 
-  const renderImage = (block: ImageBlock, index: number) => (
-    <div
-      key={index}
-      style={{
-        marginBottom: spacing['2xl'],
-      }}
-    >
-      <img
-        src={block.src}
-        alt={block.alt}
-        onClick={() => setLightboxImage({ src: block.src, alt: block.alt, caption: block.caption })}
+  const renderImage = (block: ImageBlock, index: number) => {
+    const isUserGuideImage = block.src && block.src.includes('/images/user-guide/');
+    return (
+      <div
+        key={index}
         style={{
-          ...imageStyles.image,
-          cursor: 'zoom-in',
+          marginBottom: spacing['2xl'],
         }}
-      />
-      {block.caption && (
-        <p
-          style={{
-            ...imageStyles.caption,
-            marginTop: spacing.sm,
-            marginBottom: 0,
-          }}
-        >
-          {block.caption}
-        </p>
-      )}
-    </div>
-  );
+      >
+        <div style={{ position: 'relative', display: 'inline-block', width: '100%' }}>
+          <img
+            src={block.src}
+            alt={block.alt}
+            onClick={() => setLightboxImage({ src: block.src, alt: block.alt, caption: block.caption })}
+            style={{
+              ...imageStyles.image,
+              cursor: 'zoom-in',
+              display: 'block',
+              width: '100%',
+            }}
+          />
+          {isUserGuideImage && (
+            <div
+              style={{
+                position: 'absolute',
+                top: '1.5%',
+                left: '1.5%',
+                width: '18%',
+                height: '7%',
+                backgroundColor: '#ffffff',
+                display: 'flex',
+                alignItems: 'center',
+                paddingLeft: '6px',
+                pointerEvents: 'none',
+                borderRadius: '2px',
+                boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
+              }}
+            >
+              <span
+                style={{
+                  fontFamily: 'sans-serif',
+                  fontWeight: 700,
+                  fontSize: 'calc(6px + 0.4vw)',
+                  color: '#13715B',
+                }}
+              >
+                Aegis.AI
+              </span>
+            </div>
+          )}
+        </div>
+        {block.caption && (
+          <p
+            style={{
+              ...imageStyles.caption,
+              marginTop: spacing.sm,
+              marginBottom: 0,
+            }}
+          >
+            {block.caption}
+          </p>
+        )}
+      </div>
+    );
+  };
 
   const renderArticleLinks = (block: ArticleLinksBlock, index: number) => (
     <div key={index} style={{ marginBottom: spacing['2xl'] }}>

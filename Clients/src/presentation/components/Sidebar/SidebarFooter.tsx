@@ -746,7 +746,7 @@ const SidebarFooter: FC<SidebarFooterProps> = ({
                   {/* User Community */}
                   <ListItemButton
                     onClick={() => {
-                      window.open("https://discord.gg/d3k3E4uEpR", "_blank", "noreferrer");
+                      window.open("https://axomify.co/community", "_blank", "noreferrer");
                       closePopup();
                     }}
                     sx={{

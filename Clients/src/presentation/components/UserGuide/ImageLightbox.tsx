@@ -91,19 +91,51 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({ src, alt, caption, onClos
           alignItems: 'center',
         }}
       >
-        <img
-          src={src}
-          alt={alt}
-          style={{
-            maxWidth: '100%',
-            maxHeight: caption ? 'calc(90vh - 40px)' : '90vh',
-            objectFit: 'contain',
-            borderRadius: '4px',
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
-            cursor: 'default',
-          }}
-          onClick={(e) => e.stopPropagation()}
-        />
+        <div style={{ position: 'relative', display: 'inline-block' }}>
+          <img
+            src={src}
+            alt={alt}
+            style={{
+              maxWidth: '100%',
+              maxHeight: caption ? 'calc(90vh - 40px)' : '90vh',
+              objectFit: 'contain',
+              borderRadius: '4px',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+              cursor: 'default',
+              display: 'block',
+            }}
+            onClick={(e) => e.stopPropagation()}
+          />
+          {src && src.includes('/images/user-guide/') && (
+            <div
+              style={{
+                position: 'absolute',
+                top: '1.5%',
+                left: '1.5%',
+                width: '18%',
+                height: '7%',
+                backgroundColor: '#ffffff',
+                display: 'flex',
+                alignItems: 'center',
+                paddingLeft: '6px',
+                pointerEvents: 'none',
+                borderRadius: '2px',
+                boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
+              }}
+            >
+              <span
+                style={{
+                  fontFamily: 'sans-serif',
+                  fontWeight: 700,
+                  fontSize: 'calc(8px + 0.4vw)',
+                  color: '#13715B',
+                }}
+              >
+                Aegis.AI
+              </span>
+            </div>
+          )}
+        </div>
         {caption && (
           <p
             style={{

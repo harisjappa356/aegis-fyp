@@ -74,6 +74,7 @@ const TabBar: React.FC<TabBarProps> = ({ activeTab, onTabChange, displayAdvisor 
         alignItems: 'stretch',
       }}
     >
+      {/* 
       <TabItem
         id="user-guide"
         label="User guide"
@@ -81,6 +82,7 @@ const TabBar: React.FC<TabBarProps> = ({ activeTab, onTabChange, displayAdvisor 
         isActive={activeTab === 'user-guide'}
         onClick={() => onTabChange('user-guide')}
       />
+      */}
       {displayAdvisor && (
         <TabItem
           id="advisor"
@@ -90,6 +92,7 @@ const TabBar: React.FC<TabBarProps> = ({ activeTab, onTabChange, displayAdvisor 
           onClick={() => onTabChange('advisor')}
         />
       )}
+      {/* 
       <TabItem
         id="help"
         label="Help"
@@ -97,6 +100,7 @@ const TabBar: React.FC<TabBarProps> = ({ activeTab, onTabChange, displayAdvisor 
         isActive={activeTab === 'help'}
         onClick={() => onTabChange('help')}
       />
+      */}
     </div>
   );
 };

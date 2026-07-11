@@ -660,7 +660,7 @@ const SidebarFooter: FC<SidebarFooterProps> = ({
                 </Stack>
               </Box>
 
-              {/* Explore Aegis Section */}
+              {/* Explore Aegis Section - Commented Out
               <Box>
                 <Typography
                   variant="overline"
@@ -677,7 +677,6 @@ const SidebarFooter: FC<SidebarFooterProps> = ({
                 </Typography>
 
                 <Stack spacing={1}>
-                  {/* Help Center */}
                   <ListItemButton
                     onClick={() => {
                       if (openUserGuide) {
@@ -712,7 +711,6 @@ const SidebarFooter: FC<SidebarFooterProps> = ({
                     <Typography sx={{ fontSize: "13px" }}>Help center</Typography>
                   </ListItemButton>
 
-                  {/* What's New */}
                   <ListItemButton
                     onClick={() => {
                       window.open("https://axomify.co/blog", "_blank", "noreferrer");
@@ -743,7 +741,6 @@ const SidebarFooter: FC<SidebarFooterProps> = ({
                     <Typography sx={{ fontSize: "13px" }}>What's new?</Typography>
                   </ListItemButton>
 
-                  {/* User Community */}
                   <ListItemButton
                     onClick={() => {
                       window.open("https://axomify.co/community", "_blank", "noreferrer");
@@ -774,7 +771,6 @@ const SidebarFooter: FC<SidebarFooterProps> = ({
                     <Typography sx={{ fontSize: "13px" }}>User community</Typography>
                   </ListItemButton>
 
-                  {/* Get Support */}
                   <ListItemButton
                     onClick={() => {
                       window.open("https://axomify.co/contact", "_blank", "noreferrer");
@@ -805,7 +801,6 @@ const SidebarFooter: FC<SidebarFooterProps> = ({
                     <Typography sx={{ fontSize: "13px" }}>Get support</Typography>
                   </ListItemButton>
 
-                  {/* Give Feedback */}
                   <ListItemButton
                     onClick={() => {
                       window.open("https://axomify.co/contact", "_blank", "noreferrer");
@@ -837,6 +832,7 @@ const SidebarFooter: FC<SidebarFooterProps> = ({
                   </ListItemButton>
                 </Stack>
               </Box>
+              */}
 
               <Divider sx={{ my: 1 }} />
 

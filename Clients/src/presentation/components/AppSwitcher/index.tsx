@@ -36,14 +36,14 @@ const modules: ModuleItem[] = [
     label: "AI Detection",
     description: "Scan repositories to detect AI/ML libraries and frameworks",
   },
-  {
-    id: "gateway",
-    icon: <Network size={16} strokeWidth={1.5} />,
-    label: "Gateway",
-    description:
-      "Control, monitor, and govern all LLM traffic across your organization.",
-    disabled: true,
-  },
+  // {
+  //   id: "gateway",
+  //   icon: <Network size={16} strokeWidth={1.5} />,
+  //   label: "Gateway",
+  //   description:
+  //     "Control, monitor, and govern all LLM traffic across your organization.",
+  //   disabled: true,
+  // },
 ];
 
 const AppSwitcher: FC<AppSwitcherProps> = ({

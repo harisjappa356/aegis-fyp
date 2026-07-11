@@ -10,30 +10,7 @@ interface HelperIconProps {
 }
 
 const HelperIcon: React.FC<HelperIconProps> = ({ articlePath, size = "small" }) => {
-  const userGuideSidebar = useUserGuideSidebarContext();
-
-  const handleClick = () => {
-    userGuideSidebar.open(articlePath);
-  };
-
-  return (
-    <IconButton
-      disableRipple
-      onClick={handleClick}
-      aria-label="Open help information"
-      size={size}
-      sx={{
-        color: "#9CA3AF",
-        backgroundColor: "transparent",
-        padding: "4px",
-        "&:hover": {
-          backgroundColor: "rgba(156, 163, 175, 0.1)",
-        },
-      }}
-    >
-      <GreyCircleInfoIcon size={16} />
-    </IconButton>
-  );
+  return null;
 };
 
 export default HelperIcon;

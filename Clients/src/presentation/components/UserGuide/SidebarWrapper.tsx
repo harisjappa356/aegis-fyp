@@ -40,7 +40,7 @@ const SidebarWrapper: React.FC<SidebarWrapperProps> = ({
   onOpenInNewTab,
 }) => {
   const { setContentWidth: setContextContentWidth } = useUserGuideSidebarContext();
-  const [activeTab, setActiveTab] = useState<Tab>('user-guide');
+  const [activeTab, setActiveTab] = useState<Tab>('advisor');
   const [collectionId, setCollectionId] = useState<string | undefined>();
   const [articleId, setArticleId] = useState<string | undefined>();
   const [searchQuery, setSearchQuery] = useState('');
@@ -111,12 +111,12 @@ const SidebarWrapper: React.FC<SidebarWrapperProps> = ({
     }
   }, [initialPath]);
 
-
+  // Auto-close the sidebar if the Advisor is not active on this page and the sidebar is open
   useEffect(() => {
-    if (!displayAdvisor && activeTab === 'advisor') {
-      setActiveTab('user-guide');
+    if (!displayAdvisor && isOpen) {
+      onClose();
     }
-  }, [activeTab, displayAdvisor]);
+  }, [displayAdvisor, isOpen, onClose]);
 
   // Persist sidebar state to localStorage
   useEffect(() => {
@@ -465,12 +465,14 @@ const SidebarWrapper: React.FC<SidebarWrapperProps> = ({
         </div>
       </div>
 
-      {/* Tab Bar - Always visible */}
-      <TabBar
-        activeTab={isOpen ? activeTab : undefined}
-        onTabChange={handleTabClick}
-        displayAdvisor={displayAdvisor}
-      />
+      {/* Tab Bar - Visible only when Advisor is active */}
+      {displayAdvisor && (
+        <TabBar
+          activeTab={isOpen ? activeTab : undefined}
+          onTabChange={handleTabClick}
+          displayAdvisor={displayAdvisor}
+        />
+      )}
 
       {/* Main Sidebar Content - Slides in/out */}
       <div

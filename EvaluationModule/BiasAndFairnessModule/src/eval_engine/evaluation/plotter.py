@@ -113,7 +113,7 @@ class Plotter:
         )
 
         base_no_ext = f"{self.plots_dir}/demographic_parity__{attribute_name}"
-        saved = save_plotly(fig, base_no_ext, ("html", "png"), logger=self.logger)
+        saved = save_plotly(fig, base_no_ext, ("html",), logger=self.logger)
 
         return PlotArtifact(
             type="demographic_parity",
@@ -153,7 +153,7 @@ class Plotter:
         )
 
         base_no_ext = f"{self.plots_dir}/calibration_by_group__{attribute_name}"
-        saved = save_plotly(fig, base_no_ext, ("html", "png"), logger=self.logger)
+        saved = save_plotly(fig, base_no_ext, ("html",), logger=self.logger)
 
         return PlotArtifact(
             type="calibration_by_group",
@@ -197,7 +197,7 @@ class Plotter:
         )
 
         base_no_ext = f"{self.plots_dir}/confusion_matrices_by_group__{attribute_name}"
-        saved = save_plotly(fig, base_no_ext, ("html", "png"), logger=self.logger)
+        saved = save_plotly(fig, base_no_ext, ("html",), logger=self.logger)
 
         return PlotArtifact(
             type="groupwise_confusion_matrices",
@@ -241,7 +241,7 @@ class Plotter:
         )
 
         base_no_ext = f"{self.plots_dir}/fairness_vs_accuracy__{attribute_name}"
-        saved = save_plotly(fig, base_no_ext, ("html", "png"), logger=self.logger)
+        saved = save_plotly(fig, base_no_ext, ("html",), logger=self.logger)
 
         return PlotArtifact(
             type="fairness_vs_accuracy",
@@ -286,7 +286,7 @@ class Plotter:
         )
 
         base_no_ext = f"{self.plots_dir}/fairness_radar__{attribute_name}"
-        saved = save_plotly(fig, base_no_ext, ("html", "png"), logger=self.logger)
+        saved = save_plotly(fig, base_no_ext, ("html",), logger=self.logger)
 
         return PlotArtifact(
             type="fairness_radar",
@@ -340,7 +340,7 @@ class Plotter:
         )
 
         base_no_ext = f"{self.plots_dir}/conditional_statistical_parity__{attribute_name}"
-        saved = save_plotly(fig, base_no_ext, ("html", "png"), logger=self.logger)
+        saved = save_plotly(fig, base_no_ext, ("html",), logger=self.logger)
 
         return PlotArtifact(
             type="conditional_statistical_parity",
@@ -377,7 +377,7 @@ class Plotter:
         )
 
         base_no_ext = f"{self.plots_dir}/cumulative_parity_loss__{attribute_name}"
-        saved = save_plotly(fig, base_no_ext, ("html", "png"), logger=self.logger)
+        saved = save_plotly(fig, base_no_ext, ("html",), logger=self.logger)
 
         return PlotArtifact(
             type="cumulative_parity_loss",
@@ -414,7 +414,7 @@ class Plotter:
         )
 
         base_no_ext = f"{self.plots_dir}/group_metrics_boxplots__{attribute_name}"
-        saved = save_plotly(fig, base_no_ext, ("html", "png"), logger=self.logger)
+        saved = save_plotly(fig, base_no_ext, ("html",), logger=self.logger)
 
         return PlotArtifact(
             type="group_metrics_boxplots",

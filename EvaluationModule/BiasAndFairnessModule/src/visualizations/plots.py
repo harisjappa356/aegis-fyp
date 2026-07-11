@@ -143,7 +143,7 @@ def plot_demographic_parity(
         margin=dict(l=40, r=40, t=60, b=40),
     )
 
-    fig.show()
+    # fig.show()
 
     return fig, None
 
@@ -221,7 +221,7 @@ def plot_calibration_by_group(
     fig.update_xaxes(range=[0, 1], showgrid=True, gridcolor="rgba(0,0,0,0.2)")
     fig.update_yaxes(range=[0, 1], showgrid=True, gridcolor="rgba(0,0,0,0.2)")
 
-    fig.show()
+    # fig.show()
 
     return fig, None
 
@@ -319,7 +319,7 @@ def plot_groupwise_confusion_matrices(
         margin=dict(l=40, r=40, t=80, b=40),
     )
 
-    fig.show()
+    # fig.show()
 
     return fig, None
 
@@ -394,7 +394,7 @@ def create_fairness_vs_accuracy_plot(
         margin=dict(l=40, r=40, t=60, b=40),
     )
 
-    fig.show()
+    # fig.show()
 
     return fig, None
 
@@ -508,7 +508,7 @@ def plot_fairness_radar(
         margin=dict(l=40, r=100, t=60, b=40),
     )
 
-    fig.show()
+    # fig.show()
 
     return fig, None
 
@@ -598,7 +598,7 @@ def plot_conditional_statistical_parity(
     )
     fig.update_yaxes(autorange="reversed")
 
-    fig.show()
+    # fig.show()
 
     return fig, None
 
@@ -682,7 +682,7 @@ def plot_cumulative_parity_loss(
     )
     fig.update_xaxes(showgrid=True, gridcolor="rgba(0,0,0,0.4)", griddash="dash")
 
-    fig.show()
+    # fig.show()
 
     return fig, None
 
@@ -769,7 +769,7 @@ def plot_group_metrics_boxplots(
     )
     fig.update_yaxes(range=[0, 1], showgrid=True, gridcolor="rgba(0,0,0,0.4)")
 
-    fig.show()
+    # fig.show()
 
     return fig, None
 

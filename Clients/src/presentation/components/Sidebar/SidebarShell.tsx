@@ -637,7 +637,7 @@ const SidebarShell: FC<SidebarShellProps> = ({
                     style={{ position: "relative", zIndex: 1, display: "block" }}
                   />
                 </RouterLink>
-                <span
+                {/* <span
                   style={{
                     fontSize: "8px",
                     marginLeft: "4px",
@@ -646,7 +646,7 @@ const SidebarShell: FC<SidebarShellProps> = ({
                   }}
                 >
                   {__APP_VERSION__}
-                </span>
+                </span> */}
               </Box>
             )}
             {/* Sidebar Toggle Button */}

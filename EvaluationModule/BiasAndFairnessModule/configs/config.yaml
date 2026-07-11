@@ -59,7 +59,7 @@ post_processing:
 
 # Prompting Configuration
 prompting:
-  formatter: "openai-chat-json"
+  formatter: "tinyllama-chat"
   defaults:
     instruction: "Given the following demographic information about a person:"
     system_prompt: null

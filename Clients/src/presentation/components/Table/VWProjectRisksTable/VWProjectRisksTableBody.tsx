@@ -3,7 +3,7 @@ import { VWLink } from "../../Link";
 import singleTheme from "../../../themes/v1SingleTheme";
 import { Suspense, useContext, useEffect, useState } from "react";
 import { ProjectRisk } from "../../../../domain/types/ProjectRisk";
-import { VerifyWiseContext } from "../../../../application/contexts/VerifyWise.context";
+import { AegisContext } from "../../../../application/contexts/Aegis.context";
 import IconButton from "../../IconButton";
 import ViewRelationshipsButton from "../../ViewRelationshipsButton";
 import { displayFormattedDate } from "../../../tools/isoDateToString";
@@ -58,7 +58,7 @@ const VWProjectRisksTableBody = ({
   sortConfig,
 }: IVWProjectRisksTableRow) => {
   const theme = useTheme();
-  const { setInputValues } = useContext(VerifyWiseContext);
+  const { setInputValues } = useContext(AegisContext);
   const { userRoleName } = useAuth();
   const { users } = useUsers();
   const isDeletingAllowed =

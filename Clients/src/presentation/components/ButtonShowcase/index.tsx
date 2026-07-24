@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box, Typography, Stack, Paper, Container } from '@mui/material';
 import { Plus, Eye, Filter, Edit3, Lock, Unlock, Save, Trash2, Download, Upload } from 'lucide-react';
 import CustomizableButton from '../Button/CustomizableButton';
-import VerifyWiseMultiSelect from '../VerifyWiseMultiSelect';
+import AegisMultiSelect from '../AegisMultiSelect';
 import ViewToggle from '../ViewToggle';
 
 const ButtonShowcase: React.FC = () => {
@@ -66,13 +66,13 @@ const ButtonShowcase: React.FC = () => {
         </Stack>
       </Paper>
 
-      {/* VerifyWiseMultiSelect */}
+      {/* AegisMultiSelect */}
       <Paper sx={{ p: 3, mb: 3 }}>
         <Typography variant="h6" gutterBottom>
           Multi-Select Components
         </Typography>
         <Stack direction="row" spacing={2} alignItems="center" flexWrap="wrap">
-          <VerifyWiseMultiSelect
+          <AegisMultiSelect
             options={multiSelectOptions}
             selectedValues={multiSelectValues}
             onChange={setMultiSelectValues}
@@ -80,7 +80,7 @@ const ButtonShowcase: React.FC = () => {
             icon={<Eye size={14} />}
             height={28}
           />
-          <VerifyWiseMultiSelect
+          <AegisMultiSelect
             options={multiSelectOptions}
             selectedValues={[]}
             onChange={() => {}}

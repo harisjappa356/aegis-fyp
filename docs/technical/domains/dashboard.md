@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Dashboard domain provides centralized metrics, visualizations, and analytics across VerifyWise. It aggregates data from risks, vendors, policies, incidents, models, training, tasks, and use cases with time-series tracking and interactive charts.
+The Dashboard domain provides centralized metrics, visualizations, and analytics across Aegis.ai. It aggregates data from risks, vendors, policies, incidents, models, training, tasks, and use cases with time-series tracking and interactive charts.
 
 ## Key Features
 
@@ -245,9 +245,9 @@ enum WidgetType {
 
 ```typescript
 // Layout persistence keys
-verifywise_dashboard_layouts_{projectId}_{dashboardId}_{userId}
-verifywise_dashboard_preferences_{projectId}_{dashboardId}_{userId}
-verifywise_dashboard_widgets_{projectId}_{dashboardId}_{userId}
+aegis.ai_dashboard_layouts_{projectId}_{dashboardId}_{userId}
+aegis.ai_dashboard_preferences_{projectId}_{dashboardId}_{userId}
+aegis.ai_dashboard_widgets_{projectId}_{dashboardId}_{userId}
 ```
 
 Features:

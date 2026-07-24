@@ -1,5 +1,5 @@
 /**
- * GroupedSelect - A VerifyWise select component that supports grouped options with custom rendering
+ * GroupedSelect - A Aegis.ai select component that supports grouped options with custom rendering
  *
  * @component
  * @example

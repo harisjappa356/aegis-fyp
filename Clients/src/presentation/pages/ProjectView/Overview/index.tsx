@@ -9,7 +9,7 @@ import { displayFormattedDate } from "../../../tools/isoDateToString";
 import Risks from "../../../components/Risks";
 import { useSearchParams } from "react-router-dom";
 import useProjectData from "../../../../application/hooks/useProjectData";
-import { VerifyWiseContext } from "../../../../application/contexts/VerifyWise.context";
+import { AegisContext } from "../../../../application/contexts/Aegis.context";
 import getProjectData from "../../../../application/tools/getProjectData";
 
 export type RiskData = {
@@ -37,7 +37,7 @@ const Overview: FC<OverviewProps> = memo(({ projectRisksSummary }) => {
     projectId,
   });
   const theme = useTheme();
-  const { projectStatus } = useContext(VerifyWiseContext);
+  const { projectStatus } = useContext(AegisContext);
 
   const {
     controlsProgress,

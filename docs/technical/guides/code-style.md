@@ -1,6 +1,6 @@
 # Code Style Guide
 
-This guide documents the TypeScript/JavaScript conventions and coding standards used throughout VerifyWise.
+This guide documents the TypeScript/JavaScript conventions and coding standards used throughout Aegis.ai.
 
 ## TypeScript Configuration
 
@@ -152,7 +152,7 @@ import type { RootState } from "../redux/store";
 
 // 3. Hooks and contexts
 import { useAuth } from "../hooks/useAuth";
-import { useVerifyWiseContext } from "../contexts/VerifyWise.context";
+import { useAegis.aiContext } from "../contexts/Aegis.ai.context";
 
 // 4. Components
 import { Button } from "../components/Button";
@@ -252,14 +252,14 @@ function getUserName(user: IUser) {
 const config: DatabaseConfig = {
   host: "localhost",
   port: 5432,
-  database: "verifywise"
+  database: "aegis.ai"
 };
 
 // Avoid - relies on inference for complex objects
 const config = {
   host: "localhost",
   port: 5432,
-  database: "verifywise"
+  database: "aegis.ai"
 };
 ```
 
@@ -463,7 +463,7 @@ The project uses ESLint 9 with TypeScript support:
 const config = {
   host: "localhost",
   port: 5432,
-  database: "verifywise",  // Trailing comma
+  database: "aegis.ai",  // Trailing comma
 };
 
 const items = [

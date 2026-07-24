@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: verifywise-config
-  namespace: verifywise
+  name: aegis-config
+  namespace: aegis.ai
   labels:
-    app: verifywise
+    app: aegis
 data:
   # Application Settings
   NODE_ENV: "production"

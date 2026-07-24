@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Share Links domain provides secure, tokenized public sharing of VerifyWise resources without requiring authentication. It supports sharing individual records or entire table views with configurable permissions and optional expiration.
+The Share Links domain provides secure, tokenized public sharing of Aegis.ai resources without requiring authentication. It supports sharing individual records or entire table views with configurable permissions and optional expiration.
 
 ## Key Features
 
@@ -108,7 +108,7 @@ CREATE INDEX share_links_created_by_idx ON share_links(created_by);
     },
     "is_enabled": true,
     "expires_at": null,
-    "shareable_url": "https://app.verifywise.ai/shared/models/abc123def456789..."
+    "shareable_url": "https://app.aegis.ai.ai/shared/models/abc123def456789..."
   }
 }
 ```
@@ -253,7 +253,7 @@ return fetchResourceData(shareLink);
 ## Shareable URL Format
 
 ```
-https://app.verifywise.ai/shared/{resource_type}s/{share_token}
+https://app.aegis.ai.ai/shared/{resource_type}s/{share_token}
 
 Examples:
 - /shared/models/abc123def456...

@@ -38,7 +38,7 @@ import selectValidation from "../../../application/validations/selectValidation"
 import { createProjectRisk, updateProjectRisk } from "../../../application/repository/projectRisk.repository";
 import useUsers from "../../../application/hooks/useUsers";
 import { useAuth } from "../../../application/hooks/useAuth";
-import { VerifyWiseContext } from "../../../application/contexts/VerifyWise.context";
+import { AegisContext } from "../../../application/contexts/Aegis.context";
 import allowedRoles from "../../../application/constants/permissions";
 import CustomizableButton from "../Button/CustomizableButton";
 import { RiskCalculator } from "../../tools/riskCalculator";
@@ -168,7 +168,7 @@ const AddNewRiskForm: FC<AddNewRiskFormProps> = ({
   const usersLoading = usersLoadingProp !== undefined ? usersLoadingProp : hookData.loading;
 
   // Get inputValues from context
-  const { inputValues } = useContext(VerifyWiseContext);
+  const { inputValues } = useContext(AegisContext);
 
   const isEditingDisabled =
     !allowedRoles.projectRisks.edit.includes(userRoleName);

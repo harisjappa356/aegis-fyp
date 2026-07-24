@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppModule, setActiveModule } from "../redux/ui/uiSlice";
 import { RootState } from "../redux/store";
 
-const STORAGE_KEY = "verifywise_active_module";
+const STORAGE_KEY = "aegis.ai_active_module";
 
 /**
  * Hook for managing active module state

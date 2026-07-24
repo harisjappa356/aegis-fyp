@@ -58,10 +58,10 @@ cat > "$OUTPUT_DIR/configmap-generated.yaml" << 'EOF'
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: verifywise-config
-  namespace: verifywise
+  name: aegis-config
+  namespace: aegis.ai
   labels:
-    app: verifywise
+    app: aegis
 data:
 EOF
 
@@ -70,10 +70,10 @@ cat > "$OUTPUT_DIR/secrets-generated.yaml" << 'EOF'
 apiVersion: v1
 kind: Secret
 metadata:
-  name: verifywise-secrets
-  namespace: verifywise
+  name: aegis.ai-secrets
+  namespace: aegis.ai
   labels:
-    app: verifywise
+    app: aegis
 type: Opaque
 data:
 EOF

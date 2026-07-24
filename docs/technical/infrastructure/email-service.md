@@ -2,7 +2,7 @@
 
 ## Overview
 
-VerifyWise uses a multi-provider email service supporting MJML templates, multiple email providers (Resend, SMTP, AWS SES, Azure, Exchange), and enterprise-grade security features. The service handles transactional emails, automation workflows, and notification delivery with rate limiting and credential rotation.
+Aegis.ai uses a multi-provider email service supporting MJML templates, multiple email providers (Resend, SMTP, AWS SES, Azure, Exchange), and enterprise-grade security features. The service handles transactional emails, automation workflows, and notification delivery with rate limiting and credential rotation.
 
 ## Architecture
 
@@ -193,7 +193,7 @@ Templates are stored in `Servers/templates/` as `.mjml` files.
             </a>
           </p>
           <p style="color: #7f8c8d; font-size: 12px;">
-            Sent from VerifyWise on behalf of {{organization_name}}
+            Sent from Aegis.ai on behalf of {{organization_name}}
           </p>
         </mj-text>
       </mj-column>
@@ -260,11 +260,11 @@ import { sendEmail } from "./emailService";
 // Usage
 await sendEmail(
   "user@example.com",                    // Recipient
-  "Welcome to VerifyWise",               // Subject
+  "Welcome to Aegis.ai",               // Subject
   accountCreationTemplate,                // MJML template content
   {                                       // Template variables
     name: "John Doe",
-    link: "https://app.verifywise.ai/setup",
+    link: "https://app.aegis.ai.ai/setup",
   }
 );
 ```
@@ -432,7 +432,7 @@ export const sendAccountCreationEmail = async (req: Request, res: Response) => {
     const link = `${process.env.APP_URL}/setup?token=${token}`;
 
     // Send email
-    await sendEmail(email, "Welcome to VerifyWise", template, {
+    await sendEmail(email, "Welcome to Aegis.ai", template, {
       name,
       link,
     });

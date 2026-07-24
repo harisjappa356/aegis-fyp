@@ -2,25 +2,25 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
-  namespace: verifywise
+  namespace: aegis.ai
   labels:
-    app: verifywise
+    app: aegis
     component: frontend
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: verifywise
+      app: aegis
       component: frontend
   template:
     metadata:
       labels:
-        app: verifywise
+        app: aegis
         component: frontend
     spec:
       containers:
       - name: frontend
-        image: ghcr.io/bluewave-labs/verifywise-frontend:latest
+        image: ghcr.io/bluewave-labs/aegis-frontend:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 80
@@ -64,9 +64,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontend
-  namespace: verifywise
+  namespace: aegis.ai
   labels:
-    app: verifywise
+    app: aegis
     component: frontend
 spec:
   type: ClusterIP
@@ -76,5 +76,5 @@ spec:
     protocol: TCP
     name: http
   selector:
-    app: verifywise
+    app: aegis
     component: frontend

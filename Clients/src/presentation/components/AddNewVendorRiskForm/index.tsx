@@ -15,7 +15,7 @@ import selectValidation from "../../../application/validations/selectValidation"
 import { checkStringValidation } from "../../../application/validations/stringValidation";
 import Select from "../Inputs/Select";
 import { createVendorRisk, updateVendorRisk } from "../../../application/repository/vendorRisk.repository";
-import { VerifyWiseContext } from "../../../application/contexts/VerifyWise.context";
+import { AegisContext } from "../../../application/contexts/Aegis.context";
 import { useSearchParams } from "react-router-dom";
 import useUsers from "../../../application/hooks/useUsers";
 import { handleAlert } from "../../../application/tools/alertUtils";
@@ -132,7 +132,7 @@ const AddNewVendorRiskForm: FC<RiskSectionProps> = ({
   popupStatus,
 }) => {
   const theme = useTheme();
-  const { inputValues, dashboardValues } = useContext(VerifyWiseContext);
+  const { inputValues, dashboardValues } = useContext(AegisContext);
 
   const [searchParams] = useSearchParams();
   const projectId = searchParams.get("projectId");

@@ -19,7 +19,7 @@ import {
   Pencil as EditIconGrey,
   ChevronDown as WhiteDownArrowIcon,
 } from "lucide-react";
-import { VerifyWiseContext } from "../../../application/contexts/VerifyWise.context";
+import { AegisContext } from "../../../application/contexts/Aegis.context";
 import useMultipleOnScreen from "../../../application/hooks/useMultipleOnScreen";
 import useFrameworks from "../../../application/hooks/useFrameworks";
 import useUsers from "../../../application/hooks/useUsers";
@@ -114,7 +114,7 @@ const Framework = () => {
   const subcategoryId = searchParams.get("subcategoryId");
 
   const { changeComponentVisibility, projects, userRoleName, setProjects } =
-    useContext(VerifyWiseContext);
+    useContext(AegisContext);
   const { refs, allVisible } = useMultipleOnScreen<HTMLElement>({
     countToTrigger: 1,
   });

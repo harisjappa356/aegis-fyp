@@ -1,12 +1,12 @@
 import { useState, useEffect, useCallback, useContext } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { OnboardingState, UserPreferences, SampleProjectData } from "../../presentation/types/interfaces/i.onboarding";
-import { VerifyWiseContext } from "../contexts/VerifyWise.context";
+import { AegisContext } from "../contexts/Aegis.context";
 import { useAuth } from "./useAuth";
 import { setOnboardingStatus as setReduxOnboardingStatus } from "../redux/auth/authSlice";
 import type { RootState } from "../redux/store";
 
-const getStorageKey = (userId: number) => `verifywise_onboarding_${userId}`;
+const getStorageKey = (userId: number) => `aegis.ai_onboarding_${userId}`;
 
 const initialState: OnboardingState = {
   currentStep: 0,
@@ -20,7 +20,7 @@ const initialState: OnboardingState = {
 
 export const useOnboarding = () => {
   const { userId } = useAuth();
-  const { users, organizationId } = useContext(VerifyWiseContext);
+  const { users, organizationId } = useContext(AegisContext);
   const dispatch = useDispatch();
 
   // Get server-side onboarding status from Redux

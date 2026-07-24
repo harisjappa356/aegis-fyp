@@ -2,7 +2,7 @@
 
 ## Overview
 
-VerifyWise implements a **schema-per-tenant** isolation strategy using PostgreSQL. Each organization (tenant) gets its own dedicated database schema, providing complete data isolation at the database level while maintaining a single codebase and connection pool.
+Aegis.ai implements a **schema-per-tenant** isolation strategy using PostgreSQL. Each organization (tenant) gets its own dedicated database schema, providing complete data isolation at the database level while maintaining a single codebase and connection pool.
 
 ## Architecture Diagram
 
@@ -407,7 +407,7 @@ export const createNewTenant = async (
 MULTI_TENANCY_ENABLED=true
 
 # Allowed domains for organization creation
-# (only app.verifywise.ai and test.verifywise.ai can create orgs)
+# (only app.aegis.ai.ai and test.aegis.ai.ai can create orgs)
 ```
 
 ### Organization Creation Guard
@@ -428,8 +428,8 @@ export const checkMultiTenancy = async (
   // 2. OR no organizations exist yet (initial setup)
   if (
     (process.env.MULTI_TENANCY_ENABLED === "true" &&
-      (requestOrigin?.includes("app.verifywise.ai") ||
-       requestOrigin?.includes("test.verifywise.ai"))) ||
+      (requestOrigin?.includes("app.aegis.ai.ai") ||
+       requestOrigin?.includes("test.aegis.ai.ai"))) ||
     !organizationExists.exists
   ) {
     return next();

@@ -4,23 +4,23 @@ metadata:
   # annotations:
   #   nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
   #   nginx.ingress.kubernetes.io/ssl-redirect: "true"
-  name: verifywise-config-rule
+  name: aegis-config-rule
 spec:
   rules:
-    - host: verifywise.local
+    - host: aegis.local
       http:
         paths:
           - path: /api
             backend:
               service:
-                name: verifywise-svc
+                name: aegis-svc
                 port:
                   number: 3000
             pathType: Prefix
           - path: /
             backend:
               service:
-                name: verifywise-svc
+                name: aegis-svc
                 port:
                   number: 80
             pathType: Prefix

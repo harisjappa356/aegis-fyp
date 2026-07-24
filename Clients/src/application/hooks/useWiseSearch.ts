@@ -54,7 +54,7 @@ export interface UseWiseSearchReturn {
   isSearchMode: boolean;
 }
 
-const RECENT_SEARCHES_KEY = "verifywise_recent_searches";
+const RECENT_SEARCHES_KEY = "aegis.ai_recent_searches";
 const MAX_RECENT_SEARCHES = 5;
 const DEBOUNCE_MS = 300;
 const MIN_QUERY_LENGTH = 3;

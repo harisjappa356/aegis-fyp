@@ -12,7 +12,7 @@ import AssessmentTracker from "../../Assessment/1.0AssessmentTracker";
 import useFrameworks from "../../../../application/hooks/useFrameworks";
 import AddFrameworkModal from "../AddNewFramework";
 import useMultipleOnScreen from "../../../../application/hooks/useMultipleOnScreen";
-import { VerifyWiseContext } from "../../../../application/contexts/VerifyWise.context";
+import { AegisContext } from "../../../../application/contexts/Aegis.context";
 
 import {
   containerStyle,
@@ -65,7 +65,7 @@ const ProjectFrameworks = ({
   const [searchParams, setSearchParams] = useSearchParams();
   const { users } = useUsers();
 
-  const { changeComponentVisibility } = useContext(VerifyWiseContext);
+  const { changeComponentVisibility } = useContext(AegisContext);
   const { userRoleName } = useAuth();
 
   const { refs, allVisible } = useMultipleOnScreen<HTMLElement>({

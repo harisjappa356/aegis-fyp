@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react';
 
-const SIDEBAR_STATE_KEY = 'verifywise-sidebar-open';
+const SIDEBAR_STATE_KEY = 'aegis.ai-sidebar-open';
 
 interface UseUserGuideSidebarReturn {
   isOpen: boolean;

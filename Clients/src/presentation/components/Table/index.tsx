@@ -12,7 +12,7 @@ import {
   useTheme,
 } from "@mui/material";
 import TablePaginationActions from "../TablePagination";
-import { VerifyWiseContext } from "../../../application/contexts/VerifyWise.context";
+import { AegisContext } from "../../../application/contexts/Aegis.context";
 import { DashboardState, User, InputValues } from "../../../application/interfaces/appStates";
 import singleTheme from "../../themes/v1SingleTheme";
 import { RISK_LABELS } from "../../components/RiskLevel/constants";
@@ -72,7 +72,7 @@ const CustomizableBasicTable = ({
     return saved ? parseInt(saved, 10) : DEFAULT_ROWS_PER_PAGE;
   });
   const { setInputValues, dashboardValues, setDashboardValues } =
-    useContext(VerifyWiseContext);
+    useContext(AegisContext);
 
   useEffect(() => setPage(0), [data]);
 

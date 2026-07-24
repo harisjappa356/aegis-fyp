@@ -39,7 +39,7 @@ interface CommandPaletteProps {
 }
 
 // localStorage key for tracking if user has dismissed the welcome banner
-const WISE_SEARCH_WELCOME_DISMISSED_KEY = 'verifywise_wise_search_welcome_dismissed'
+const WISE_SEARCH_WELCOME_DISMISSED_KEY = 'aegis.ai_wise_search_welcome_dismissed'
 
 // Map entity types to icons
 const ENTITY_ICONS: Record<string, LucideIcon> = {

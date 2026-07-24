@@ -1,5 +1,5 @@
 /**
- * VWTooltip - A VerifyWise tooltip component that supports HTML/JSX content
+ * VWTooltip - A Aegis.ai tooltip component that supports HTML/JSX content
  *
  * @component
  * @example

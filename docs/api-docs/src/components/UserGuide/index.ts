@@ -3,11 +3,11 @@
  *
  * This module exports User Guide components for two modes:
  *
- * 1. Web Mode (verifywise.ai/user-guide)
+ * 1. Web Mode (aegis.ai.ai/user-guide)
  *    - Full standalone documentation with hero section
  *    - Uses UserGuideWrapper as the main entry point
  *
- * 2. In-App Mode (sidebar within VerifyWise app)
+ * 2. In-App Mode (sidebar within Aegis.ai app)
  *    - Sidebar documentation (360px) on the right side
  *    - Uses SidebarWrapper as the main entry point
  *    - Includes vertical tab bar (50px) with User Guide and Help tabs

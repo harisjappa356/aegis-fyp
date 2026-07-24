@@ -1,12 +1,12 @@
 # API Conventions
 
-This guide documents the REST API conventions and patterns used throughout VerifyWise.
+This guide documents the REST API conventions and patterns used throughout Aegis.ai.
 
 ## Base URL
 
 All API endpoints are prefixed with `/api/`:
 ```
-https://api.verifywise.ai/api/
+https://api.aegis.ai.ai/api/
 ```
 
 ## Authentication

@@ -3,7 +3,7 @@ import "./App.css";
 import { ThemeProvider } from "@emotion/react";
 import light from "./presentation/themes/light";
 import { CssBaseline } from "@mui/material";
-import { VerifyWiseContext } from "./application/contexts/VerifyWise.context";
+import { AegisContext } from "./application/contexts/Aegis.context";
 import { useCallback, useMemo, useState, useEffect } from "react";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
@@ -139,7 +139,7 @@ function App() {
 
   useEffect(() => {
     if (userPreferences) {
-      localStorage.setItem("verifywise_preferences", JSON.stringify(userPreferences));
+      localStorage.setItem("aegis.ai_preferences", JSON.stringify(userPreferences));
     }
   }, [userPreferences]);
 
@@ -248,7 +248,7 @@ function App() {
     <CookiesProvider>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <VerifyWiseContext.Provider value={contextValues}>
+          <AegisContext.Provider value={contextValues}>
             <UserGuideSidebarProvider>
               <ConditionalThemeWrapper>
                 {alert && (
@@ -282,7 +282,7 @@ function App() {
                 </AdvisorConversationProvider>
               </ConditionalThemeWrapper>
             </UserGuideSidebarProvider>
-          </VerifyWiseContext.Provider>
+          </AegisContext.Provider>
         </PersistGate>
       </Provider>
 

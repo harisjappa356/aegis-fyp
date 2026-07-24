@@ -9,7 +9,7 @@ const fs = require('fs');
 const path = require('path');
 
 const SOURCE_FILE = path.join(__dirname, '../docs/api-docs/src/config/endpoints.ts');
-const OUTPUT_DIR = path.join(__dirname, '../../website/verifywise/content/api-docs/endpoints');
+const OUTPUT_DIR = path.join(__dirname, '../../website/aegis.ai/content/api-docs/endpoints');
 
 // Map from variable names to file names
 const endpointMapping = {

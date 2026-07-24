@@ -1,6 +1,6 @@
 # Testing Guidelines
 
-This guide documents the testing patterns, tools, and best practices used in VerifyWise.
+This guide documents the testing patterns, tools, and best practices used in Aegis.ai.
 
 ## Testing Stack
 

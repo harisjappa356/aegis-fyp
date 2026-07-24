@@ -26,8 +26,8 @@ import {
   LayoutGrid,
 } from "lucide-react";
 import { toggleSidebar } from "../../../application/redux/ui/uiSlice";
-import { VerifyWiseContext } from "../../../application/contexts/VerifyWise.context";
-import VerifyWiseLogo from "../../assets/imgs/aegis-logo.svg";
+import { AegisContext } from "../../../application/contexts/Aegis.context";
+import AegisLogo from "../../assets/imgs/aegis-logo.svg";
 import SidebarFooter from "./SidebarFooter";
 import FlyingHearts from "../FlyingHearts";
 
@@ -142,8 +142,8 @@ const SidebarShell: FC<SidebarShellProps> = ({
     return () => clearTimeout(timer);
   }, []);
 
-  // VerifyWiseContext available for future use
-  useContext(VerifyWiseContext);
+  // AegisContext available for future use
+  useContext(AegisContext);
 
   const collapsed = useSelector((state: any) => state.ui?.sidebar?.collapsed);
 
@@ -631,7 +631,7 @@ const SidebarShell: FC<SidebarShellProps> = ({
                   style={{ display: "flex", alignItems: "center" }}
                 >
                   <img
-                    src={VerifyWiseLogo}
+                    src={AegisLogo}
                     alt="Aegis.AI"
                     height={20}
                     style={{ position: "relative", zIndex: 1, display: "block" }}

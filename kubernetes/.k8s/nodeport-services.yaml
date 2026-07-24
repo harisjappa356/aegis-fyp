@@ -3,13 +3,13 @@ kind: Service
 metadata:
   name: backend-nodeport
   labels:
-    app: verifywise
+    app: aegis
     component: backend
     service-type: nodeport
 spec:
   type: NodePort
   selector:
-    app: verifywise
+    app: aegis
     component: backend
   ports:
     - name: http
@@ -23,13 +23,13 @@ kind: Service
 metadata:
   name: frontend-nodeport
   labels:
-    app: verifywise
+    app: aegis
     component: frontend
     service-type: nodeport
 spec:
   type: NodePort
   selector:
-    app: verifywise
+    app: aegis
     component: frontend
   ports:
     - name: http
@@ -43,13 +43,13 @@ kind: Service
 metadata:
   name: eval-server-nodeport
   labels:
-    app: verifywise
+    app: aegis
     component: eval-server
     service-type: nodeport
 spec:
   type: NodePort
   selector:
-    app: verifywise
+    app: aegis
     component: eval-server
   ports:
     - name: http

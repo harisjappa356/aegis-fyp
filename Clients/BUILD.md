@@ -6,16 +6,16 @@ This Dockerfile requires the **parent directory** as the build context because i
 
 ## Build Command
 
-**From the project root directory (`verifywise/`):**
+**From the project root directory (`aegis.ai/`):**
 
 ```bash
-docker build -f Clients/Dockerfile -t verifywise-frontend .
+docker build -f Clients/Dockerfile -t aegis.ai-frontend .
 ```
 
 **DO NOT run from the Clients directory:**
 ```bash
 # ❌ WRONG - This will fail
-cd Clients && docker build -t verifywise-frontend .
+cd Clients && docker build -t aegis.ai-frontend .
 ```
 
 ## What the Dockerfile Does
@@ -40,7 +40,7 @@ docker build \
   -f Clients/Dockerfile \
   --build-arg VITE_SLACK_CLIENT_ID=your_slack_id \
   --build-arg VITE_APP_VERSION=1.0.0 \
-  -t verifywise-frontend \
+  -t aegis.ai-frontend \
   .
 ```
 
@@ -53,6 +53,6 @@ This means the build context is incorrect. Make sure you're running the build co
 ### Error: "COPY failed: file not found"
 
 Verify that:
-1. You're in the project root directory (`verifywise/`)
+1. You're in the project root directory (`aegis.ai/`)
 2. The `shared/` directory exists at the same level as `Clients/`
 3. The `Clients/` directory contains all necessary files

@@ -21,7 +21,7 @@ interface SidebarWrapperProps {
   onOpenInNewTab?: () => void;
 }
 
-const STORAGE_KEY = 'verifywise-sidebar-state';
+const STORAGE_KEY = 'aegis.ai-sidebar-state';
 
 const SidebarWrapper: React.FC<SidebarWrapperProps> = ({
   isOpen,

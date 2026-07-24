@@ -1,6 +1,6 @@
-# VerifyWise Technical Documentation
+# Aegis.ai Technical Documentation
 
-Welcome to the VerifyWise technical documentation. This guide helps developers understand the system architecture, codebase structure, and how to contribute effectively.
+Welcome to the Aegis.ai technical documentation. This guide helps developers understand the system architecture, codebase structure, and how to contribute effectively.
 
 ## Quick Start
 
@@ -122,7 +122,7 @@ Coding conventions and architectural patterns.
 ## Repository Structure
 
 ```
-verifywise/
+aegis.ai/
 ├── Clients/                 # React frontend application
 │   └── src/
 │       ├── application/     # Business logic, hooks, services

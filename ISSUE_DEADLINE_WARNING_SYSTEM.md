@@ -84,7 +84,7 @@ As a compliance manager, I want to see warnings about upcoming deadlines when I 
 4. **localStorage Schema**
    ```json
    {
-     "key": "verifywise_deadline_snooze_{userId}_{entity}",
+     "key": "aegis.ai_deadline_snooze_{userId}_{entity}",
      "value": {
        "snoozedUntil": "2024-12-03T10:00:00Z"
      }

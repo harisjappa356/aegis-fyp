@@ -117,7 +117,7 @@ export function getAvailableSections(
 /**
  * LocalStorage key for saving section preferences
  */
-export const SECTION_PREFERENCES_KEY = "verifywise_report_sections";
+export const SECTION_PREFERENCES_KEY = "aegis.ai_report_sections";
 
 /**
  * Get default section selection (all sections enabled)

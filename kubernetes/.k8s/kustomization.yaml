@@ -31,33 +31,33 @@ resources:
 
 # Common labels applied to all resources
 commonLabels:
-  app: verifywise
+  app: aegis
   managed-by: kustomize
 
 # Common annotations
 commonAnnotations:
-  description: "VerifyWise AI Risk & Compliance Platform"
+  description: "Aegis.ai AI Risk & Compliance Platform"
 
 # Images (can be used to override image tags)
 images:
-  - name: ghcr.io/bluewave-labs/verifywise-backend
+  - name: ghcr.io/bluewave-labs/aegis-backend
     newTag: latest
-  - name: ghcr.io/bluewave-labs/verifywise-frontend
+  - name: ghcr.io/bluewave-labs/aegis-frontend
     newTag: latest
-  - name: ghcr.io/bluewave-labs/verifywise-eval-server
+  - name: ghcr.io/bluewave-labs/aegis.ai-eval-server
     newTag: latest
 
 # ConfigMap generator (optional - alternative to using configmap-generated.yaml)
 # Uncomment to generate ConfigMap from .env file directly
 # configMapGenerator:
-#   - name: verifywise-config
+#   - name: aegis-config
 #     envs:
 #       - .env.dev
 
 # Secret generator (optional - alternative to using secrets-generated.yaml)
 # Uncomment to generate Secret from .env file directly
 # secretGenerator:
-#   - name: verifywise-secrets
+#   - name: aegis.ai-secrets
 #     envs:
 #       - .env.dev
 

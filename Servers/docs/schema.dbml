@@ -1,8 +1,8 @@
-// VerifyWise Database Schema
+// Aegis.ai Database Schema
 // Generated on 2025-11-29
 // Source: Sequelize-typescript models
 
-Project VerifyWise {
+Project Aegis.ai {
   database_type: 'PostgreSQL'
   Note: 'AI Governance and Compliance Platform'
 }

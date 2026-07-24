@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: verifywise
+  name: aegis.ai
 spec:
   template:
     spec:
@@ -10,7 +10,7 @@ spec:
           configMap:
             name: frontend-nginx-config
       containers:
-        - name: verifywise-frontend
+        - name: aegis-frontend
           volumeMounts:
             - name: nginx-config
               mountPath: /etc/nginx/conf.d

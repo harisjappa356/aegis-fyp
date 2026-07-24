@@ -1,6 +1,6 @@
 # Backend Patterns
 
-This guide documents the architectural patterns, conventions, and best practices used in the VerifyWise backend (Servers).
+This guide documents the architectural patterns, conventions, and best practices used in the Aegis.ai backend (Servers).
 
 ## Project Structure
 

@@ -15,7 +15,7 @@ import {
   Layers,
   AlertCircle,
 } from "lucide-react";
-import { VerifyWiseContext } from "../../../application/contexts/VerifyWise.context";
+import { AegisContext } from "../../../application/contexts/Aegis.context";
 import useMultipleOnScreen from "../../../application/hooks/useMultipleOnScreen";
 import { getAllTasks } from "../../../application/repository/task.repository";
 import { TaskStatus } from "../../../domain/enums/task.enum";
@@ -40,7 +40,7 @@ const Sidebar: React.FC<SidebarProps> = ({
   const navigate = useNavigate();
   const location = useLocation();
   const { open: openUserGuide } = useUserGuideSidebarContext();
-  const { changeComponentVisibility } = useContext(VerifyWiseContext);
+  const { changeComponentVisibility } = useContext(AegisContext);
 
   const { refs: _refs, allVisible } = useMultipleOnScreen<HTMLElement>({
     countToTrigger: 1,

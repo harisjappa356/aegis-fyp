@@ -16,7 +16,7 @@ import CustomizableButton from "../../components/Button/CustomizableButton";
 import PageBreadcrumbs from "../../components/Breadcrumbs/PageBreadcrumbs";
 import PageHeader from "../../components/Layout/PageHeader";
 import HelperIcon from "../../components/HelperIcon";
-import { VerifyWiseContext } from "../../../application/contexts/VerifyWise.context";
+import { AegisContext } from "../../../application/contexts/Aegis.context";
 import { ITask, TaskSummary } from "../../../domain/interfaces/i.task";
 import {
   getAllTasks,
@@ -85,7 +85,7 @@ const Tasks: React.FC = () => {
   // Flash indicator state for updated rows
   const [flashRowId, setFlashRowId] = useState<number | null>(null);
 
-  const { userRoleName } = useContext(VerifyWiseContext);
+  const { userRoleName } = useContext(AegisContext);
   const { users } = useUsers();
 
   // Track if we've already processed the URL param to avoid duplicate fetches

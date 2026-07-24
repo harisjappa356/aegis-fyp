@@ -418,4 +418,4 @@ npx tsx lib/ai-detection/test-patterns.ts
 
 ## License
 
-Part of the VerifyWise platform. See main repository for license details.
+Part of the Aegis.ai platform. See main repository for license details.

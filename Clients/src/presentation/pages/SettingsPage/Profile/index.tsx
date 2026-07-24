@@ -39,7 +39,7 @@ import {
 import { useAuth } from "../../../../application/hooks/useAuth";
 import { useProfilePhotoFetch } from "../../../../application/hooks/useProfilePhotoFetch";
 import Avatar from "../../../components/Avatar/VWAvatar";
-import { VerifyWiseContext } from "../../../../application/contexts/VerifyWise.context";
+import { AegisContext } from "../../../../application/contexts/Aegis.context";
 
 /**
  * ProfileForm component for managing user profile information.
@@ -81,7 +81,7 @@ const ProfileForm: React.FC = () => {
   const theme = useTheme();
   const initialStateRef = useRef({ firstname: "", lastname: "", email: "" });
 
-  const { refreshUsers } = useContext(VerifyWiseContext);
+  const { refreshUsers } = useContext(AegisContext);
 
   const isModified =
     firstname !== initialStateRef.current.firstname ||
@@ -424,7 +424,7 @@ const ProfileForm: React.FC = () => {
     }
   }, [selectedImagePreview]);
 
-  const { setPhotoRefreshFlag } = useContext(VerifyWiseContext);
+  const { setPhotoRefreshFlag } = useContext(AegisContext);
 
   // Handle Image file selection and upload
   const handleImageChange = useCallback(

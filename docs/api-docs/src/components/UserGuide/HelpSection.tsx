@@ -42,7 +42,7 @@ const HelpSection: React.FC = () => {
       <div style={{ display: 'flex', flexDirection: 'column', gap: spacing.md }}>
         {/* Contact support */}
         <a
-          href="mailto:support@verifywise.ai"
+          href="mailto:support@aegis.ai.ai"
           className="help-card"
           style={{
             display: 'flex',
@@ -100,7 +100,7 @@ const HelpSection: React.FC = () => {
 
         {/* Community */}
         <a
-          href="https://github.com/verifywise/verifywise/discussions"
+          href="https://github.com/aegis.ai/aegis.ai/discussions"
           target="_blank"
           rel="noopener noreferrer"
           className="help-card"

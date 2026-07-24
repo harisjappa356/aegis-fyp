@@ -15,6 +15,6 @@ generatorOptions:
     type: generated
 
 secretGenerator:
-  - name: verifywise-secret
+  - name: aegis.ai-secret
     envs:
       - secrets.env

@@ -1,6 +1,6 @@
-# VerifyWise Kubernetes Deployment
+# Aegis.ai Kubernetes Deployment
 
-This directory contains Kubernetes manifests for deploying the VerifyWise application using Kustomize.
+This directory contains Kubernetes manifests for deploying the Aegis.ai application using Kustomize.
 
 ## Architecture
 
@@ -17,7 +17,7 @@ The application consists of the following components:
 - Kubernetes cluster (Minikube for local, or cloud provider for production)
 - kubectl CLI tool
 - Kustomize (built into kubectl v1.14+)
-- Docker images available at `ghcr.io/Aegis-AI/verifywise-*`
+- Docker images available at `ghcr.io/Aegis-AI/aegis-*`
 
 ### For Local Development
 - [Minikube](https://minikube.sigs.k8s.io/docs/start/) installed
@@ -87,14 +87,14 @@ kubectl apply -k dev/
 kubectl get pods -w
 ```
 
-Wait until all containers in the `verifywise` pod show `Running` status.
+Wait until all containers in the `aegis.ai` pod show `Running` status.
 
 #### 4. Access the Application
 
 Use Minikube's service command to expose and access the application:
 
 ```bash
-minikube service verifywise-svc
+minikube service aegis-svc
 ```
 
 This will:
@@ -105,7 +105,7 @@ This will:
 **Alternative**: Get the URL without opening browser:
 
 ```bash
-minikube service verifywise-svc --url
+minikube service aegis-svc --url
 ```
 
 #### 5. Access Different Services
@@ -114,7 +114,7 @@ The main service exposes port 80 for the frontend. To access the API directly:
 
 ```bash
 # Port forward to backend
-kubectl port-forward svc/verifywise-svc 3000:3000
+kubectl port-forward svc/aegis-svc 3000:3000
 # Access at http://localhost:3000
 ```
 
@@ -122,12 +122,12 @@ kubectl port-forward svc/verifywise-svc 3000:3000
 
 ```bash
 # View all containers
-kubectl logs -l app=verifywise --all-containers=true
+kubectl logs -l app=aegis --all-containers=true
 
 # View specific container
-kubectl logs -l app=verifywise -c verifywise-backend
-kubectl logs -l app=verifywise -c verifywise-frontend
-kubectl logs -l app=verifywise -c verifywise-postgres-temp
+kubectl logs -l app=aegis -c aegis-backend
+kubectl logs -l app=aegis -c aegis-frontend
+kubectl logs -l app=aegis -c aegis-postgres-temp
 ```
 
 #### 7. Stop and Cleanup
@@ -158,12 +158,12 @@ minikube addons enable ingress
 
 #### 2. Configure Domain
 
-The default configuration uses `verifywise.local` as the hostname. Update `dev/ingress.yaml` for your domain:
+The default configuration uses `aegis.local` as the hostname. Update `dev/ingress.yaml` for your domain:
 
 ```yaml
 spec:
   rules:
-    - host: verifywise.yourdomain.com  # Change this
+    - host: aegis.ai.yourdomain.com  # Change this
 ```
 
 #### 3. Update ConfigMap URLs
@@ -172,9 +172,9 @@ Update `dev/configmap.yaml` with your production domain:
 
 ```yaml
 data:
-  BACKEND_URL: "https://verifywise.yourdomain.com/api"
-  FRONTEND_URL: "https://verifywise.yourdomain.com"
-  HOST: "verifywise.yourdomain.com"
+  BACKEND_URL: "https://aegis.ai.yourdomain.com/api"
+  FRONTEND_URL: "https://aegis.ai.yourdomain.com"
+  HOST: "aegis.ai.yourdomain.com"
 ```
 
 #### 4. Deploy the Application
@@ -189,11 +189,11 @@ Point your domain to the Ingress IP address:
 
 ```bash
 # Get Ingress IP
-kubectl get ingress verifywise-config-rule
+kubectl get ingress aegis-config-rule
 
 # Example output:
 # NAME                      CLASS    HOSTS              ADDRESS          PORTS
-# verifywise-config-rule    <none>   verifywise.local   192.168.49.2    80
+# aegis-config-rule    <none>   aegis.local   192.168.49.2    80
 ```
 
 For production: Create an A record pointing to the ADDRESS
@@ -204,14 +204,14 @@ For local testing with Minikube: Add to `/etc/hosts`:
 minikube ip
 
 # Add to /etc/hosts
-echo "$(minikube ip) verifywise.local" | sudo tee -a /etc/hosts
+echo "$(minikube ip) aegis.local" | sudo tee -a /etc/hosts
 ```
 
 #### 6. Access the Application
 
 Visit your configured domain:
-- Frontend: `http://verifywise.local` or `https://verifywise.yourdomain.com`
-- API: `http://verifywise.local/api` or `https://verifywise.yourdomain.com/api`
+- Frontend: `http://aegis.local` or `https://aegis.ai.yourdomain.com`
+- API: `http://aegis.local/api` or `https://aegis.ai.yourdomain.com/api`
 
 #### 7. Enable HTTPS (Production)
 
@@ -231,10 +231,10 @@ Add TLS configuration:
 spec:
   tls:
     - hosts:
-        - verifywise.yourdomain.com
-      secretName: verifywise-tls
+        - aegis.ai.yourdomain.com
+      secretName: aegis-tls
   rules:
-    - host: verifywise.yourdomain.com
+    - host: aegis.ai.yourdomain.com
 ```
 
 Install [cert-manager](https://cert-manager.io/) for automatic SSL certificate management.
@@ -243,13 +243,13 @@ Install [cert-manager](https://cert-manager.io/) for automatic SSL certificate m
 
 ```bash
 # Check all resources
-kubectl get all -l app=verifywise
+kubectl get all -l app=aegis
 
 # Check Ingress status
-kubectl describe ingress verifywise-config-rule
+kubectl describe ingress aegis-config-rule
 
 # View logs
-kubectl logs -l app=verifywise --all-containers=true -f
+kubectl logs -l app=aegis --all-containers=true -f
 ```
 
 ## Resource Management
@@ -293,20 +293,20 @@ kubectl get pods -o jsonpath='{.items[*].spec.containers[*].image}' | tr ' ' '\n
 
 ```bash
 # Check PostgreSQL logs
-kubectl logs -l app=verifywise -c verifywise-postgres-temp
+kubectl logs -l app=aegis -c aegis-postgres-temp
 
 # Verify database is ready
-kubectl exec -it <pod-name> -c verifywise-backend -- nc -zv localhost 5432
+kubectl exec -it <pod-name> -c aegis-backend -- nc -zv localhost 5432
 ```
 
 ### Service Not Accessible (Minikube)
 
 ```bash
 # Check service
-kubectl get svc verifywise-svc
+kubectl get svc aegis-svc
 
 # Try direct port-forward
-kubectl port-forward svc/verifywise-svc 8080:80
+kubectl port-forward svc/aegis-svc 8080:80
 
 # Check Minikube service list
 minikube service list
@@ -319,7 +319,7 @@ minikube service list
 kubectl get pods -n ingress-nginx
 
 # Verify Ingress resource
-kubectl describe ingress verifywise-config-rule
+kubectl describe ingress aegis-config-rule
 
 # Check Ingress controller logs
 kubectl logs -n ingress-nginx -l app.kubernetes.io/name=ingress-nginx
@@ -329,20 +329,20 @@ kubectl logs -n ingress-nginx -l app.kubernetes.io/name=ingress-nginx
 
 ```bash
 # Update deployment with new image versions
-kubectl rollout restart deployment/verifywise
+kubectl rollout restart deployment/aegis.ai
 
 # Check rollout status
-kubectl rollout status deployment/verifywise
+kubectl rollout status deployment/aegis.ai
 
 # Rollback if needed
-kubectl rollout undo deployment/verifywise
+kubectl rollout undo deployment/aegis.ai
 ```
 
 ## Scaling
 
 ```bash
 # Scale replicas (note: StatefulSet might be needed for multi-replica with shared DB)
-kubectl scale deployment verifywise --replicas=3
+kubectl scale deployment aegis.ai --replicas=3
 
 # Current setup uses single pod with sidecar containers
 # For true horizontal scaling, separate the services
@@ -352,9 +352,9 @@ kubectl scale deployment verifywise --replicas=3
 
 1. Make changes to manifests
 2. Apply updates: `kubectl apply -k dev/`
-3. Watch rollout: `kubectl rollout status deployment/verifywise`
+3. Watch rollout: `kubectl rollout status deployment/aegis.ai`
 4. Test changes
-5. Check logs: `kubectl logs -l app=verifywise -c <container-name> -f`
+5. Check logs: `kubectl logs -l app=aegis -c <container-name> -f`
 
 ## Production Checklist
 

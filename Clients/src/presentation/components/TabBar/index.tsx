@@ -41,7 +41,7 @@ const TAB_GAP = "34px";
 const DEFAULT_INDICATOR_COLOR = "#13715B";
 
 /**
- * Standardized TabBar component for VerifyWise.
+ * Standardized TabBar component for Aegis.ai.
  *
  * Provides consistent styling and behavior across all tabbed interfaces.
  * Automatically handles icons, counts, loading states, and disabled states.

@@ -24,7 +24,7 @@ import { ChevronsUpDown, ChevronUp, ChevronDown } from "lucide-react";
 import { IProjectTableViewProps } from "../../../domain/interfaces/i.project";
 import { Project } from "../../../domain/types/Project";
 import { deleteProject } from "../../../application/repository/project.repository";
-import { VerifyWiseContext } from "../../../application/contexts/VerifyWise.context";
+import { AegisContext } from "../../../application/contexts/Aegis.context";
 import Alert from "../Alert";
 import allowedRoles from "../../../application/constants/permissions";
 import { useAuth } from "../../../application/hooks/useAuth";
@@ -133,7 +133,7 @@ const SortableTableHeader: React.FC<{
 const ProjectTableView: React.FC<IProjectTableViewProps> = ({ projects, hidePagination = false, onProjectDeleted }) => {
   const theme = useTheme();
   const navigate = useNavigateSearch();
-  const { setProjects } = useContext(VerifyWiseContext);
+  const { setProjects } = useContext(AegisContext);
   const { userRoleName } = useAuth();
   const [page, setPage] = useState(0);
   const [alert, setAlert] = useState<{

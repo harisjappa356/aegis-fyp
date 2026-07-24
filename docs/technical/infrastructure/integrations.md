@@ -2,7 +2,7 @@
 
 ## Overview
 
-VerifyWise integrates with external services for AI model management, notifications, repository access, and LLM capabilities. All integrations use encrypted credential storage and follow multi-tenant isolation patterns.
+Aegis.ai integrates with external services for AI model management, notifications, repository access, and LLM capabilities. All integrations use encrypted credential storage and follow multi-tenant isolation patterns.
 
 ## Integrations Summary
 
@@ -19,7 +19,7 @@ VerifyWise integrates with external services for AI model management, notificati
 
 ### Purpose
 
-Syncs AI/ML model metadata from MLflow tracking servers to VerifyWise model inventory.
+Syncs AI/ML model metadata from MLflow tracking servers to Aegis.ai model inventory.
 
 ### Database Schema
 
@@ -217,7 +217,7 @@ slack_webhooks (public schema)
 
 ```json
 {
-  "text": "Notification from VerifyWise",
+  "text": "Notification from Aegis.ai",
   "blocks": [
     { "type": "header", "text": { "type": "plain_text", "text": "Title" } },
     { "type": "section", "text": { "type": "mrkdwn", "text": "Message body" } },
@@ -333,7 +333,7 @@ const { data, success } = decrypt({ iv, value });
 SLACK_API_URL=https://slack.com/api/oauth.v2.access
 SLACK_CLIENT_ID=your-client-id
 SLACK_CLIENT_SECRET=your-client-secret
-FRONTEND_URL=https://app.verifywise.ai
+FRONTEND_URL=https://app.aegis.ai.ai
 
 # Encryption
 ENCRYPTION_KEY=32-byte-key-for-aes-256

@@ -18,7 +18,7 @@ import {
 const Field = lazy(() => import("../../../Inputs/Field"));
 import { fieldStyle } from "./styles";
 const Select = lazy(() => import("../../../../components/Inputs/Select"));
-import { VerifyWiseContext } from "../../../../../application/contexts/VerifyWise.context";
+import { AegisContext } from "../../../../../application/contexts/Aegis.context";
 import {
   Project,
   FrameworkValues,
@@ -58,7 +58,7 @@ const GenerateReportFrom: React.FC<ReportProps> = ({
   onValuesChange,
   onValidateRef,
 }) => {
-  const { dashboardValues } = useContext(VerifyWiseContext);
+  const { dashboardValues } = useContext(AegisContext);
   const [errors, setErrors] = useState<FormErrors>({});
   const theme = useTheme();
 

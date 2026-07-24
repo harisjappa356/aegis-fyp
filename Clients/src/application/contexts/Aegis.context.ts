@@ -5,7 +5,7 @@ import { ComponentVisible } from "../../application/interfaces/ComponentVisible"
 import { User } from "../../domain/types/User";
 import { UIValues, AuthValues, InputValues, DashboardState } from "../interfaces/appStates";
 
-interface VerifyWiseContextProps {
+interface AegisContextProps {
   uiValues: UIValues;
   setUiValues: (values: UIValues | React.SetStateAction<UIValues>) => void;
   authValues: AuthValues;
@@ -36,7 +36,7 @@ interface VerifyWiseContextProps {
   setPhotoRefreshFlag: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const VerifyWiseContext = createContext<VerifyWiseContextProps>({
+const AegisContext = createContext<AegisContextProps>({
   uiValues: {},
   setUiValues: () => {},
   authValues: {},
@@ -71,4 +71,4 @@ const VerifyWiseContext = createContext<VerifyWiseContextProps>({
   setPhotoRefreshFlag: () => {},
 });
 
-export { VerifyWiseContext };
+export { AegisContext };

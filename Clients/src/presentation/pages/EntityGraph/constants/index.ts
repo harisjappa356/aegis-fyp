@@ -1,6 +1,6 @@
 import type { EntityType } from '../EntityNode';
 
-// Entity type colors following VerifyWise design system
+// Entity type colors following Aegis.ai design system
 export const entityColors: Record<EntityType, string> = {
   useCase: '#13715B',     // Primary green
   model: '#2196F3',       // Blue

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: verifywise
+  name: aegis.ai
 spec:
   replicas: 1
   template:
@@ -10,9 +10,9 @@ spec:
       volumes:
         - name: postgres-volume
           persistentVolumeClaim:
-            claimName: verifywise-postgres-volume
+            claimName: aegis-postgres-volume
       containers:
-        - name: verifywise-frontend
+        - name: aegis-frontend
           resources:
             requests:
               cpu: "100m"
@@ -20,7 +20,7 @@ spec:
             limits:
               cpu: "200m"
               memory: "768Mi"
-        - name: verifywise-backend
+        - name: aegis-backend
           resources:
             requests:
               cpu: "100m"
@@ -28,7 +28,7 @@ spec:
             limits:
               cpu: "200m"
               memory: "768Mi"
-        - name: verifywise-worker
+        - name: aegis.ai-worker
           resources:
             requests:
               cpu: "100m"
@@ -36,7 +36,7 @@ spec:
             limits:
               cpu: "200m"
               memory: "768Mi"
-        - name: verifywise-eval-server
+        - name: aegis.ai-eval-server
           resources:
             requests:
               cpu: "100m"
@@ -44,7 +44,7 @@ spec:
             limits:
               cpu: "200m"
               memory: "768Mi"
-        - name: verifywise-redis
+        - name: aegis.ai-redis
           resources:
             requests:
               cpu: "100m"
@@ -52,7 +52,7 @@ spec:
             limits:
               cpu: "200m"
               memory: "768Mi"
-        - name: verifywise-postgres-temp
+        - name: aegis-postgres-temp
           securityContext:
             runAsUser: 999
           resources:

@@ -32,7 +32,7 @@ import {
   Telescope,
 } from "lucide-react";
 import Avatar from "../Avatar/VWAvatar";
-import { VerifyWiseContext } from "../../../application/contexts/VerifyWise.context";
+import { AegisContext } from "../../../application/contexts/Aegis.context";
 import { ROLES } from "../../../application/constants/roles";
 import useLogout from "../../../application/hooks/useLogout";
 import { User } from "../../../domain/types/User";
@@ -123,7 +123,7 @@ const SidebarFooter: FC<SidebarFooterProps> = ({
   const navigate = useNavigate();
   const location = useLocation();
   const logout = useLogout();
-  const { userId, users, photoRefreshFlag } = useContext(VerifyWiseContext);
+  const { userId, users, photoRefreshFlag } = useContext(AegisContext);
 
   const [managementAnchorEl, setManagementAnchorEl] = useState<null | HTMLElement>(null);
   const [slideoverOpen, setSlideoverOpen] = useState(false);

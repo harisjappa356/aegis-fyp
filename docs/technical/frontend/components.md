@@ -2,7 +2,7 @@
 
 ## Overview
 
-VerifyWise has 105+ reusable components following consistent patterns. Components are organized by type (inputs, modals, tables, cards) in `Clients/src/presentation/components/`. This document covers the most commonly used components and their patterns.
+Aegis.ai has 105+ reusable components following consistent patterns. Components are organized by type (inputs, modals, tables, cards) in `Clients/src/presentation/components/`. This document covers the most commonly used components and their patterns.
 
 ## Component Organization
 
@@ -523,7 +523,7 @@ User avatar with initials.
 
 ### VWAvatar
 
-VerifyWise avatar wrapper.
+Aegis.ai avatar wrapper.
 
 ```tsx
 // Auto-generates background color from name

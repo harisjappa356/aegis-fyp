@@ -2,7 +2,7 @@ import { useContext, useEffect, useState, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Stack, Typography } from "@mui/material";
 import { vwhomeBody, vwhomeHeading } from "./style";
-import { VerifyWiseContext } from "../../../../application/contexts/VerifyWise.context";
+import { AegisContext } from "../../../../application/contexts/Aegis.context";
 import { FrameworkTypeEnum } from "../../../components/Forms/ProjectForm/constants";
 import ProjectForm from "../../../components/Forms/ProjectForm";
 import PageTour from "../../../components/PageTour";
@@ -28,7 +28,7 @@ const Home = () => {
     changeComponentVisibility,
     refreshUsers,
     userRoleName,
-  } = useContext(VerifyWiseContext);
+  } = useContext(AegisContext);
   const [isProjectFormModalOpen, setIsProjectFormModalOpen] =
     useState<boolean>(false);
   const [refreshProjectsFlag, setRefreshProjectsFlag] =

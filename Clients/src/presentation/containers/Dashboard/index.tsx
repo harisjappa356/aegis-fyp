@@ -2,7 +2,7 @@ import { Stack, Typography, Box } from "@mui/material";
 import "./index.css";
 import { Outlet, useLocation } from "react-router";
 import { useContext, useEffect, FC, useState } from "react";
-import { VerifyWiseContext } from "../../../application/contexts/VerifyWise.context";
+import { AegisContext } from "../../../application/contexts/Aegis.context";
 import { EvalsSidebarProvider } from "../../../application/contexts/EvalsSidebar.context";
 import { AIDetectionSidebarProvider } from "../../../application/contexts/AIDetectionSidebar.context";
 import DemoAppBanner from "../../components/DemoBanner/DemoAppBanner";
@@ -28,7 +28,7 @@ interface DashboardProps {
 }
 
 const Dashboard: FC<DashboardProps> = ({ reloadTrigger }) => {
-  const { setDashboardValues, setProjects } = useContext(VerifyWiseContext);
+  const { setDashboardValues, setProjects } = useContext(AegisContext);
   const location = useLocation();
   const { activeModule, setActiveModule } = useActiveModule();
   const { userRoleName } = useAuth();

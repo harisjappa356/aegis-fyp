@@ -291,7 +291,7 @@ __pycache__, dist, build, target
 
 3. Git Clone
    ├── Shallow clone: --depth 1
-   └── Temp directory: /tmp/verifywise-scan-{timestamp}-{random}
+   └── Temp directory: /tmp/aegis.ai-scan-{timestamp}-{random}
 
 4. File Enumeration
    ├── Walk directory tree

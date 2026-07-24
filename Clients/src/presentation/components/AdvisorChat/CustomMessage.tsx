@@ -6,7 +6,7 @@ import Markdown from 'react-markdown';
 import { Bot } from 'lucide-react';
 import { ChartRenderer } from './ChartRenderer';
 import VWAvatar from '../Avatar/VWAvatar';
-import { VerifyWiseContext } from '../../../application/contexts/VerifyWise.context';
+import { AegisContext } from '../../../application/contexts/Aegis.context';
 import { useProfilePhotoFetch } from '../../../application/hooks/useProfilePhotoFetch';
 import { User } from '../../../domain/types/User';
 
@@ -117,7 +117,7 @@ const DEFAULT_USER: User = {
 
 export const CustomMessage: FC = () => {
   const theme = useTheme();
-  const { userId, users, photoRefreshFlag } = useContext(VerifyWiseContext);
+  const { userId, users, photoRefreshFlag } = useContext(AegisContext);
   const { fetchProfilePhotoAsBlobUrl } = useProfilePhotoFetch();
   const [avatarUrl, setAvatarUrl] = useState<string>("");
 

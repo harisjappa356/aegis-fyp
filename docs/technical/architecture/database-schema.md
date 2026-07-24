@@ -2,7 +2,7 @@
 
 ## Overview
 
-VerifyWise uses PostgreSQL with Sequelize ORM. The database implements a schema-per-tenant architecture with shared data in the `public` schema and tenant-specific data in isolated schemas. There are 60+ Sequelize models covering users, organizations, projects, vendors, risks, approvals, and compliance frameworks.
+Aegis.ai uses PostgreSQL with Sequelize ORM. The database implements a schema-per-tenant architecture with shared data in the `public` schema and tenant-specific data in isolated schemas. There are 60+ Sequelize models covering users, organizations, projects, vendors, risks, approvals, and compliance frameworks.
 
 ## Schema Architecture
 

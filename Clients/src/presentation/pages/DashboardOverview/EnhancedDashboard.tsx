@@ -380,7 +380,7 @@ const DashboardContent: React.FC = () => {
           cursor: ${state.editMode ? 'grabbing' : 'default'};
         }
 
-        /* VerifyWise green theme */
+        /* Aegis.ai green theme */
         .widget-card {
           transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
         }

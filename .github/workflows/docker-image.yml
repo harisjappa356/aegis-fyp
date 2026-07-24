@@ -49,8 +49,8 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/verifywise-frontend:${{ env.TAG }}
-            ghcr.io/${{ github.repository_owner }}/verifywise-frontend:latest
+            ghcr.io/${{ github.repository_owner }}/aegis-frontend:${{ env.TAG }}
+            ghcr.io/${{ github.repository_owner }}/aegis-frontend:latest
           build-args: |
             VITE_SLACK_CLIENT_ID=${{ secrets.SLACK_CLIENT_ID }}
             VITE_APP_VERSION=${{ env.TAG }}
@@ -62,8 +62,8 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/verifywise-backend:${{ env.TAG }}
-            ghcr.io/${{ github.repository_owner }}/verifywise-backend:latest
+            ghcr.io/${{ github.repository_owner }}/aegis-backend:${{ env.TAG }}
+            ghcr.io/${{ github.repository_owner }}/aegis-backend:latest
 
       - name: Clean up after Servers build
         run: |
@@ -86,5 +86,5 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/verifywise-eval-server:${{ env.TAG }}
-            ghcr.io/${{ github.repository_owner }}/verifywise-eval-server:latest
+            ghcr.io/${{ github.repository_owner }}/aegis.ai-eval-server:${{ env.TAG }}
+            ghcr.io/${{ github.repository_owner }}/aegis.ai-eval-server:latest

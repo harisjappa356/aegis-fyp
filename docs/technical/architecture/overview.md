@@ -2,7 +2,7 @@
 
 ## Introduction
 
-VerifyWise is a full-stack AI governance platform built with a modern JavaScript/TypeScript stack. The system follows a client-server architecture with a React frontend and Node.js backend, using PostgreSQL for data persistence and Redis for caching and job queues.
+Aegis.ai is a full-stack AI governance platform built with a modern JavaScript/TypeScript stack. The system follows a client-server architecture with a React frontend and Node.js backend, using PostgreSQL for data persistence and Redis for caching and job queues.
 
 ## High-Level Architecture
 
@@ -242,7 +242,7 @@ Clients/src/
 ### 5. State Management (Frontend)
 - **Redux**: Authentication, UI state, persisted preferences
 - **React Query**: Server state, API caching
-- **Context API**: Legacy global state (VerifyWiseContext)
+- **Context API**: Legacy global state (Aegis.aiContext)
 
 ## Security Architecture
 
@@ -276,8 +276,8 @@ NODE_ENV=development
 # Database
 DB_HOST=localhost
 DB_PORT=5432
-DB_NAME=verifywise
-DB_USER=verifywise
+DB_NAME=aegis.ai
+DB_USER=aegis.ai
 DB_PASSWORD=****
 
 # Redis

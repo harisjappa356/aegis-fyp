@@ -7,7 +7,7 @@ interface TipState {
 }
 
 const getStorageKey = (entityName: string, userId: number) =>
-  `verifywise_tips_${entityName}_${userId}`;
+  `aegis.ai_tips_${entityName}_${userId}`;
 
 const getDismissedTips = (storageKey: string): number[] => {
   const savedState = localStorage.getItem(storageKey);

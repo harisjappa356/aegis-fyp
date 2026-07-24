@@ -9,7 +9,7 @@ import ControlCategoryTile from "./ControlCategory";
 import PageTour from "../../../components/PageTour";
 import ComplianceSteps from "./ComplianceSteps";
 import useMultipleOnScreen from "../../../../application/hooks/useMultipleOnScreen";
-import { VerifyWiseContext } from "../../../../application/contexts/VerifyWise.context";
+import { AegisContext } from "../../../../application/contexts/Aegis.context";
 import { ComplianceData } from "../../../../domain/interfaces/i.compliance";
 import { Project } from "../../../../domain/types/Project";
 import { getComplianceProgress } from "../../../../application/repository/control_eu_act.repository";
@@ -37,7 +37,7 @@ const ComplianceTracker = ({
   const [error, setError] = useState<unknown>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const { componentsVisible, changeComponentVisibility } =
-    useContext(VerifyWiseContext);
+    useContext(AegisContext);
   const [runComplianceTour, setRunComplianceTour] = useState(false);
 
   const { refs, allVisible } = useMultipleOnScreen<HTMLDivElement>({

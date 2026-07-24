@@ -14,7 +14,7 @@ import {
   Box,
 } from "@mui/material";
 import TablePaginationActions from "../../TablePagination";
-import { VerifyWiseContext } from "../../../../application/contexts/VerifyWise.context";
+import { AegisContext } from "../../../../application/contexts/Aegis.context";
 import singleTheme from "../../../themes/v1SingleTheme";
 import { ChevronsUpDown, ChevronUp, ChevronDown } from "lucide-react";
 
@@ -53,7 +53,7 @@ const CustomizablePolicyTable = ({
   const [rowsPerPage, setRowsPerPage] = useState(() =>
     getPaginationRowCount("policyManager", DEFAULT_ROWS_PER_PAGE)
   );
-  const { setInputValues } = useContext(VerifyWiseContext);
+  const { setInputValues } = useContext(AegisContext);
 
   // Initialize sorting state from localStorage or default to no sorting
   const [sortConfig, setSortConfig] = useState<SortConfig>(() => {

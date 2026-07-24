@@ -272,8 +272,8 @@ const Login: React.FC = () => {
             alignItems: "center",
             height: "100%",
             margin: "auto",
-            mt: 40,
-            gap: theme.spacing(20),
+            mt: 10,
+            gap: theme.spacing(8),
           }}
         >
           <Typography
@@ -287,7 +287,7 @@ const Login: React.FC = () => {
           <Typography sx={{ fontSize: 16, fontWeight: "bold" }}>
             {loginText}
           </Typography>
-          <Stack sx={{ gap: theme.spacing(7.5) }}>
+          <Stack sx={{ gap: theme.spacing(6), width: "100%" }}>
             <Field
               label="Email"
               isRequired
@@ -328,7 +328,7 @@ const Login: React.FC = () => {
               />
               <Typography
                 sx={{
-                  color: singleTheme.buttons.primary.contained.backgroundColor,
+                  color: "#13715B",
                   fontSize: 13,
                   fontWeight: "bold",
                   cursor: "pointer",
@@ -350,33 +350,36 @@ const Login: React.FC = () => {
             >
               Sign in
             </Button>
-              {/* <Stack
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  gap: theme.spacing(1),
-                }}
+            <Stack
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: 1,
+                mt: 1.5,
+              }}
+            >
+              <Typography
+                sx={{ fontSize: 14, color: "text.secondary" }}
               >
-                <Typography
-                  sx={{ fontSize: 14, color: theme.palette.text.secondary }}
-                >
-                  Don't have an account yet?
-                </Typography>
-                <Typography
-                  sx={{
-                    color:
-                      singleTheme.buttons.primary.contained.backgroundColor,
-                    fontSize: 14,
-                    fontWeight: "bold",
-                    cursor: "pointer",
-                  }}
-                  onClick={() => navigate("/register")}
-                >
-                  Register here
-                </Typography>
-              </Stack> */}
+                Don't have an account yet?
+              </Typography>
+              <Typography
+                sx={{
+                  color: "#13715B",
+                  fontSize: 14,
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                  "&:hover": {
+                    textDecoration: "underline",
+                  },
+                }}
+                onClick={() => navigate("/register")}
+              >
+                Register here
+              </Typography>
+            </Stack>
           </Stack>
         </Stack>
       </form>

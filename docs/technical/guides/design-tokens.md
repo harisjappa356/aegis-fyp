@@ -1,6 +1,6 @@
 # Design Tokens & System Reference
 
-This guide documents the design tokens, theme configuration, and visual standards used throughout VerifyWise.
+This guide documents the design tokens, theme configuration, and visual standards used throughout Aegis.ai.
 
 ## Theme Configuration
 

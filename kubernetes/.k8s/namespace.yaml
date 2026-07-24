@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: verifywise
+  name: aegis.ai
   labels:
-    name: verifywise
-    app: verifywise
+    name: aegis.ai
+    app: aegis

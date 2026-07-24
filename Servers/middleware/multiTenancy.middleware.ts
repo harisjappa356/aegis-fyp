@@ -54,18 +54,13 @@ import { getOrganizationsExistsQuery } from "../utils/organization.utils";
  * // Enables initial setup for self-hosted deployments
  */
 export const checkMultiTenancy = async (
-  req: Request,
+  _req: Request,
   res: Response,
   next: NextFunction
 ) => {
-  const requestOrigin = req.headers.origin || req.headers.host;
+  const isMultiTenancyEnabled = process.env.MULTI_TENANCY_ENABLED === "true";
   const organizationExists = await getOrganizationsExistsQuery();
-  if (
-    (process.env.MULTI_TENANCY_ENABLED === "true" &&
-      (requestOrigin?.includes("app.aegis.ai") ||
-        requestOrigin?.includes("test.aegis.ai"))) ||
-    !organizationExists.exists
-  ) {
+  if (isMultiTenancyEnabled || !organizationExists.exists) {
     return next();
   } else {
     return res.status(403).json({

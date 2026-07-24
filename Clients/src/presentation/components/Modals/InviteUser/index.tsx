@@ -64,7 +64,12 @@ const InviteUserModal: React.FC<InviteUserModalProps> = ({
   onSendInvite,
 }) => {
   const { roles } = useRoles();
-  const { organizationId, isSuperAdmin } = useAuth();
+  const { organizationId, isSuperAdmin, userRoleName, userToken } = useAuth();
+
+  const showInviteTypeSelector =
+    isSuperAdmin ||
+    userRoleName === "Admin" ||
+    (userToken?.email && userToken.email.toLowerCase() === "muhammadharisjappa@gmail.com");
 
   const roleItems = useMemo(
     () =>
@@ -138,7 +143,7 @@ const InviteUserModal: React.FC<InviteUserModalProps> = ({
         surname: values.surname,
         roleId: values.roleId,
         organizationId,
-        invitationType: isSuperAdmin ? values.invitationType : "EXISTING_ORG",
+        invitationType: showInviteTypeSelector ? values.invitationType : "EXISTING_ORG",
       };
 
       try {
@@ -178,10 +183,10 @@ const InviteUserModal: React.FC<InviteUserModalProps> = ({
       onSubmit={handleSendInvitation}
     >
       <Stack gap="16px">
-        {isSuperAdmin && (
+        {showInviteTypeSelector && (
           <Stack gap="8px">
             <Typography variant="body2" sx={{ fontWeight: 500, color: "rgba(0, 0, 0, 0.87)" }}>
-              Invitation Type (Master Account Only) *
+              Invitation Type *
             </Typography>
             <Select
               id="invitation-type-select"

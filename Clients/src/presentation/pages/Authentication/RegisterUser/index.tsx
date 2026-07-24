@@ -139,35 +139,36 @@ const RegisterUser: React.FC = () => {
   };
 
   const checkValidInvitation = (expDate: any) => {
+    if (!expDate) return false;
     const todayDate = new Date();
     const currentTime = todayDate.getTime();
-
-    if (currentTime < expDate) {
-      setIsInvitationValid(true);
-    } else {
-      setIsInvitationValid(false);
-    }
-    return isInvitationValid;
+    return currentTime < expDate;
   };
 
   useEffect(() => {
-    if (userToken !== null) {
-      const userInfo = extractUserToken(userToken);
-      if (userInfo !== null) {
-        const isValidLink = checkValidInvitation(userInfo?.expire);
+    if (!userToken) {
+      setIsInvitationValid(false);
+      return;
+    }
 
-        if (isValidLink) {
-          const userData: FormValues = {
-            ...initialState,
-            name: userInfo.name ?? "",
-            surname: userInfo.surname ?? "",
-            email: userInfo.email ?? "",
-            roleId: Number(userInfo.roleId) ?? 1,
-            organizationId: Number(userInfo.organizationId),
-          };
-          setValues(userData);
-        }
+    const userInfo = extractUserToken(userToken);
+    if (userInfo) {
+      const isValidLink = checkValidInvitation(userInfo?.expire);
+      setIsInvitationValid(isValidLink);
+
+      if (isValidLink) {
+        const userData: FormValues = {
+          ...initialState,
+          name: userInfo.name ?? "",
+          surname: userInfo.surname ?? "",
+          email: userInfo.email ?? "",
+          roleId: Number(userInfo.roleId) ?? 1,
+          organizationId: Number(userInfo.organizationId),
+        };
+        setValues(userData);
       }
+    } else {
+      setIsInvitationValid(false);
     }
   }, [userToken]);
 
@@ -240,8 +241,7 @@ const RegisterUser: React.FC = () => {
                 color: "error.main",
               }}
             >
-              This invitation link is expired. You need to be invited again to
-              gain access to the dashboard
+              Registration is by invitation only. Please use the valid invitation link provided in your email.
             </Typography>
           )}
 

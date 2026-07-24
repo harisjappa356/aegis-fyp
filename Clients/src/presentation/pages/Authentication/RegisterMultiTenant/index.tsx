@@ -28,6 +28,9 @@ import {
 import { CreateMyOrganization } from "../../../../application/repository/organization.repository";
 import useUsers from "../../../../application/hooks/useUsers";
 
+import { useSearchParams } from "react-router-dom";
+import { extractUserToken } from "../../../../application/tools/extractToken";
+
 // Initial state for form values
 const initialState: FormValues = {
   name: "",
@@ -47,6 +50,13 @@ const RegisterMultiTenant: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { users } = useUsers();
+  const [searchParams] = useSearchParams();
+  const userToken = searchParams.get("token");
+  const [isInvitationValid, setIsInvitationValid] = useState<boolean>(true);
+  const [invitationMeta, setInvitationMeta] = useState<{
+    invitationType?: string;
+    accessExpiresAt?: string;
+  }>({});
 
   // State for form values
   const [values, setValues] = useState<FormValues>(initialState);
@@ -80,7 +90,29 @@ const RegisterMultiTenant: React.FC = () => {
   useEffect(() => {
     localStorage.clear();
     dispatch(setAuthToken(""));
-  }, []);
+
+    if (!userToken) {
+      setIsInvitationValid(false);
+      return;
+    }
+
+    const userInfo = extractUserToken(userToken);
+    if (userInfo && userInfo.expire && Date.now() < userInfo.expire) {
+      setIsInvitationValid(true);
+      setValues((prev) => ({
+        ...prev,
+        email: userInfo.email || "",
+        name: userInfo.name || "",
+        surname: userInfo.surname || "",
+      }));
+      setInvitationMeta({
+        invitationType: userInfo.invitationType,
+        accessExpiresAt: userInfo.accessExpiresAt,
+      });
+    } else {
+      setIsInvitationValid(false);
+    }
+  }, [userToken]);
 
   // Handle input field changes for user form
   const handleChange =
@@ -385,9 +417,22 @@ const RegisterMultiTenant: React.FC = () => {
               Aegis
               <span style={{ color: singleTheme.textColors.theme }}>.AI</span>
             </Typography>
-            <Typography sx={{ fontSize: 16, fontWeight: "bold" }}>
-              Create admin account
-            </Typography>
+            {isInvitationValid ? (
+              <Typography sx={{ fontSize: 16, fontWeight: "bold" }}>
+                Create Aegis.AI organization account
+              </Typography>
+            ) : (
+              <Typography
+                sx={{
+                  fontSize: 16,
+                  fontWeight: "semibold",
+                  color: "error.main",
+                  textAlign: "center",
+                }}
+              >
+                Registration is by invitation only. Please use the valid invitation link provided in your email.
+              </Typography>
+            )}
             <Typography
               sx={{
                 color: singleTheme.buttons.primary.contained.backgroundColor,

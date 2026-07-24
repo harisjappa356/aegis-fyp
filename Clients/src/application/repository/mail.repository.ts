@@ -12,6 +12,7 @@ interface InviteEmailData {
   surname: string;
   roleId: string;
   organizationId: string;
+  invitationType?: string;
 }
 
 interface ApiResponse<T = unknown> {

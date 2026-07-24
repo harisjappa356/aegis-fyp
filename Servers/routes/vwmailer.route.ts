@@ -29,7 +29,9 @@ const inviteLimiter = rateLimit({
   }
 });
 
-router.post("/invite", inviteLimiter, async (req, res) => {
+import authenticateJWT from "../middleware/auth.middleware";
+
+router.post("/invite", inviteLimiter, authenticateJWT, async (req, res) => {
   await invite(req, res, req.body);
 });
 

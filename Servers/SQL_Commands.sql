@@ -59,7 +59,11 @@ CREATE TABLE users (
   role INT REFERENCES roles(id),
   created_at DATE,
   last_login DATE,
-  is_demo BOOLEAN
+  is_demo BOOLEAN,
+  is_super_admin BOOLEAN DEFAULT FALSE,
+  invitation_type VARCHAR(50),
+  access_expires_at TIMESTAMP WITH TIME ZONE,
+  invited_by_user_id INT REFERENCES users(id)
 );
 
 CREATE TABLE projects (

@@ -145,9 +145,21 @@ const authenticateJWT = async (
     }
 
     // Validate role hasn't changed since token was issued
-    const user = await getUserByIdQuery(decoded.id)
+    const user = await getUserByIdQuery(decoded.id);
+    if (!user) {
+      return res.status(401).json({ message: 'User not found' });
+    }
+
     if (decoded.roleName !== roleMap.get(user.role_id)) {
       return res.status(403).json({ message: 'Not allowed to access' });
+    }
+
+    // Enforce 3-Month Trial Access Expiration (Cascades to all users in trial org)
+    if (user.access_expires_at && new Date(user.access_expires_at) < new Date()) {
+      return res.status(403).json({
+        message: "Your 3-month hands-on access has expired. Access for this organization is revoked.",
+        code: "TRIAL_EXPIRED"
+      });
     }
 
     // Verify tenant hash format (defense-in-depth against SQL injection)

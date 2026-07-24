@@ -213,15 +213,25 @@ export const createNewUserQuery = async (
   transaction: Transaction,
   is_demo: boolean = false
 ): Promise<UserModel> => {
-  const { name, surname, email, password_hash, role_id, organization_id } =
-    user;
+  const {
+    name,
+    surname,
+    email,
+    password_hash,
+    role_id,
+    organization_id,
+    is_super_admin = false,
+    invitation_type = null,
+    access_expires_at = null,
+    invited_by_user_id = null,
+  } = user as any;
   const created_at = new Date();
   const last_login = new Date();
 
   try {
     const result = await sequelize.query(
-      `INSERT INTO users (name, surname, email, password_hash, role_id, created_at, last_login, is_demo, organization_id)
-        VALUES (:name, :surname, :email, :password_hash, :role_id, :created_at, :last_login, :is_demo, :organization_id) RETURNING *`,
+      `INSERT INTO users (name, surname, email, password_hash, role_id, created_at, last_login, is_demo, organization_id, is_super_admin, invitation_type, access_expires_at, invited_by_user_id)
+        VALUES (:name, :surname, :email, :password_hash, :role_id, :created_at, :last_login, :is_demo, :organization_id, :is_super_admin, :invitation_type, :access_expires_at, :invited_by_user_id) RETURNING *`,
       {
         replacements: {
           name,
@@ -233,10 +243,13 @@ export const createNewUserQuery = async (
           last_login,
           is_demo,
           organization_id,
+          is_super_admin,
+          invitation_type,
+          access_expires_at,
+          invited_by_user_id,
         },
         mapToModel: true,
         model: UserModel,
-        // type: QueryTypes.INSERT
         transaction,
       }
     );

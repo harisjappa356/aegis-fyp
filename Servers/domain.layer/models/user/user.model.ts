@@ -121,6 +121,32 @@ export class UserModel extends Model<UserModel> {
   })
   profile_photo_id?: number;
 
+  @Column({
+    type: DataType.BOOLEAN,
+    allowNull: false,
+    defaultValue: false,
+  })
+  is_super_admin?: boolean;
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
+  invitation_type?: string;
+
+  @Column({
+    type: DataType.DATE,
+    allowNull: true,
+  })
+  access_expires_at?: Date;
+
+  @ForeignKey(() => UserModel)
+  @Column({
+    type: DataType.INTEGER,
+    allowNull: true,
+  })
+  invited_by_user_id?: number;
+
   /**
    * Creates a new user with validation and password hashing
    *

@@ -39,6 +39,7 @@ interface FormValues {
   surname: string;
   email: string;
   roleId: string;
+  invitationType: string;
 }
 
 interface FormErrors {
@@ -46,6 +47,7 @@ interface FormErrors {
   surname?: string;
   email?: string;
   roleId?: string;
+  invitationType?: string;
 }
 
 const initialState: FormValues = {
@@ -53,6 +55,7 @@ const initialState: FormValues = {
   surname: "",
   email: "",
   roleId: "1",
+  invitationType: "EXISTING_ORG",
 };
 
 const InviteUserModal: React.FC<InviteUserModalProps> = ({
@@ -62,6 +65,22 @@ const InviteUserModal: React.FC<InviteUserModalProps> = ({
 }) => {
   const { roles } = useRoles();
   const { organizationId } = useAuth();
+  const [isSuperAdmin, setIsSuperAdmin] = useState(false);
+
+  useEffect(() => {
+    // Check if user is super admin from local storage or token
+    const token = localStorage.getItem("token");
+    if (token) {
+      try {
+        const payload = JSON.parse(atob(token.split(".")[1]));
+        if (payload.isSuperAdmin || payload.is_super_admin) {
+          setIsSuperAdmin(true);
+        }
+      } catch (e) {
+        setIsSuperAdmin(false);
+      }
+    }
+  }, []);
 
   const roleItems = useMemo(
     () =>
@@ -71,6 +90,12 @@ const InviteUserModal: React.FC<InviteUserModalProps> = ({
       })),
     [roles]
   );
+
+  const invitationTypeItems = [
+    { _id: "EXISTING_ORG", name: "Team Member (Existing Organization)" },
+    { _id: "NEW_ADMIN_ORG", name: "Separate Admin (Create New Organization)" },
+    { _id: "TRIAL_3_MONTHS", name: "3-Month Hands-On Practice Trial" },
+  ];
 
   const [values, setValues] = useState<FormValues>(initialState);
   const [errors, setErrors] = useState<FormErrors>({});
@@ -95,7 +120,7 @@ const InviteUserModal: React.FC<InviteUserModalProps> = ({
 
   const handleOnSelectChange =
     (prop: keyof FormValues) => (event: SelectChangeEvent<string | number>) => {
-      setValues({ ...values, [prop]: event.target.value });
+      setValues({ ...values, [prop]: String(event.target.value) });
       setErrors({ ...errors, [prop]: "" });
     };
 
@@ -129,6 +154,7 @@ const InviteUserModal: React.FC<InviteUserModalProps> = ({
         surname: values.surname,
         roleId: values.roleId,
         organizationId,
+        invitationType: isSuperAdmin ? values.invitationType : "EXISTING_ORG",
       };
 
       try {
@@ -139,6 +165,7 @@ const InviteUserModal: React.FC<InviteUserModalProps> = ({
           surname: formData.surname,
           roleId: formData.roleId,
           organizationId: String(formData.organizationId || ""),
+          invitationType: formData.invitationType,
         });
         const data = response.data as {
           message: string;
@@ -161,12 +188,26 @@ const InviteUserModal: React.FC<InviteUserModalProps> = ({
     <StandardModal
       isOpen={isOpen}
       onClose={() => setIsOpen(false)}
-      title="Invite new team member"
-      description="Add a new member to give them access to the Aegis dashboard"
+      title="Invite new user"
+      description="Send an invitation to grant access to Aegis.ai"
       submitButtonText="Send Invite"
       onSubmit={handleSendInvitation}
     >
       <Stack gap="16px">
+        {isSuperAdmin && (
+          <Stack gap="8px">
+            <Typography variant="body2" sx={{ fontWeight: 500, color: "rgba(0, 0, 0, 0.87)" }}>
+              Invitation Type (Master Account Only) *
+            </Typography>
+            <Select
+              id="invitation-type-select"
+              value={values.invitationType}
+              onChange={handleOnSelectChange("invitationType")}
+              items={invitationTypeItems}
+              isRequired
+            />
+          </Stack>
+        )}
         <Stack gap="8px">
           <Typography variant="body2" sx={{ fontWeight: 500, color: "rgba(0, 0, 0, 0.87)" }}>
             Name *

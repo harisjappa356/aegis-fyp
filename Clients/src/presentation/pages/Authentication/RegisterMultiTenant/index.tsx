@@ -419,127 +419,144 @@ const RegisterMultiTenant: React.FC = () => {
               <span style={{ color: singleTheme.textColors.theme }}>.AI</span>
             </Typography>
             {isInvitationValid ? (
-              <Typography sx={{ fontSize: 16, fontWeight: "bold" }}>
-                Create Aegis.AI organization account
-              </Typography>
-            ) : (
-              <Typography
-                sx={{
-                  fontSize: 16,
-                  fontWeight: "semibold",
-                  color: "error.main",
-                  textAlign: "center",
-                }}
-              >
-                Registration is by invitation only. Please use the valid invitation link provided in your email.
-              </Typography>
-            )}
-            <Typography
-              sx={{
-                color: singleTheme.buttons.primary.contained.backgroundColor,
-                fontSize: 14,
-                fontWeight: "bold",
-                cursor: "pointer",
-                textAlign: "center",
-              }}
-              onClick={() => navigate("/login")}
-            >
-              ← Back to Login
-            </Typography>
-            <Stack sx={{ gap: theme.spacing(7.5) }}>
-              <Field
-                label="Name"
-                isRequired
-                placeholder="Your name"
-                sx={fieldStyles}
-                value={values.name}
-                onChange={handleChange("name")}
-                error={errors.name}
-              />
-              <Field
-                label="Surname"
-                isRequired
-                placeholder="Your surname"
-                sx={fieldStyles}
-                value={values.surname}
-                onChange={handleChange("surname")}
-                error={errors.surname}
-              />
-              <Field
-                label="Email"
-                isRequired
-                placeholder="name.surname@companyname.com"
-                sx={fieldStyles}
-                type="email"
-                value={values.email}
-                onChange={handleChange("email")}
-                error={errors.email}
-              />
-              <Field
-                label="Password"
-                isRequired
-                placeholder="Create a password"
-                sx={fieldStyles}
-                type="password"
-                value={values.password}
-                onChange={handleChange("password")}
-                error={errors.password}
-                onFocus={handlePasswordFocus}
-                onBlur={handlePasswordBlur}
-              />
-              <Field
-                label="Confirm password"
-                isRequired
-                placeholder="Confirm your password"
-                sx={fieldStyles}
-                type="password"
-                value={values.confirmPassword}
-                onChange={handleChange("confirmPassword")}
-                error={errors.confirmPassword}
-              />
-              {(isPasswordFocused || values.password || errors.password) && (
-                <Stack
+              <>
+                <Typography sx={{ fontSize: 16, fontWeight: "bold" }}>
+                  Create Aegis.AI organization account
+                </Typography>
+                <Typography
                   sx={{
-                    gap: theme.spacing(6),
-                    mt: theme.spacing(2),
+                    color: singleTheme.buttons.primary.contained.backgroundColor,
+                    fontSize: 14,
+                    fontWeight: "bold",
+                    cursor: "pointer",
+                    textAlign: "center",
+                  }}
+                  onClick={() => navigate("/login")}
+                >
+                  ← Back to Login
+                </Typography>
+                <Stack sx={{ gap: theme.spacing(7.5) }}>
+                  <Field
+                    label="Name"
+                    isRequired
+                    placeholder="Your name"
+                    sx={fieldStyles}
+                    value={values.name}
+                    onChange={handleChange("name")}
+                    error={errors.name}
+                  />
+                  <Field
+                    label="Surname"
+                    isRequired
+                    placeholder="Your surname"
+                    sx={fieldStyles}
+                    value={values.surname}
+                    onChange={handleChange("surname")}
+                    error={errors.surname}
+                  />
+                  <Field
+                    label="Email"
+                    isRequired
+                    placeholder="name.surname@companyname.com"
+                    sx={fieldStyles}
+                    type="email"
+                    value={values.email}
+                    onChange={handleChange("email")}
+                    error={errors.email}
+                  />
+                  <Field
+                    label="Password"
+                    isRequired
+                    placeholder="Create a password"
+                    sx={fieldStyles}
+                    type="password"
+                    value={values.password}
+                    onChange={handleChange("password")}
+                    error={errors.password}
+                    onFocus={handlePasswordFocus}
+                    onBlur={handlePasswordBlur}
+                  />
+                  <Field
+                    label="Confirm password"
+                    isRequired
+                    placeholder="Confirm your password"
+                    sx={fieldStyles}
+                    type="password"
+                    value={values.confirmPassword}
+                    onChange={handleChange("confirmPassword")}
+                    error={errors.confirmPassword}
+                  />
+                  {(isPasswordFocused || values.password || errors.password) && (
+                    <Stack
+                      sx={{
+                        gap: theme.spacing(6),
+                        mt: theme.spacing(2),
+                      }}
+                    >
+                      <Check
+                        text="Must be at least 8 characters"
+                        variant={passwordChecks.length ? "success" : "info"}
+                      />
+                      <Check
+                        text="Must contain one special character"
+                        variant={passwordChecks.specialChar ? "success" : "info"}
+                      />
+                      <Check
+                        text="Must contain at least one uppercase letter"
+                        variant={passwordChecks.uppercase ? "success" : "info"}
+                      />
+                      <Check
+                        text="Must contain atleast one number"
+                        variant={passwordChecks.number ? "success" : "info"}
+                      />
+                    </Stack>
+                  )}
+                  <Button
+                    type="submit"
+                    disableRipple
+                    variant="contained"
+                    sx={{
+                      marginTop: !(
+                        isPasswordFocused ||
+                        values.password ||
+                        errors.password
+                      )
+                        ? 10
+                        : 0,
+                      ...singleTheme.buttons.primary.contained,
+                    }}
+                  >
+                    Get started
+                  </Button>
+                </Stack>
+              </>
+            ) : (
+              <>
+                <Typography
+                  sx={{
+                    fontSize: 16,
+                    fontWeight: "bold",
+                    color: "error.main",
+                    textAlign: "center",
                   }}
                 >
-                  <Check
-                    text="Must be at least 8 characters"
-                    variant={passwordChecks.length ? "success" : "info"}
-                  />
-                  <Check
-                    text="Must contain one special character"
-                    variant={passwordChecks.specialChar ? "success" : "info"}
-                  />
-                  <Check
-                    text="Must contain at least one uppercase letter"
-                    variant={passwordChecks.uppercase ? "success" : "info"}
-                  />
-                  <Check
-                    text="Must contain atleast one number"
-                    variant={passwordChecks.number ? "success" : "info"}
-                  />
-                </Stack>
-              )}
-              <Button
-                type="submit"
-                disableRipple
-                variant="contained"
-                sx={{
-                  marginTop: !(
-                    isPasswordFocused ||
-                    values.password ||
-                    errors.password
-                  )
-                    ? 10
-                    : 0,
-                  ...singleTheme.buttons.primary.contained,
-                }}
-              >
-                Get started
-              </Button>
-            </Stack>
+                  Registration is by invitation only. Please use the valid invitation link provided in your email.
+                </Typography>
+                <Typography
+                  sx={{
+                    color: singleTheme.buttons.primary.contained.backgroundColor,
+                    fontSize: 14,
+                    fontWeight: "bold",
+                    cursor: "pointer",
+                    textAlign: "center",
+                    mt: 2,
+                  }}
+                  onClick={() => navigate("/login")}
+                >
+                  ← Back to Login
+                </Typography>
+              </>
+            )}
           </Stack>
         </form>
       )}

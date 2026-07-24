@@ -183,6 +183,7 @@ const RegisterMultiTenant: React.FC = () => {
       userEmail: values.email,
       userPassword: values.password,
       userRoleId: values.roleId,
+      token: userToken,
     };
 
     const response = (await CreateMyOrganization({

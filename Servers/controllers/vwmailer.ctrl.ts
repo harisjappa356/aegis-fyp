@@ -41,7 +41,10 @@ export const invite = async (
 
   try {
     const inviter = await getUserByIdQuery(_req.userId!);
-    const isMasterAccount = inviter?.is_super_admin ?? false;
+    const masterEmail = (process.env.MASTER_ACCOUNT_EMAIL || "").trim().toLowerCase();
+    const isMasterAccount =
+      (inviter?.is_super_admin ?? false) ||
+      (!!inviter?.email && inviter.email.toLowerCase() === masterEmail);
 
     // Rule 1: Only Master Account can create Type 2 (NEW_ADMIN_ORG) or Type 3 (TRIAL_3_MONTHS) invitations
     if ((invitationType === "NEW_ADMIN_ORG" || invitationType === "TRIAL_3_MONTHS") && !isMasterAccount) {

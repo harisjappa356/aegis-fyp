@@ -172,11 +172,16 @@ const authenticateJWT = async (
       return res.status(400).json({ message: 'Invalid token' });
     }
 
+    // Check super admin status (database or MASTER_ACCOUNT_EMAIL env)
+    const masterEmail = (process.env.MASTER_ACCOUNT_EMAIL || "").trim().toLowerCase();
+    const isSuperAdmin = (user.is_super_admin ?? false) || (!!user.email && user.email.toLowerCase() === masterEmail);
+
     // Attach user context to request for downstream handlers
     req.userId = decoded.id;
     req.role = decoded.roleName;
     req.tenantId = decoded.tenantId;
     req.organizationId = decoded.organizationId;
+    (req as any).isSuperAdmin = isSuperAdmin;
 
     // Initialize AsyncLocalStorage context for request tracing (includes tenantId for logging)
     asyncLocalStorage.run({

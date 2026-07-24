@@ -42,7 +42,7 @@ const useRegisterUser = () => {
   }, userToken: string | null) => {
     try {
        const response = await createNewUser({
-        userData: { ...values, role_id: user.roleId || 1 },
+        userData: { ...values, role_id: user.roleId || 1, token: userToken || "" },
       }, {
         Authorization: `Bearer ${userToken || ""}`,
       });

@@ -279,6 +279,8 @@ export async function getOrganizationById(
  *   }
  * }
  */
+import { getTokenPayload } from "../utils/jwt.utils";
+
 export async function createOrganization(
   req: Request,
   res: Response
@@ -299,7 +301,22 @@ export async function createOrganization(
       userName: string;
       userSurname: string;
       userPassword: string;
+      token?: string;
     };
+
+    // Enforce Invite-Only Registration Check
+    const token = body.token || (req.headers.authorization ? req.headers.authorization.split(" ")[1] : null);
+    let decoded: any = null;
+    if (token) {
+      decoded = getTokenPayload(token);
+    }
+
+    if (!decoded || (decoded.expire && Date.now() >= decoded.expire)) {
+      await transaction.rollback();
+      return res.status(403).json({
+        message: "Registration is by invitation only. Please use the valid invitation link provided in your email.",
+      });
+    }
 
     // Use the OrganizationModel's createNewOrganization method with validation
     const organizationModel = await OrganizationModel.createNewOrganization(
@@ -327,7 +344,10 @@ export async function createOrganization(
           password: body.userPassword,
           roleId: 1, // Assuming 1 is the default role ID for Admin
           organizationId: organization_id,
-        },
+          invitation_type: decoded.invitationType || null,
+          access_expires_at: decoded.accessExpiresAt ? new Date(decoded.accessExpiresAt) : null,
+          invited_by_user_id: decoded.invitedByUserId || null,
+        } as any,
         transaction
       );
 

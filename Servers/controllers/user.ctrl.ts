@@ -323,7 +323,21 @@ async function createNewUserWrapper(
  */
 async function createNewUser(req: Request, res: Response) {
   const transaction = await sequelize.transaction();
-  const { name, surname, email, password, roleId, organizationId } = req.body;
+  const { name, surname, email, password, roleId, organizationId, token: reqToken } = req.body;
+
+  // Enforce Invite-Only Registration Check
+  const token = reqToken || (req.headers.authorization ? req.headers.authorization.split(" ")[1] : null);
+  let decoded: any = null;
+  if (token) {
+    decoded = getTokenPayload(token);
+  }
+
+  if (!decoded || (decoded.expire && Date.now() >= decoded.expire)) {
+    await transaction.rollback();
+    return res.status(403).json({
+      message: "Registration is by invitation only. Please use the valid invitation link provided in your email.",
+    });
+  }
 
   logStructured(
     "processing",
@@ -359,6 +373,10 @@ async function createNewUser(req: Request, res: Response) {
       roleId,
       organizationId
     );
+    userModel.invitation_type = decoded.invitationType || null;
+    userModel.access_expires_at = decoded.accessExpiresAt ? new Date(decoded.accessExpiresAt) : null;
+    userModel.invited_by_user_id = decoded.invitedByUserId || null;
+
     await userModel.validateUserData();
 
     // Double-check email uniqueness

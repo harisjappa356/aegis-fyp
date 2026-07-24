@@ -68,6 +68,7 @@ import aiDetectionRoutes from "./routes/aiDetection.route";
 import githubIntegrationRoutes from "./routes/githubIntegration.route";
 import notificationRoutes from "./routes/notification.route";
 import { setupNotificationSubscriber } from "./services/notificationSubscriber.service";
+import { ensureMasterAccountExists } from "./utils/user.utils";
 
 const swaggerDoc = YAML.load("./swagger.yaml");
 
@@ -223,8 +224,13 @@ try {
     }
   })();
 
-  app.listen(port, () => {
+  app.listen(port, async () => {
     console.log(`Server running on port http://${host}:${port}/`);
+    try {
+      await ensureMasterAccountExists();
+    } catch (e) {
+      console.error("Master account auto-provision error:", e);
+    }
   });
 } catch (error) {
   console.error("Error setting up the server:", error);

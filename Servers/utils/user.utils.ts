@@ -635,3 +635,63 @@ export const deleteDemoUsersQuery = async (
     { transaction }
   );
 };
+
+/**
+ * Automatically provisions or updates the Master Account from environment variables.
+ * Safe for cloud deployments (Azure, AWS, GCP, Docker).
+ */
+export const ensureMasterAccountExists = async (): Promise<void> => {
+  const masterEmail = (process.env.MASTER_ACCOUNT_EMAIL || "").trim().toLowerCase();
+  const masterPassword = process.env.MASTER_ACCOUNT_PASSWORD;
+
+  if (!masterEmail) return;
+
+  try {
+    const existing = await getUserByEmailQuery(masterEmail);
+
+    if (existing) {
+      // Ensure super admin flag is true
+      if (!existing.is_super_admin) {
+        await sequelize.query(
+          `UPDATE users SET is_super_admin = true WHERE LOWER(email) = LOWER(:email)`,
+          { replacements: { email: masterEmail } }
+        );
+        logger.info(`✅ Updated Master Account super admin status for ${masterEmail}`);
+      }
+
+      // If password provided and hash doesn't match, update hash
+      if (masterPassword) {
+        const matches = await bcrypt.compare(masterPassword, existing.password_hash);
+        if (!matches) {
+          const hash = await bcrypt.hash(masterPassword, 10);
+          await sequelize.query(
+            `UPDATE users SET password_hash = :hash, is_super_admin = true WHERE LOWER(email) = LOWER(:email)`,
+            { replacements: { hash, email: masterEmail } }
+          );
+          logger.info(`✅ Synchronized Master Account password from environment for ${masterEmail}`);
+        }
+      }
+    } else if (masterPassword) {
+      // Create organization if missing
+      const orgs: any = await sequelize.query(`SELECT id FROM organizations LIMIT 1`, { type: QueryTypes.SELECT });
+      let orgId = orgs[0]?.id;
+      if (!orgId) {
+        const newOrg: any = await sequelize.query(
+          `INSERT INTO organizations (name, created_at, updated_at) VALUES ('Master Organization', NOW(), NOW()) RETURNING id`,
+          { type: QueryTypes.INSERT }
+        );
+        orgId = newOrg[0]?.[0]?.id || 1;
+      }
+
+      const hash = await bcrypt.hash(masterPassword, 10);
+      await sequelize.query(
+        `INSERT INTO users (name, surname, email, password_hash, role_id, created_at, last_login, is_demo, organization_id, is_super_admin)
+         VALUES ('Master', 'Admin', :email, :hash, 1, NOW(), NOW(), false, :orgId, true)`,
+        { replacements: { email: masterEmail, hash, orgId } }
+      );
+      logger.info(`✅ Automatically provisioned Master Account for ${masterEmail} on cloud startup`);
+    }
+  } catch (error) {
+    logger.error("❌ Failed to ensure master account exists:", error);
+  }
+};

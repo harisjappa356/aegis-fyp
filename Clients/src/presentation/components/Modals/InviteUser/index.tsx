@@ -64,23 +64,7 @@ const InviteUserModal: React.FC<InviteUserModalProps> = ({
   onSendInvite,
 }) => {
   const { roles } = useRoles();
-  const { organizationId } = useAuth();
-  const [isSuperAdmin, setIsSuperAdmin] = useState(false);
-
-  useEffect(() => {
-    // Check if user is super admin from local storage or token
-    const token = localStorage.getItem("token");
-    if (token) {
-      try {
-        const payload = JSON.parse(atob(token.split(".")[1]));
-        if (payload.isSuperAdmin || payload.is_super_admin) {
-          setIsSuperAdmin(true);
-        }
-      } catch (e) {
-        setIsSuperAdmin(false);
-      }
-    }
-  }, []);
+  const { organizationId, isSuperAdmin } = useAuth();
 
   const roleItems = useMemo(
     () =>

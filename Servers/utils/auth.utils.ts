@@ -7,6 +7,7 @@ export interface UserTokenData {
   email: string;
   roleName: string;
   organizationId: number;
+  isSuperAdmin?: boolean;
 }
 
 export interface AuthTokenResult {
@@ -25,12 +26,16 @@ export function generateUserTokens(
   userData: UserTokenData,
   res: Response
 ): AuthTokenResult {
+  const masterEmail = (process.env.MASTER_ACCOUNT_EMAIL || "").trim().toLowerCase();
+  const isSuperAdmin = (userData.isSuperAdmin ?? false) || (!!userData.email && userData.email.toLowerCase() === masterEmail);
+
   const tokenPayload = {
     id: userData.id,
     email: userData.email,
     roleName: userData.roleName,
     tenantId: getTenantHash(userData.organizationId),
     organizationId: userData.organizationId,
+    isSuperAdmin,
   };
 
   const accessToken = generateToken(tokenPayload) as string;

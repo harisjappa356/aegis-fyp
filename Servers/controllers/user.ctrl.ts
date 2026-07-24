@@ -553,6 +553,7 @@ async function loginUser(req: Request, res: Response): Promise<any> {
             email: email,
             roleName: (userData as any).role_name,
             organizationId: (userData as any).organization_id,
+            isSuperAdmin: (userData as any).is_super_admin ?? false,
           },
           res
         );

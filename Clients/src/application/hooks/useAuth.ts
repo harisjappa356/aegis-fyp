@@ -12,6 +12,7 @@ export const useAuth = () => {
     userRoleName: userToken?.roleName || "",
     userId: userToken?.id ? parseInt(userToken.id) : null,
     organizationId: userToken?.organizationId ? parseInt(userToken.organizationId) : null,
+    isSuperAdmin: !!(userToken?.isSuperAdmin || userToken?.is_super_admin),
     isAuthenticated: !!token,
   };
 };

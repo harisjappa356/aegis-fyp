@@ -66,9 +66,7 @@ const InviteUserModal: React.FC<InviteUserModalProps> = ({
   const { roles } = useRoles();
   const { organizationId, isSuperAdmin, userRoleName, userToken } = useAuth();
 
-  const showInviteTypeSelector =
-    isSuperAdmin ||
-    (userToken?.email && userToken.email.toLowerCase() === "muhammadharisjappa@gmail.com");
+  const showInviteTypeSelector = isSuperAdmin;
 
   const roleItems = useMemo(
     () =>

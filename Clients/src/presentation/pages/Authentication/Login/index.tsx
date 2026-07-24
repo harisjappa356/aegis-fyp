@@ -350,36 +350,6 @@ const Login: React.FC = () => {
             >
               Sign in
             </Button>
-            <Stack
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "center",
-                gap: 1,
-                mt: 1.5,
-              }}
-            >
-              <Typography
-                sx={{ fontSize: 14, color: "text.secondary" }}
-              >
-                Don't have an account yet?
-              </Typography>
-              <Typography
-                sx={{
-                  color: "#13715B",
-                  fontSize: 14,
-                  fontWeight: "bold",
-                  cursor: "pointer",
-                  "&:hover": {
-                    textDecoration: "underline",
-                  },
-                }}
-                onClick={() => navigate("/register")}
-              >
-                Register here
-              </Typography>
-            </Stack>
           </Stack>
         </Stack>
       </form>

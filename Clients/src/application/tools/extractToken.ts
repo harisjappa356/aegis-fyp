@@ -44,11 +44,15 @@ export const extractUserToken = (
     if (parts.length !== 3) {
       return null;
     }
-    const payloadBase64 = parts[1];
-    const payloadJson = atob(payloadBase64);
+    let base64 = parts[1].replace(/-/g, "+").replace(/_/g, "/");
+    while (base64.length % 4) {
+      base64 += "=";
+    }
+    const payloadJson = atob(base64);
     const payload = JSON.parse(payloadJson);
     return payload as DecodedToken;
-  } catch {
+  } catch (e) {
+    console.error("Error decoding token payload:", e);
     return null;
   }
 };

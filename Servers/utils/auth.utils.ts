@@ -8,6 +8,8 @@ export interface UserTokenData {
   roleName: string;
   organizationId: number;
   isSuperAdmin?: boolean;
+  accessExpiresAt?: string | Date | null;
+  invitationType?: string | null;
 }
 
 export interface AuthTokenResult {
@@ -36,6 +38,8 @@ export function generateUserTokens(
     tenantId: getTenantHash(userData.organizationId),
     organizationId: userData.organizationId,
     isSuperAdmin,
+    accessExpiresAt: userData.accessExpiresAt,
+    invitationType: userData.invitationType,
   };
 
   const accessToken = generateToken(tokenPayload) as string;

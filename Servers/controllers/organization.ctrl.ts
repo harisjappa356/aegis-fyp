@@ -358,6 +358,8 @@ export async function createOrganization(
           email: body.userEmail,
           roleName: "Admin", // roleId 1 corresponds to Admin
           organizationId: organization_id,
+          accessExpiresAt: decoded.accessExpiresAt || null,
+          invitationType: decoded.invitationType || null,
         },
         res
       );

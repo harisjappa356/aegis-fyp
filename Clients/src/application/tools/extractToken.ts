@@ -12,6 +12,9 @@ export interface DecodedToken {
   roleName: string;
   organizationId: string;
   tenantId: string;
+  accessExpiresAt?: string;
+  access_expires_at?: string;
+  invitationType?: string;
 }
 
 /**

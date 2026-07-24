@@ -6,6 +6,7 @@ import { AegisContext } from "../../../application/contexts/Aegis.context";
 import { EvalsSidebarProvider } from "../../../application/contexts/EvalsSidebar.context";
 import { AIDetectionSidebarProvider } from "../../../application/contexts/AIDetectionSidebar.context";
 import DemoAppBanner from "../../components/DemoBanner/DemoAppBanner";
+import TrialExpirationBanner from "../../components/TrialBanner/TrialExpirationBanner";
 import { getAllProjects } from "../../../application/repository/project.repository";
 import {
   postAutoDrivers,
@@ -309,6 +310,7 @@ const Dashboard: FC<DashboardProps> = ({ reloadTrigger }) => {
             }}
           >
             <DemoAppBanner />
+            <TrialExpirationBanner />
             {alertState && (
               <Alert
                 variant={alertState.variant}

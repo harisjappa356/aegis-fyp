@@ -19,6 +19,7 @@
 import { UserModel } from "../domain.layer/models/user/user.model";
 import { sequelize } from "../database/db";
 import { QueryTypes, Transaction } from "sequelize";
+import bcrypt from "bcrypt";
 import { ProjectModel } from "../domain.layer/models/project/project.model";
 import { VendorModel } from "../domain.layer/models/vendor/vendor.model";
 import { ControlModel } from "../domain.layer/models/control/control.model";
@@ -642,7 +643,8 @@ export const deleteDemoUsersQuery = async (
  */
 export const ensureMasterAccountExists = async (): Promise<void> => {
   const masterEmail = (process.env.MASTER_ACCOUNT_EMAIL || "").trim().toLowerCase();
-  const masterPassword = process.env.MASTER_ACCOUNT_PASSWORD;
+  const rawPassword = process.env.MASTER_ACCOUNT_PASSWORD || "";
+  const masterPassword = rawPassword.replace(/^['"]|['"]$/g, "");
 
   if (!masterEmail) return;
 
@@ -656,7 +658,7 @@ export const ensureMasterAccountExists = async (): Promise<void> => {
           `UPDATE users SET is_super_admin = true WHERE LOWER(email) = LOWER(:email)`,
           { replacements: { email: masterEmail } }
         );
-        logger.info(`✅ Updated Master Account super admin status for ${masterEmail}`);
+        console.log(`✅ Updated Master Account super admin status for ${masterEmail}`);
       }
 
       // If password provided and hash doesn't match, update hash
@@ -668,7 +670,7 @@ export const ensureMasterAccountExists = async (): Promise<void> => {
             `UPDATE users SET password_hash = :hash, is_super_admin = true WHERE LOWER(email) = LOWER(:email)`,
             { replacements: { hash, email: masterEmail } }
           );
-          logger.info(`✅ Synchronized Master Account password from environment for ${masterEmail}`);
+          console.log(`✅ Synchronized Master Account password from environment for ${masterEmail}`);
         }
       }
     } else if (masterPassword) {
@@ -689,9 +691,9 @@ export const ensureMasterAccountExists = async (): Promise<void> => {
          VALUES ('Master', 'Admin', :email, :hash, 1, NOW(), NOW(), false, :orgId, true)`,
         { replacements: { email: masterEmail, hash, orgId } }
       );
-      logger.info(`✅ Automatically provisioned Master Account for ${masterEmail} on cloud startup`);
+      console.log(`✅ Automatically provisioned Master Account for ${masterEmail} on cloud startup`);
     }
   } catch (error) {
-    logger.error("❌ Failed to ensure master account exists:", error);
+    console.error("❌ Failed to ensure master account exists:", error);
   }
 };

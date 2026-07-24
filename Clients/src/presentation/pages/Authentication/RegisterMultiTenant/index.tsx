@@ -175,12 +175,15 @@ const RegisterMultiTenant: React.FC = () => {
       return;
     }
 
+    const tokenInfo = userToken ? extractUserToken(userToken) : null;
+    const lockedEmail = tokenInfo?.email || values.email;
+
     // Include organization data in the request
     const requestBody = {
       name: `${values.name}'s Organization`,
       userName: values.name,
       userSurname: values.surname,
-      userEmail: values.email,
+      userEmail: lockedEmail,
       userPassword: values.password,
       userRoleId: values.roleId,
       token: userToken,
@@ -463,6 +466,7 @@ const RegisterMultiTenant: React.FC = () => {
                     value={values.email}
                     onChange={handleChange("email")}
                     error={errors.email}
+                    disabled
                   />
                   <Field
                     label="Password"

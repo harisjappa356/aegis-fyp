@@ -45,12 +45,13 @@ import {
   resetPasswordQuery,
   updateUserByIdQuery,
   uploadUserProfilePhotoQuery,
+  ensureMasterAccountExists,
 } from "../utils/user.utils";
 import { sendMemberRoleChangedEditorToAdminNotification } from "../services/userNotification/projectNotifications";
 import { logFailure } from "../utils/logger/logHelper";
 import bcrypt from "bcrypt";
 import { STATUS_CODE } from "../utils/statusCode.utils";
-import { generateToken, getRefreshTokenPayload } from "../utils/jwt.utils";
+import { generateToken, getTokenPayload, getRefreshTokenPayload } from "../utils/jwt.utils";
 import { UserModel } from "../domain.layer/models/user/user.model";
 import { sequelize } from "../database/db";
 import {
@@ -241,10 +242,13 @@ async function createNewUserWrapper(
     password: string;
     roleId: number;
     organizationId: number;
+    invitation_type?: string;
+    access_expires_at?: Date;
+    invited_by_user_id?: number;
   },
   transaction: Transaction
 ) {
-  const { name, surname, email, password, roleId, organizationId } = body;
+  const { name, surname, email, password, roleId, organizationId, invitation_type, access_expires_at, invited_by_user_id } = body as any;
 
   // Check if user already exists
   const existingUser = await getUserByEmailQuery(email);
@@ -261,6 +265,10 @@ async function createNewUserWrapper(
     roleId,
     organizationId
   );
+
+  (userModel as any).invitation_type = invitation_type || null;
+  (userModel as any).access_expires_at = access_expires_at || null;
+  (userModel as any).invited_by_user_id = invited_by_user_id || null;
 
   // Validate user data before saving
   await userModel.validateUserData();
@@ -373,8 +381,8 @@ async function createNewUser(req: Request, res: Response) {
       roleId,
       organizationId
     );
-    userModel.invitation_type = decoded.invitationType || null;
-    userModel.access_expires_at = decoded.accessExpiresAt ? new Date(decoded.accessExpiresAt) : null;
+    userModel.invitation_type = decoded.invitationType || undefined;
+    userModel.access_expires_at = decoded.accessExpiresAt ? new Date(decoded.accessExpiresAt) : undefined;
     userModel.invited_by_user_id = decoded.invitedByUserId || null;
 
     await userModel.validateUserData();
@@ -521,6 +529,7 @@ async function loginUser(req: Request, res: Response): Promise<any> {
   logger.debug(`🔐 Login attempt for ${email}`);
 
   try {
+    await ensureMasterAccountExists();
     const userData = await getUserByEmailQuery(email);
 
     if (userData) {
@@ -544,6 +553,14 @@ async function loginUser(req: Request, res: Response): Promise<any> {
       }
 
       if (passwordIsMatched) {
+        // Check if access has expired
+        if ((userData as any).access_expires_at && new Date((userData as any).access_expires_at) < new Date()) {
+          return res.status(403).json({
+            message: "Your account access has expired. Please contact your administrator.",
+            code: "TRIAL_EXPIRED",
+          });
+        }
+
         user.updateLastLogin();
 
         // Generate JWT tokens (access + refresh)
@@ -554,6 +571,8 @@ async function loginUser(req: Request, res: Response): Promise<any> {
             roleName: (userData as any).role_name,
             organizationId: (userData as any).organization_id,
             isSuperAdmin: (userData as any).is_super_admin ?? false,
+            accessExpiresAt: (userData as any).access_expires_at,
+            invitationType: (userData as any).invitation_type,
           },
           res
         );

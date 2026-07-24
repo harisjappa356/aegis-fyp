@@ -70,8 +70,8 @@ export const invite = async (
       // Set accessExpiresAt to inviter's expiration date (cascading expiration)
       accessExpiresAt = new Date(inviter.access_expires_at!).toISOString();
     } else if (invitationType === "TRIAL_3_MONTHS") {
-      // New 3-Month Trial issued by Master Account
-      accessExpiresAt = new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString();
+      // 2-Day trial for testing (UI label remains 3-Month Trial)
+      accessExpiresAt = new Date(Date.now() + 2 * 24 * 60 * 60 * 1000).toISOString();
     }
 
     // Read the MJML template file
@@ -92,7 +92,7 @@ export const invite = async (
       invitedByUserId: _req.userId,
     }) as string;
 
-    const routePath = invitationType === "NEW_ADMIN_ORG" ? "/register" : "/user-reg";
+    const routePath = (invitationType === "NEW_ADMIN_ORG" || invitationType === "TRIAL_3_MONTHS") ? "/register" : "/user-reg";
     const link = `${frontEndUrl}${routePath}?${new URLSearchParams({
       token,
     }).toString()}`;

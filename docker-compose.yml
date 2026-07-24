@@ -48,6 +48,11 @@ services:
       - LLM_EVALS_URL=http://eval_server:8000
       - REDIS_URL=redis://redis:6379/0
       - ENCRYPTION_KEY=$ENCRYPTION_KEY
+      - RESEND_API_KEY=$RESEND_API_KEY
+      - EMAIL_PROVIDER=$EMAIL_PROVIDER
+      - EMAIL_ID=$EMAIL_ID
+      - MASTER_ACCOUNT_EMAIL=$MASTER_ACCOUNT_EMAIL
+      - MASTER_ACCOUNT_PASSWORD=$MASTER_ACCOUNT_PASSWORD
   frontend:
     depends_on:
       - backend

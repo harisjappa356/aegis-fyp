@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box, Typography, Stack, Paper, Container } from '@mui/material';
 import { Plus, Eye, Filter, Edit3, Lock, Unlock, Save, Trash2, Download, Upload } from 'lucide-react';
 import CustomizableButton from '../Button/CustomizableButton';
-import AegisMultiSelect from '../AegisMultiSelect';
+import AegisMultiSelect from '../VerifyWiseMultiSelect';
 import ViewToggle from '../ViewToggle';
 
 const ButtonShowcase: React.FC = () => {

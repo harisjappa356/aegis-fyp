@@ -97,7 +97,8 @@ const RegisterMultiTenant: React.FC = () => {
     }
 
     const userInfo = extractUserToken(userToken);
-    if (userInfo && userInfo.expire && Date.now() < userInfo.expire) {
+    const expireMs = userInfo?.expire ? Number(userInfo.expire) : 0;
+    if (userInfo && userInfo.expire && Date.now() < expireMs) {
       setIsInvitationValid(true);
       setValues((prev) => ({
         ...prev,

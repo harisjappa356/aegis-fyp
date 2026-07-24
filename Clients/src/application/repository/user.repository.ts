@@ -14,6 +14,7 @@ interface CreateUserData {
   role_id?: number;
   organizationId?: number;
   organization_id?: number;
+  token?: string;
 }
 
 /**

@@ -15,6 +15,8 @@ export interface DecodedToken {
   accessExpiresAt?: string;
   access_expires_at?: string;
   invitationType?: string;
+  isSuperAdmin?: boolean;
+  is_super_admin?: boolean;
 }
 
 /**
